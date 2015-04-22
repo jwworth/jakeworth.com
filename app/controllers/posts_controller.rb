@@ -31,7 +31,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      flash[:alert] = 'Post updated'
       redirect_to post_path @post
+    else
+      flash[:alert] = @post.errors.full_messages
+      render :edit
     end
   end
 

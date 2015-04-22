@@ -93,7 +93,6 @@ Then 'I see the post edit page' do
 end
 
 Then 'I see my edited post' do
-  save_and_open_page
   expect(page).to have_content 'Awesome new title'
   expect(page).to have_content 'Awesome new body'
 end
