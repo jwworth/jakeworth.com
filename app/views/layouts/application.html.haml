@@ -10,7 +10,7 @@
     %h1=link_to 'worth-chicago', root_path
     %ul
       - if developer_signed_in?
-        %li Signed In.
+        %li= link_to 'Create post', new_post_path
       %li= link_to 'Github', 'http://github.com/jwworth'
       %li= link_to 'Twitter', 'http://twitter.com/jwworth'
     = yield
