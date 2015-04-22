@@ -74,8 +74,28 @@ Given(/^I am a signed in developer$/) do
   }
 end
 
+And 'a post exists' do
+  @post = FactoryGirl.create(:post)
+end
+
 Given(/^I click create post$/) do
   click_on 'Create post'
+end
+
+Given(/^I click edit post$/) do
+  click_on '[edit]'
+end
+
+Then 'I see the post edit page' do
+  within 'h3' do
+    expect(page).to have_content 'Edit post'
+  end
+end
+
+Then 'I see my edited post' do
+  save_and_open_page
+  expect(page).to have_content 'Awesome new title'
+  expect(page).to have_content 'Awesome new body'
 end
 
 Then(/^I see the post create page$/) do
@@ -88,6 +108,14 @@ When(/^I enter valid information into that form$/) do
   within 'form' do
     fill_in 'Title', with: 'Awesome title'
     fill_in 'Body', with: 'Awesome body'
+    click_on 'Submit'
+  end
+end
+
+When(/^I enter new valid information into that form$/) do
+  within 'form' do
+    fill_in 'Title', with: 'Awesome new title'
+    fill_in 'Body', with: 'Awesome new body'
     click_on 'Submit'
   end
 end
