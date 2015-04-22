@@ -78,8 +78,20 @@ When(/^I enter valid information into that form$/) do
   end
 end
 
+When(/^I enter invalid information into that form$/) do
+  within 'form' do
+    fill_in 'Title', with: 'Awesome title'
+    fill_in 'Body', with: ''
+    click_on 'Submit'
+  end
+end
+
 Then(/^I see my post$/) do
   within '.title' do
     expect(page).to have_content('Awesome title')
   end
+end
+
+Then(/^I see a message "(.*?)"$/) do |message|
+  expect(page).to have_content message
 end

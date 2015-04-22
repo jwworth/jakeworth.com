@@ -6,8 +6,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    if @post.save!
+    if @post.save
       redirect_to root_path
+    else
+      flash[:alert] = @post.errors.full_messages
+      render :new
     end
   end
 

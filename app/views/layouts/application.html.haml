@@ -13,6 +13,11 @@
         %li= link_to 'Create post', new_post_path
       %li= link_to 'Github', 'http://github.com/jwworth'
       %li= link_to 'Twitter', 'http://twitter.com/jwworth'
+    #flash
+      - if flash.present?
+        - if flash[:alert]
+          - [flash[:alert]].flatten.each do |alert_message|
+            %p.error= alert_message
     = yield
 
   %footer

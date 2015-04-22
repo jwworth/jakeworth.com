@@ -6,4 +6,16 @@ describe Post do
 
     expect(post).to be_valid
   end
+
+  it 'should require a title' do
+    post = FactoryGirl.build(:post, title: nil)
+
+    expect(post).to_not be_valid
+  end
+
+  it 'should require a body' do
+    post = FactoryGirl.build(:post, body: nil)
+
+    expect(post).to_not be_valid
+  end
 end
