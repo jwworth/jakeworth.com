@@ -1,3 +1,3 @@
 # worth-chicago.co
 
-Source code for my developer's blog.
+This is the source code for my developer's blog.
