@@ -30,3 +30,24 @@ Then 'I am not logged in' do
   expect(current_path).to eq new_session_path
   expect(page).to_not have_content 'Signed In.'
 end
+
+Given 'I am a visitor' do
+  # noop
+end
+
+And 'I visit the homepage' do
+  visit root_path
+end
+
+Then 'I see links' do
+  within 'body ul' do
+    expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
+    expect(page).to have_link 'Twitter', href: 'http://twitter.com/jwworth'
+  end
+end
+
+And 'I see copyright information' do
+  within 'footer' do
+    expect(page).to have_content "© #{Date.today.year} Jake Worth"
+  end
+end

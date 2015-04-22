@@ -2,11 +2,20 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title WorthChicagoCo
+    %title worth-chicago
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    - if developer_signed_in?
-      Signed In.
+    %h1=link_to 'worth-chicago', root_path
+    %ul
+      - if developer_signed_in?
+        %li Signed In.
+      %li= link_to 'Github', 'http://github.com/jwworth'
+      %li= link_to 'Twitter', 'http://twitter.com/jwworth'
     = yield
+
+  %footer
+    %p
+      &copy;
+      = "#{Date.today.year} Jake Worth"
