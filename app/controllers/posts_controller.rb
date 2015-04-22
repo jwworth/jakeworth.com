@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_filter :require_developer, except: :index
+
   def new
     @post = Post.new
   end

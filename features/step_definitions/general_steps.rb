@@ -39,6 +39,10 @@ And 'I visit the homepage' do
   visit root_path
 end
 
+Then 'I see the homepage' do
+  expect(current_path).to eq root_path
+end
+
 Then 'I see links' do
   within 'body ul' do
     expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
@@ -94,4 +98,8 @@ end
 
 Then(/^I see a message "(.*?)"$/) do |message|
   expect(page).to have_content message
+end
+
+When 'I visit the new post path' do
+  visit '/posts/new'
 end
