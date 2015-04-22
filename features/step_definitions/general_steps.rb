@@ -50,6 +50,16 @@ Then 'I see links' do
   end
 end
 
+Then 'I see the page for that post' do
+  within 'h3' do
+    expect(page).to have_content 'Newest post'
+  end
+
+  within 'body' do
+    expect(page).to have_content 'Newest body'
+  end
+end
+
 And 'I see copyright information' do
   within 'footer' do
     expect(page).to have_content "© #{Date.today.year} Jake Worth"
@@ -102,4 +112,15 @@ end
 
 When 'I visit the new post path' do
   visit '/posts/new'
+end
+
+And 'posts exist' do
+  2.times { FactoryGirl.create(:post) }
+  @newest_post = FactoryGirl.create(:post, title: 'Newest post', body: 'Newest body')
+end
+
+When 'I click the newest post' do
+  within '.title:first-child' do
+    click_on 'Newest post'
+  end
 end

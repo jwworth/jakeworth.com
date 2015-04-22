@@ -7,18 +7,20 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %h1=link_to 'worth-chicago', root_path
-    %ul
-      - if developer_signed_in?
-        %li= link_to 'Create post', new_post_path
-      %li= link_to 'Github', 'http://github.com/jwworth'
-      %li= link_to 'Twitter', 'http://twitter.com/jwworth'
-    #flash
-      - if flash.present?
-        - if flash[:alert]
-          - [flash[:alert]].flatten.each do |alert_message|
-            %p.error= alert_message
-    = yield
+    %main
+      %h1=link_to 'worth-chicago', root_path
+      %ul
+        - if developer_signed_in?
+          %li= link_to 'Create post', new_post_path
+        %li= link_to 'Github', 'http://github.com/jwworth'
+        %li= link_to 'Twitter', 'http://twitter.com/jwworth'
+      #flash
+        - if flash.present?
+          - if flash[:alert]
+            - [flash[:alert]].flatten.each do |alert_message|
+              %p.error= alert_message
+      %article
+        = yield
 
   %footer
     %p

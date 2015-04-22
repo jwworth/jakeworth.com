@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_filter :require_developer, except: :index
+  before_filter :require_developer, except: [:index, :show]
 
   def new
     @post = Post.new
@@ -17,7 +17,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
