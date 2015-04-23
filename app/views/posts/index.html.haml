@@ -1,4 +1,4 @@
 - @posts.each do |post|
-  .title
-    %span= link_to post.title, post_path(post.url_slug)
-    %span= link_to '[edit]', edit_post_path(post.url_slug)
+  %p.title
+    = link_to post.title, post_path(post.url_slug)
+    = link_to '[edit]', edit_post_path(post.url_slug)

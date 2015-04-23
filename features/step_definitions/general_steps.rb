@@ -152,7 +152,5 @@ And 'posts exist' do
 end
 
 When 'I click the newest post' do
-  within '.title:first-child' do
-    click_on 'Newest post'
-  end
+  click_on 'Newest post'
 end
