@@ -58,6 +58,7 @@ Then 'I see the page for that post' do
 
   within 'body' do
     expect(page).to have_content 'Newest body'
+    expect(page).to have_content @newest_post.created_at.strftime('%F')
   end
 end
 

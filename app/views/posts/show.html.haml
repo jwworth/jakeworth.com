@@ -1,2 +1,5 @@
 %h3= @post.title
-.body= @post.body
+.body
+  %p= @post.body
+  %p.posted= "Posted: #{@post.created_at.strftime('%F')}"
+
