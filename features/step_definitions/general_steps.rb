@@ -47,6 +47,7 @@ Then 'I see links' do
   within 'body ul' do
     expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
     expect(page).to have_link 'Twitter', href: 'http://twitter.com/jwworth'
+    expect(page).to have_link 'Email', href: 'mailto:jake@worth-chicago.co'
   end
 end
 
