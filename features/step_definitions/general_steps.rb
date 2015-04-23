@@ -26,9 +26,12 @@ Then 'I am logged in' do
   expect(page).to have_link 'Create post'
 end
 
+When 'I click log out' do
+  click_on 'Log out'
+end
+
 Then 'I am not logged in' do
-  expect(current_path).to eq new_session_path
-  expect(page).to_not have_content 'Signed In.'
+  expect(page).to_not have_content 'Log out'
 end
 
 Given 'I am a visitor' do
