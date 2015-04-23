@@ -1,0 +1,14 @@
+Feature: Visitor cannot edt posts
+
+  Scenario: With URL hacking
+    Given I am a visitor
+    And a post exists
+    When I visit the edit post path
+    Then I see the homepage
+    Then I see a message "Access denied"
+
+  Scenario: Via link
+    Given I am a visitor
+    And a post exists
+    When I visit the homepage
+    Then I do not see edit buttons

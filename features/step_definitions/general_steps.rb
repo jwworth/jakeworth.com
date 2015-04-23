@@ -42,6 +42,10 @@ And 'I visit the homepage' do
   visit root_path
 end
 
+Then 'I do not see edit buttons' do
+  expect(page).to_not have_content '[edit]'
+end
+
 Then 'I see the homepage' do
   expect(current_path).to eq root_path
 end
@@ -144,6 +148,10 @@ end
 
 When 'I visit the new post path' do
   visit '/posts/new'
+end
+
+When 'I visit the edit post path' do
+  visit edit_post_path @post.url_slug
 end
 
 And 'posts exist' do
