@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
     if @post.save
       redirect_to root_path
     else
@@ -21,18 +21,18 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_url_slug(params[:url_slug])
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_url_slug(params[:url_slug])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by_url_slug(params[:url_slug])
     if @post.update(post_params)
       flash[:alert] = 'Post updated'
-      redirect_to post_path @post
+      redirect_to @post
     else
       flash[:alert] = @post.errors.full_messages
       render :edit
@@ -42,6 +42,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :title, :body
+    params.require(:post).permit :title, :body, :url_slug
   end
 end

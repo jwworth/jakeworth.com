@@ -18,4 +18,18 @@ describe Post do
 
     expect(post).to_not be_valid
   end
+
+  it 'should build a url slug' do
+    post = FactoryGirl.create(:post, title: 'A post about rails')
+
+    expect(post.url_slug).to eq 'a-post-about-rails'
+  end
+
+  it 'should validate title uniqueness' do
+    post = FactoryGirl.create(:post, title: 'Title')
+    dup_post = FactoryGirl.build(:post, title: 'Title')
+
+    expect(dup_post).to_not be_valid
+    expect(dup_post.errors[:title]).to eq ["has already been taken"]
+  end
 end

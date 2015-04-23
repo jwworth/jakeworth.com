@@ -5,8 +5,8 @@ end
 
 technologies = %w(assembly bash clojure data ember)
 
-10.times do
+10.times do |i|
   theme = technologies.sample
-  post = Post.create!(title: "A post about #{theme}", body: (theme + ' ') * 200)
+  post = Post.create!(title: "A post about #{theme} #{i}", body: (theme + ' ') * 200)
   puts "Created post ##{post.id}"
 end
