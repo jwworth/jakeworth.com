@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails'
 gem 'gravatar_image_tag'
 gem 'rails_12factor', group: :production
+gem 'brakeman'
 
 group :development, :test do
   gem 'byebug'
