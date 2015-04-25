@@ -23,7 +23,10 @@
         - if flash.present?
           - if flash[:alert]
             - [flash[:alert]].flatten.each do |alert_message|
-              %p.error= alert_message
+              %p.alert= alert_message
+          - elsif flash[:notice]
+            - [flash[:notice]].flatten.each do |notice|
+              %p.notice= notice
       %article
         = yield
 

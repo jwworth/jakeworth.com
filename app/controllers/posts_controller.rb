@@ -9,9 +9,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      flash[:notice] = 'Post created'
       redirect_to root_path
     else
-      flash[:alert] = @post.errors.full_messages
+      flash.now[:alert] = @post.errors.full_messages
       render :new
     end
   end
@@ -31,10 +32,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by_url_slug(params[:url_slug])
     if @post.update(post_params)
-      flash[:alert] = 'Post updated'
+      flash[:notice] = 'Post updated'
       redirect_to @post
     else
-      flash[:alert] = @post.errors.full_messages
+      flash.now[:alert] = @post.errors.full_messages
       render :edit
     end
   end
