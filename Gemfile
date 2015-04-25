@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
 
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -13,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails'
 gem 'gravatar_image_tag'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
