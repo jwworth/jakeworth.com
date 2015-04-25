@@ -9,6 +9,7 @@
   %body
     %main
       %header
+        = gravatar_image_tag 'jake@worth-chicago.co'
         %h1=link_to 'worth-chicago', root_path
         %ul
           - if developer_signed_in?
