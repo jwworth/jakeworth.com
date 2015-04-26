@@ -3,4 +3,10 @@
   %p= f.text_field :title
   %p= f.label :body
   %p= f.text_area :body
+
+  %p.label Markdown Preview
+  .post_group
+    %article.post
+      .body
+
   %p= f.submit 'Submit'

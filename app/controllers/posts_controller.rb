@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def preview
+    render layout: false
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save

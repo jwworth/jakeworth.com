@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   patch '/:url_slug', to: 'posts#update', param: :url_slug
   get '/posts/new', to: 'posts#new', as: 'new_post'
   post '/posts/new', to: 'posts#create', as: 'posts'
+  post '/post_preview/', to: 'posts#preview'
 end
