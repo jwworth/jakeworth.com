@@ -58,6 +58,10 @@ Then 'I see links' do
   end
 end
 
+Then 'I see an edit button' do
+  expect(page).to have_link '[edit]'
+end
+
 Then 'I see the page for that post' do
   within 'h3' do
     expect(page).to have_content 'Newest post'
