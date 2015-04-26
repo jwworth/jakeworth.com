@@ -1,6 +1,8 @@
 = form_for @post do |f|
   %p= f.label :title
   %p= f.text_field :title
+  %p= f.label :url_slug, 'URL slug (leave blank to autogenerate)'
+  %p= f.text_field :url_slug
   %p= f.label :body
   %p= f.text_area :body
 
