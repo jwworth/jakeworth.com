@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  include MarkdownHelper
   before_filter :require_developer, except: [:index, :show]
 
   def new
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = 'Post created'
-      redirect_to root_path
+      redirect_to @post
     else
       flash.now[:alert] = @post.errors.full_messages
       render :new

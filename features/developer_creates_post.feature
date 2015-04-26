@@ -13,3 +13,10 @@ Feature: Developer creates post
     Then I see the post create page
     When I enter invalid information into that form
     Then I see a message "Body can't be blank"
+
+  Scenario: With markdown
+    Given I am a signed in developer
+    And I click create post
+    Then I see the post create page
+    When I enter markdown into that form
+    Then I see my markdown post

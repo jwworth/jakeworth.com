@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'gravatar_image_tag'
 gem 'rails_12factor', group: :production
 gem 'brakeman'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'

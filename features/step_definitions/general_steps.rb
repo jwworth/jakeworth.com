@@ -120,6 +120,24 @@ When(/^I enter valid information into that form$/) do
   end
 end
 
+When 'I enter markdown into that form' do
+  within 'form' do
+    fill_in 'Title', with: 'Awesome title'
+    fill_in 'Body', with: 'Awesome *emphasis* and `code`'
+    click_on 'Submit'
+  end
+end
+
+Then 'I see my markdown post' do
+  within('em') do
+    expect(page).to have_content 'emphasis'
+  end
+
+  within('code') do
+    expect(page).to have_content 'code'
+  end
+end
+
 When(/^I enter new valid information into that form$/) do
   within 'form' do
     fill_in 'Title', with: 'Awesome new title'
@@ -137,7 +155,7 @@ When(/^I enter invalid information into that form$/) do
 end
 
 Then(/^I see my post$/) do
-  within '.title' do
+  within 'h3' do
     expect(page).to have_content('Awesome title')
   end
 end

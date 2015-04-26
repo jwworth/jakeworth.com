@@ -1,5 +1,5 @@
 %h3= @post.title
 .content
-  %p= raw @post.body
+  %p= markdown_render @post.body
   %p.posted= "Posted: #{@post.created_at.strftime('%F')}"
 
