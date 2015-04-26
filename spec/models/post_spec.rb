@@ -49,6 +49,12 @@ describe Post do
     expect(post.url_slug).to eq 'a-post-about-rails'
   end
 
+  it 'should build a url slug with no dots' do
+    post = FactoryGirl.create(:post, title: 'A post about .rails')
+
+    expect(post.url_slug).to eq 'a-post-about-rails'
+  end
+
   it 'should validate title uniqueness' do
     post = FactoryGirl.create(:post, title: 'Title')
     dup_post = FactoryGirl.build(:post, title: 'Title')
