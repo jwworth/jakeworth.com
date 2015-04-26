@@ -5,3 +5,4 @@ Feature: Visitor views homepage
     And I visit the homepage
     Then I see links
     And I see copyright information
+    And I see project information

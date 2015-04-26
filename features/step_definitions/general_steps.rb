@@ -75,6 +75,12 @@ And 'I see copyright information' do
   end
 end
 
+And 'I see project information' do
+  within 'footer' do
+    expect(page).to have_link 'Source', href: 'http://github.com/jwworth/worth-chicago.co'
+  end
+end
+
 Given(/^I am a signed in developer$/) do
   steps %Q{
     Given a developer exists
