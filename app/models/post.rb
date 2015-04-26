@@ -12,7 +12,9 @@ class Post < ActiveRecord::Base
   private
 
   def generate_url_slug
-    self.url_slug = title.downcase.gsub(' ', '-').gsub(/\.|!|\?|:|#/, '')
+    if url_slug.nil? || url_slug.empty?
+      self.url_slug = title.downcase.gsub(' ', '-').gsub(/\.|!|\?|:|#/, '')
+    end
   end
 end
 
