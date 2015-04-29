@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>404! the page you looking for doesn't exist.</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  html {
+    background: url('space.jpg') center;
+  }
   body {
-    background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+  }
+  a {
+    color: black;
+    text-decoration: initial;
   }
 
   div.dialog {
@@ -23,12 +29,8 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
     background-color: white;
     padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
   h1 {
@@ -58,10 +60,14 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
+      <h1>404! the page you looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
+      <p>
+        <a href="http://worth-chicago.co">Home</a>
+        //
+        <a href="mailto:jake@worth-chicago.co">Contact</a>
+      </p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
