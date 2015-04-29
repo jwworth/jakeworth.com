@@ -23,7 +23,7 @@ When 'I enter invalid credentials into the form' do
 end
 
 Then 'I am logged in' do
-  expect(page).to have_link 'Create post'
+  expect(page).to have_link '+'
 end
 
 When 'I click log out' do
@@ -98,7 +98,7 @@ And 'a post exists' do
 end
 
 Given(/^I click create post$/) do
-  click_on 'Create post'
+  click_on '+'
 end
 
 Given(/^I click edit post$/) do
