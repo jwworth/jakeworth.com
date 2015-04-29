@@ -1,11 +1,12 @@
 $text-color: rgba(46,48,58,0.96)
+$light-gray: #a8a8a8
+$special-links: #b31b1f
 
 // Normalization
 
 a
   color: $text-color
   text-decoration: initial
-
 
 ul, li
   margin: 0
@@ -24,18 +25,20 @@ main
     padding-bottom: 20px
     ul
       list-style: none
+      float: right
+      margin-top: -29px
+      li
+        display: inline
+        padding: 0px 2px
+        padding: 7px
+        border-bottom: 1px solid $light-gray
+        margin-right: 7px
     img
       margin-bottom: -87px
       border-radius: 50px
     h1
       margin: 0 auto
       width: 200px
-    ul
-      float: right
-      margin-top: -29px
-      li
-        display: inline
-        padding: 0px 2px
     .subheader
       margin: 0 auto
       width: 200px
@@ -58,9 +61,9 @@ main
       ul
         list-style-position: inside
       a
-        color: blue
+        color: $special-links
       .posted
-        color: gray
+        color: $light-gray
         font-style: italic
 
   footer
