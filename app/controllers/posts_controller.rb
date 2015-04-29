@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  include MarkdownHelper
+  before_filter :set_post, only: [:show, :edit, :update]
   before_filter :require_developer, except: [:index, :show]
 
   def new
@@ -26,16 +26,7 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc)
   end
 
-  def show
-    @post = Post.find_by_url_slug(params[:url_slug])
-  end
-
-  def edit
-    @post = Post.find_by_url_slug(params[:url_slug])
-  end
-
   def update
-    @post = Post.find_by_url_slug(params[:url_slug])
     if @post.update(post_params)
       flash[:notice] = 'Post updated'
       redirect_to @post
@@ -49,5 +40,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit :title, :body, :url_slug
+  end
+
+  def set_post
+    @post = Post.find_by_url_slug!(params[:url_slug])
   end
 end
