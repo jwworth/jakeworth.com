@@ -45,5 +45,4 @@ ActiveRecord::Schema.define(version: 20150423152139) do
     t.datetime "updated_at"
     t.string   "url_slug"
   end
-
 end

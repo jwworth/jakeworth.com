@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def create
     developer = Developer.find_by(email: params[:session][:email].downcase)
     if developer && developer.authenticate(params[:session][:password])
