@@ -60,6 +60,6 @@ describe Post do
     dup_post = FactoryGirl.build(:post, title: 'Title')
 
     expect(dup_post).to_not be_valid
-    expect(dup_post.errors[:title]).to eq ["has already been taken"]
+    expect(dup_post.errors[:title]).to eq ['has already been taken']
   end
 end

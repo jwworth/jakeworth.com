@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
   private
 
   def require_developer
-    unless developer_signed_in?
-      redirect_to root_path, alert: 'Access denied'
-    end
+    redirect_to root_path, alert: 'Access denied' unless developer_signed_in?
   end
 end
