@@ -86,11 +86,11 @@ And 'I see project information' do
 end
 
 Given(/^I am a signed in developer$/) do
-  steps %Q{
+  steps %(
     Given a developer exists
     When I go to the login link
     When I enter valid credentials into the form
-  }
+    )
 end
 
 And 'a post exists' do
