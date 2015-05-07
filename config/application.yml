@@ -1,0 +1,8 @@
+defaults: &defaults
+  google_analytics_key: ~
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
