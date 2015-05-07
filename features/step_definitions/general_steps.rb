@@ -175,11 +175,11 @@ Then(/^I see a message "(.*?)"$/) do |message|
 end
 
 When 'I visit the new post path' do
-  visit '/posts/new'
+  visit new_post_path
 end
 
 When 'I visit the edit post path' do
-  visit edit_post_path @post.url_slug
+  visit edit_post_path @post
 end
 
 And 'posts exist' do
