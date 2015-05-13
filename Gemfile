@@ -35,4 +35,5 @@ end
 
 group :development do
   gem 'brakeman'
+  gem 'bullet'
 end
