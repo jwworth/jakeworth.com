@@ -13,8 +13,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = 'Post created'
-      redirect_to @post
+      redirect_to @post, notice: 'Post created'
     else
       flash.now[:alert] = @post.errors.full_messages
       render :new
@@ -27,8 +26,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      flash[:notice] = 'Post updated'
-      redirect_to @post
+      redirect_to @post, notice: 'Post updated'
     else
       flash.now[:alert] = @post.errors.full_messages
       render :edit

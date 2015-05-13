@@ -3,8 +3,7 @@ class SessionsController < ApplicationController
     developer = Developer.find_by(email: params[:session][:email].downcase)
     if developer && developer.authenticate(params[:session][:password])
       sign_in developer
-      flash[:notice] = 'Logged in'
-      redirect_back_or_to root_path
+      redirect_back_or_to root_path, notice: 'Logged in'
     else
       flash.now[:alert] = 'Access denied'
       render :new
