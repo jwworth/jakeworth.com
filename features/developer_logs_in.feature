@@ -11,3 +11,8 @@ Feature: Developer logs in
     And I go to the login link
     When I enter invalid credentials into the form
     Then I am not logged in
+
+  Scenario: With valid credentials
+    Given I am a signed in developer
+    And I go to the login link
+    Then I see the homepage
