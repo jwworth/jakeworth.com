@@ -4,6 +4,7 @@ module MarkdownHelper
                                           tables: true,
                                           no_intra_emphasis: true,
                                           fenced_code_blocks: true,
+                                          autolink: true,
                                           strikethrough: true,
                                           space_after_headers: true,
                                           underline: true,
