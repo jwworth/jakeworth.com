@@ -15,8 +15,8 @@
           - if developer_signed_in?
             %li.create-post-button= link_to '+', new_post_path
             %li= link_to 'Log out', destroy_session_path
-          %li= link_to 'Github', 'http://github.com/jwworth'
-          %li= link_to 'Twitter', 'http://twitter.com/jwworth'
+          %li= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
+          %li= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
           %li= link_to 'Email', 'mailto:jake@worth-chicago.co'
         .subheader= "A developer's notebook"
       #flash
@@ -35,4 +35,4 @@
           &copy;
           #{Date.today.year} Jake Worth
           \//
-          = link_to 'Source', 'http://github.com/jwworth/worth-chicago.co'
+          = link_to 'Source', 'http://github.com/jwworth/worth-chicago.co', target: '_blank'
