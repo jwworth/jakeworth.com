@@ -14,8 +14,8 @@
         %h1= link_to SITE_NAME, root_path
         %ul
           - if developer_signed_in?
-            %li.create-post-button= link_to '+', new_post_path
-            %li= link_to 'Log out', destroy_session_path
+            %li.action-button= link_to '+', new_post_path
+            %li.action-button= link_to '☮', destroy_session_path
           %li= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
           %li= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
           %li= link_to 'Email', 'mailto:jake@worth-chicago.co'
