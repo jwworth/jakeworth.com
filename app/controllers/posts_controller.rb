@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :set_post, only: [:show, :edit, :update]
-  before_filter :require_developer, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit, :update]
+  before_action :require_developer, except: [:index, :show]
 
   def new
     @post = Post.new
