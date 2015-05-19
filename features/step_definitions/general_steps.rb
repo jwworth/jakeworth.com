@@ -40,6 +40,7 @@ end
 
 And 'I visit the homepage' do
   visit root_path
+  expect(page.title).to include SITE_NAME
 end
 
 Then 'I do not see edit buttons' do
@@ -66,6 +67,8 @@ Then 'I see the page for that post' do
   within 'h3' do
     expect(page).to have_content 'Newest post'
   end
+
+  expect(page.title).to include 'Newest post - WORTH-CHICAGO'
 
   within 'body' do
     expect(page).to have_content 'Newest body'
