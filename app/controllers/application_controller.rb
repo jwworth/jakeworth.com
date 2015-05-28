@@ -2,8 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   authem_for :developer
 
-  if ENV['http_auth']
-    http_basic_authenticate_with name: ENV['http_name'], password: ENV['http_password']
+  if creds = ENV['basic_auth']
+    username, password = creds.split(':', 2)
+    http_basic_authenticate_with name: username, password: password
   end
 
   private
