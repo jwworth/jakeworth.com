@@ -22,7 +22,6 @@ gem 'figaro'
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
-  gem 'spring'
 end
 
 group :test do
