@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'posts#index'
 
-  get '/s/login', to: 'sessions#new', as: 'new_session'
-  post '/s/login', to: 'sessions#create'
-  get '/s/logout', to: 'sessions#destroy', as: 'destroy_session'
+  get '/login', to: 'sessions#new', as: 'new_session'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy', as: 'destroy_session'
 
   get '/:url_slug', to: 'posts#show', as: 'post', param: :url_slug
   get '/:url_slug/edit', to: 'posts#edit', as: 'edit_post', param: :url_slug
