@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
       sign_in developer
       redirect_back_or_to root_path, notice: 'Logged in'
     else
-      flash.now[:alert] = 'Access denied'
       render :new
     end
   end
