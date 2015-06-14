@@ -21,8 +21,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @latest_posts = Post.last(10)
-    @older_posts = Post.offset(10)
+    @latest_posts = Post.last(10).reverse
+    @older_posts = Post.offset(10).order('created_at desc')
   end
 
   def update
