@@ -1,6 +1,6 @@
 %h3 Latest Posts
 
-- @posts.each do |post|
+- @latest_posts.each do |post|
   %p.title
     = link_to post.title, post_path(post.url_slug)
     - if developer_signed_in?

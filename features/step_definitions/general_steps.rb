@@ -193,3 +193,11 @@ end
 When 'I click the newest post' do
   click_on 'Newest post'
 end
+
+Given(/^(\d+) posts exist$/) do |num|
+  FactoryGirl.create_list(:post, num.to_i)
+end
+
+Then(/^I see (\d+) post titles$/) do |num|
+  expect(page).to have_selector '.title', count: num.to_i
+end
