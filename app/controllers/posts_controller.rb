@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   def index
     @latest_posts = Post.last(10)
+    @older_posts = Post.offset(10)
   end
 
   def update

@@ -1,5 +1,7 @@
 require 'simplecov'
 require 'cucumber/rails'
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
 
 ActionController::Base.allow_rescue = false
 

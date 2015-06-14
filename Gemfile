@@ -30,6 +30,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'simplecov', require: false
+  gem 'poltergeist'
 end
 
 group :development do
