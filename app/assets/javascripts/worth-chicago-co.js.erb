@@ -28,6 +28,7 @@ $(function(){
 
   $moreButtonEl.click(function(e) {
     e.preventDefault();
-    $(".older-posts").show("fast");
+    $(".older-posts").show();
+    $($moreButtonEl).hide();
   });
 });

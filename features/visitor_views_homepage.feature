@@ -22,3 +22,4 @@ Feature: Visitor views homepage
     Then I see 10 post titles
     When I click "More"
     Then I see 11 post titles
+    And I do not see a link to "More"

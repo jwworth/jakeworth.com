@@ -205,3 +205,7 @@ end
 When(/^I click "(.*?)"$/) do |arg|
   click_on arg
 end
+
+Then(/^I do not see a link to "(.*?)"$/) do |arg|
+  expect(page).to_not have_link arg
+end
