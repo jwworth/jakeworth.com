@@ -6,4 +6,4 @@
 .content
   %p= find_and_preserve markdown_render @post.body
   %p.posted
-    Posted: #{@post.created_at.strftime('%b %d, %Y')}
+    #{@post.created_at.strftime('%b %d, %Y')}
