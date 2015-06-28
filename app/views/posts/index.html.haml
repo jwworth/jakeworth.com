@@ -6,11 +6,11 @@
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
 
-.more-button= link_to 'More', '#'
-
 .older-posts
   - @older_posts.each do |post|
     %p.title
       = link_to post.title, post_path(post.url_slug)
       - if developer_signed_in?
         = link_to '[edit]', edit_post_path(post.url_slug)
+
+.expand-button= link_to 'More', '#'

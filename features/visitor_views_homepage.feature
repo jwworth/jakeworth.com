@@ -23,3 +23,20 @@ Feature: Visitor views homepage
     When I click "More"
     Then I see 11 post titles
     And I do not see a link to "More"
+
+  @javascript
+  Scenario: And can hide older posts
+    Given I am a visitor
+    And 11 posts exist
+    When I visit the homepage
+    Then I see 10 post titles
+    And I see a link to "More"
+    And I do not see a link to "Less"
+    When I click "More"
+    Then I see 11 post titles
+    And I do not see a link to "More"
+    And I see a link to "Less"
+    When I click "Less"
+    Then I see 10 post titles
+    And I do not see a link to "Less"
+    And I see a link to "More"

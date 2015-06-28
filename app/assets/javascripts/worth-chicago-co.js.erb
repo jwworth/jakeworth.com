@@ -24,11 +24,11 @@ $(function(){
 
   $('#post_body').on('keyup', debounce(renderMarkdown, 350)).each(renderMarkdown);
 
-  var $moreButtonEl = $(".more-button")
+  var $expandButtonEl = $(".expand-button a")
 
-  $moreButtonEl.click(function(e) {
+  $expandButtonEl.click(function(e) {
     e.preventDefault();
-    $(".older-posts").show();
-    $($moreButtonEl).hide();
+    $(".older-posts").toggle();
+    $($expandButtonEl).html($($expandButtonEl).text() == 'More' ? 'Less' : 'More');
   });
 });

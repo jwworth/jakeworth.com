@@ -202,6 +202,10 @@ Then(/^I see (\d+) post titles$/) do |num|
   expect(page).to have_selector '.title', count: num.to_i
 end
 
+Then(/^I see a link to "(.*?)"$/) do |arg|
+  expect(page).to have_link arg
+end
+
 When(/^I click "(.*?)"$/) do |arg|
   click_on arg
 end
