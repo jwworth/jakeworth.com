@@ -1,9 +1,16 @@
 require 'simplecov'
 require 'cucumber/rails'
-require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
 
 ActionController::Base.allow_rescue = false
+
+Capybara.configure do |config|
+  config.javascript_driver = :webkit
+end
+
+
+Before "@javascript" do
+  page.driver.block_unknown_urls
+end
 
 begin
   DatabaseCleaner.strategy = :transaction
