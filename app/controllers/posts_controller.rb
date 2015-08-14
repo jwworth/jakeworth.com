@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  helper_attr_accessor :older_posts, :latest_posts
+
   before_action :set_post, only: [:show, :edit, :update]
   before_action :require_developer, except: [:index, :show]
 
@@ -21,9 +23,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    posts = Post.order('created_at desc').to_a
-    @latest_posts = posts.shift(10)
-    @older_posts = posts
+    self.older_posts = Post.ordered
+    self.latest_posts = older_posts.shift(10)
   end
 
   def update

@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
     http_basic_authenticate_with name: username, password: password
   end
 
+  def self.helper_attr_accessor *attr_names
+    attr_names.each do |n|
+      attr_accessor n
+      helper_method n, :"#{n}="
+      hide_action n
+    end
+  end
+
   private
 
   def require_developer

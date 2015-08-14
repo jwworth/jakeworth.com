@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :body
   validates_uniqueness_of :title
 
+  scope :ordered, -> { order('created_at desc').to_a }
+
   before_create :generate_url_slug
 
   def to_param

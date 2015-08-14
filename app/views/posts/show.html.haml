@@ -5,5 +5,4 @@
   = link_to '[edit]', edit_post_path(@post.url_slug)
 .content
   %p= find_and_preserve markdown_render @post.body
-  %p.posted
-    #{@post.created_at.strftime('%b %d, %Y')}
+  %p.posted= @post.created_at.strftime('%b %d, %Y')
