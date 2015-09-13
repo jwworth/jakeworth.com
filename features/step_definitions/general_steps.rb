@@ -76,15 +76,9 @@ Then 'I see the page for that post' do
   end
 end
 
-And 'I see copyright information' do
-  within 'footer' do
-    expect(page).to have_content "© #{Date.today.year} Jake Worth"
-  end
-end
-
 And 'I see project information' do
   within 'footer' do
-    expect(page).to have_link 'Source', href: 'http://github.com/jwworth/worth-chicago.co'
+    expect(page).to have_link 'source', href: 'http://github.com/jwworth/worth-chicago.co'
   end
 end
 

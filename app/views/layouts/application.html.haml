@@ -33,8 +33,6 @@
         = yield
 
       %footer
-        %p
-          &copy;
-          #{Date.today.year} Jake Worth
-        %p
-          = link_to 'Source', 'http://github.com/jwworth/worth-chicago.co', target: '_blank'
+        created by
+        = link_to '@jwworth.', 'http://twitter.com/jwworth'
+        = link_to ' source code.', 'http://github.com/jwworth/worth-chicago.co'

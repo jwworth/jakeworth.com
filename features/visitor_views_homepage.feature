@@ -4,7 +4,6 @@ Feature: Visitor views homepage
     Given I am a visitor
     When I visit the homepage
     Then I see links
-    And I see copyright information
     And I see project information
 
   @javascript

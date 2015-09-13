@@ -2,8 +2,6 @@ $text-color: rgba(46,48,58,0.96)
 $light-gray: #a8a8a8
 $special-links: #b31b1f
 
-// Normalization
-
 a
   color: $text-color
   text-decoration: initial
@@ -12,16 +10,14 @@ ul, li
   margin: 0
   padding: 0
 
-// Application
-
 body
   background-color: #fff
   color: $text-color
   font-family: helvetica
-
-main
   margin: 0 auto
   width: 900px
+
+main
   header
     padding-bottom: 20px
     ul
@@ -31,7 +27,6 @@ main
       li
         font-size: 0.8em
         display: inline
-        padding: 0px 2px
         padding: 7px
         border-bottom: 1px solid $light-gray
         margin-right: 7px
@@ -76,11 +71,9 @@ main
       font-size: 0.8em
 
   footer
-    margin: 0 auto
-    width: 300px
+    color: $light-gray
     text-align: center
     padding: 80px
     font-size: 0.8em
     a
-      color: $special-links
-
+      color: $light-gray
