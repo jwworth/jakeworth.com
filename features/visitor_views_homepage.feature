@@ -39,3 +39,10 @@ Feature: Visitor views homepage
     Then I see 10 post titles
     And I do not see a link to "Less"
     And I see a link to "More"
+
+  Scenario: Visitor sees Atom feed
+    Given I am a visitor
+    And a post exists
+    And I visit the homepage
+    When I visit the Atom feed page
+    Then I see an Atom feed

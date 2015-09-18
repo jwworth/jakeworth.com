@@ -78,7 +78,7 @@ end
 
 And 'I see project information' do
   within 'footer' do
-    expect(page).to have_link 'source', href: 'http://github.com/jwworth/worth-chicago.co'
+    expect(page).to have_link 'source code', href: 'http://github.com/jwworth/worth-chicago.co'
   end
 end
 
@@ -207,3 +207,13 @@ end
 Then(/^I do not see a link to "(.*?)"$/) do |arg|
   expect(page).to_not have_link arg
 end
+
+When 'I visit the Atom feed page' do
+  visit root_path(format: 'atom')
+end
+
+Then 'I see an Atom feed' do
+  expect(page).to have_content '?format=atom'
+  expect(page).to have_content @post.title
+end
+
