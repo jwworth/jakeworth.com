@@ -43,6 +43,24 @@ And 'I visit the homepage' do
   expect(page.title).to include SITE_NAME
 end
 
+And 'a project exists' do
+  FactoryGirl.create :project
+end
+
+And 'a non-featured project exists' do
+  FactoryGirl.create :project, featured: false, title: 'Not special'
+end
+
+Then(/^I see the project$/) do
+  expect(page).to have_content 'A cool project'
+  expect(page).to have_link 'http://www.google.com'
+  expect(page).to have_content 'With cool features'
+end
+
+Then(/^I do not see the non-featured project$/) do
+  expect(page).to_not have_content 'Not special'
+end
+
 Then 'I do not see edit buttons' do
   expect(page).to_not have_content '[edit]'
 end

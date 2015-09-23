@@ -16,6 +16,8 @@ body
   font-family: helvetica
   margin: 0 auto
   width: 900px
+  .older-posts
+    display: none
 
 main
   header
@@ -51,24 +53,34 @@ main
     p.notice
       color: green
 
-  article
-    .older-posts
-      display: none
-    form
-      #post_title
-        width: 300px
-      #post_body
-        width: 100%
-        height: 400px
-    .content
-      ul
-        list-style-position: inside
+  content
+    .projects
       a
         color: $special-links
-    .posted, .expand-button a
+      .small
+        color: $light-gray
+        font-style: italic
+        font-size: 0.8em
+    .expand-button a
       color: $light-gray
       font-style: italic
       font-size: 0.8em
+    article
+      form
+        #post_title
+          width: 300px
+        #post_body
+          width: 100%
+          height: 400px
+      .content
+        ul
+          list-style-position: inside
+        a
+          color: $special-links
+      .posted,
+        color: $light-gray
+        font-style: italic
+        font-size: 0.8em
 
   footer
     color: $light-gray

@@ -21,6 +21,7 @@
           %li= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
           %li= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
           %li= link_to 'Email', 'mailto:jake@worth-chicago.co'
+          %li= link_to 'Projects', projects_path
         .subheader= "A developer's notebook"
       #flash
         - if flash.present?
@@ -30,7 +31,7 @@
           - elsif flash[:notice]
             - [flash[:notice]].flatten.each do |notice|
               %p.notice= notice
-      %article
+      %content
         = yield
 
       %footer

@@ -1,0 +1,9 @@
+%h3 Projects
+
+.projects
+  - projects.each do |project|
+    %p
+      = project.title
+    %p
+      = link_to project.hyperlink, project.hyperlink
+    .small= project.description
