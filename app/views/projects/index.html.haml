@@ -2,8 +2,5 @@
 
 .projects
   - projects.each do |project|
-    %p
-      = project.title
-    %p
-      = link_to project.hyperlink, project.hyperlink
+    %p= link_to project.title, project.hyperlink
     .small= project.description

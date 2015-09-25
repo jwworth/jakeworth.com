@@ -52,8 +52,7 @@ And 'a non-featured project exists' do
 end
 
 Then(/^I see the project$/) do
-  expect(page).to have_content 'A cool project'
-  expect(page).to have_link 'http://www.google.com'
+  expect(page).to have_link('A cool project', href: 'http://www.google.com')
   expect(page).to have_content 'With cool features'
 end
 
