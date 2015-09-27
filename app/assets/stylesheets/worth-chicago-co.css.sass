@@ -1,7 +1,9 @@
 $text-color: rgba(46,48,58,0.96)
 $light-gray: #a8a8a8
 $special-links: #b31b1f
+$small: 0.8em
 
+// Normalization
 a
   color: $text-color
   text-decoration: initial
@@ -19,15 +21,16 @@ body
   .older-posts
     display: none
 
+// Style
 main
   header
-    padding-bottom: 20px
+    padding: 20px
     ul
       list-style: none
       float: right
       margin-top: -24px
       li
-        font-size: 0.8em
+        font-size: $small
         display: inline
         padding: 7px
         border-bottom: 1px solid $light-gray
@@ -53,39 +56,38 @@ main
     p.notice
       color: green
 
-  content
+  section
     .projects
       a
         color: $special-links
       .small
         color: $light-gray
         font-style: italic
-        font-size: 0.8em
+        font-size: $small
     .expand-button a
       color: $light-gray
       font-style: italic
-      font-size: 0.8em
-    article
-      form
-        #post_title
-          width: 300px
-        #post_body
-          width: 100%
-          height: 400px
-      .content
-        ul
-          list-style-position: inside
-        a
-          color: $special-links
-      .posted,
-        color: $light-gray
-        font-style: italic
-        font-size: 0.8em
+      font-size: $small
+    article, form
+      #post_title
+        width: 300px
+      #post_body
+        width: 100%
+        height: 400px
+    .content
+      ul
+        list-style-position: inside
+      a
+        color: $special-links
+    .posted
+      color: $light-gray
+      font-style: italic
+      font-size: $small
 
   footer
     color: $light-gray
     text-align: center
     padding: 80px
-    font-size: 0.8em
+    font-size: $small
     a
       color: $light-gray

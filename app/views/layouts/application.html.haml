@@ -15,9 +15,6 @@
         = gravatar_image_tag 'jake@worth-chicago.co'
         %h1= link_to SITE_NAME, root_path
         %ul
-          - if developer_signed_in?
-            %li.action-button= link_to '+', new_post_path
-            %li.action-button= link_to '☮', destroy_session_path
           %li= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
           %li= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
           %li= link_to 'Email', 'mailto:jake@worth-chicago.co'
@@ -31,10 +28,14 @@
           - elsif flash[:notice]
             - [flash[:notice]].flatten.each do |notice|
               %p.notice= notice
-      %content
+      %section
         = yield
 
       %footer
         created by
         = link_to '@jwworth.', 'http://twitter.com/jwworth'
         = link_to ' source code.', 'http://github.com/jwworth/worth-chicago.co'
+        - if developer_signed_in?
+          .action-button
+            = link_to '+', new_post_path
+            = link_to '☮', destroy_session_path
