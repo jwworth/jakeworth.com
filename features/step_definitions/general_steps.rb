@@ -72,7 +72,7 @@ Then 'I see links' do
   within 'body ul' do
     expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
     expect(page).to have_link 'Twitter', href: 'http://twitter.com/jwworth'
-    expect(page).to have_link 'Email', href: 'mailto:jake@worth-chicago.co'
+    expect(page).to have_link 'Email', href: 'mailto:jake@jakeworth.com'
   end
 end
 
@@ -85,7 +85,7 @@ Then 'I see the page for that post' do
     expect(page).to have_content 'Newest post'
   end
 
-  expect(page.title).to include 'Newest post - WORTH-CHICAGO'
+  expect(page.title).to include 'Newest post - JAKE WORTH'
 
   within 'body' do
     expect(page).to have_content 'Newest body'
@@ -95,7 +95,7 @@ end
 
 And 'I see project information' do
   within 'footer' do
-    expect(page).to have_link 'source code', href: 'http://github.com/jwworth/worth-chicago.co'
+    expect(page).to have_link 'source code', href: 'http://github.com/jwworth/jakeworth.com'
   end
 end
 

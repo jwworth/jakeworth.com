@@ -5,15 +5,15 @@ if seed_file.exist? && !ENV['NO_SEED_DATA']
 end
 
 puts 'Creating projects'
-Project.find_or_create_by(title: 'WORTH-CHICAGO') do |project|
+Project.find_or_create_by(title: 'jakeworth.com') do |project|
   project.description = 'My development blog.'
-  project.hyperlink = 'http://worth-chicago.co'
+  project.hyperlink = 'http://jakeworth.com'
   project.featured = true
 end
 
 Project.find_or_create_by(title: 'CERAMIC NATION') do |project|
   project.description = 'A Markov Chain generated novel.'
-  project.hyperlink = 'http://ceramic-nation.worth-chicago.co'
+  project.hyperlink = 'http://ceramic-nation.jakeworth.com'
   project.featured = true
 end
 
