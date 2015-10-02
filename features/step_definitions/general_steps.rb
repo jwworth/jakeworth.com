@@ -85,7 +85,7 @@ Then 'I see the page for that post' do
     expect(page).to have_content 'Newest post'
   end
 
-  expect(page.title).to include 'Newest post - JAKE WORTH'
+  expect(page.title).to include 'Newest post - Jake Worth'
 
   within 'body' do
     expect(page).to have_content 'Newest body'

@@ -1,1 +1,1 @@
-SITE_NAME = 'JAKE WORTH'
+SITE_NAME = 'Jake Worth'

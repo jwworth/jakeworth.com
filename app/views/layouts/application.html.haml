@@ -13,7 +13,7 @@
     %main
       %header
         = gravatar_image_tag 'jake@worth-chicago.co'
-        %h1= link_to SITE_NAME, root_path
+        %h1= link_to SITE_NAME.upcase, root_path
         %ul
           %li= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
           %li= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
