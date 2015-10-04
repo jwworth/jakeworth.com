@@ -1,0 +1,10 @@
+= form_for project do |f|
+  %p= f.label :title
+  %p= f.text_field :title
+  %p= f.label :hyperlink
+  %p= f.text_field :hyperlink
+  %p= f.label :description
+  %p= f.text_field :description
+  %p= f.label :featured
+  %p= f.check_box :featured
+  %p= f.submit 'Submit'

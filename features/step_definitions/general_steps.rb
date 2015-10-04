@@ -22,6 +22,10 @@ When 'I enter invalid credentials into the form' do
   click_on 'Submit'
 end
 
+When 'I enter invalid information into the project form' do
+  click_on 'Submit'
+end
+
 Then 'I am logged in' do
   expect(page).to have_link '+'
 end
@@ -115,6 +119,14 @@ Given(/^I click create post$/) do
   click_on '+'
 end
 
+Given(/^I click create project$/) do
+  click_on '$'
+end
+
+And 'I try to visit the new project path' do
+  visit new_project_path
+end
+
 Given(/^I click edit post$/) do
   click_on '[edit]'
 end
@@ -136,10 +148,35 @@ Then(/^I see the post create page$/) do
   end
 end
 
+Then(/^I see the project create page$/) do
+  within 'h3' do
+    expect(page).to have_content 'Create project'
+  end
+end
+
 When(/^I enter valid information into that form$/) do
   within 'form' do
     fill_in 'Title', with: 'Awesome title'
     fill_in 'Body', with: 'Awesome body'
+    click_on 'Submit'
+  end
+end
+
+When(/^I enter valid information into the project form$/) do
+  within 'form' do
+    fill_in 'Title', with: 'Google'
+    fill_in 'Hyperlink', with: 'http://google.com'
+    fill_in 'Description', with: 'A search engine.'
+    check 'Featured'
+    click_on 'Submit'
+  end
+end
+
+When(/^I enter valid information into the project form but don't feature it$/) do
+  within 'form' do
+    fill_in 'Title', with: 'Google'
+    fill_in 'Hyperlink', with: 'http://google.com'
+    fill_in 'Description', with: 'A search engine.'
     click_on 'Submit'
   end
 end
@@ -182,6 +219,16 @@ Then(/^I see my post$/) do
   within 'h3' do
     expect(page).to have_content('Awesome title')
   end
+end
+
+Then(/^I see my project$/) do
+  within '.project' do
+    expect(page).to have_content('Google')
+  end
+end
+
+Then(/^I do not see my project$/) do
+  expect(page).to_not have_selector '.project'
 end
 
 Then(/^I see a message "(.*?)"$/) do |message|
