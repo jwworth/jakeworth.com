@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :require_developer, except: :index
 
   def index
-    self.projects = Project.featured.shuffle
+    self.projects = Project.featured.order(:title)
   end
 
   def new
