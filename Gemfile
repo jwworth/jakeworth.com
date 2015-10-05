@@ -32,3 +32,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'capybara-webkit'
 end
+
+group :development do
+  gem 'brakeman'
+end
