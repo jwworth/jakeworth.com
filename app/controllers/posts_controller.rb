@@ -8,7 +8,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def preview
+  def body_preview
+    render layout: false
+  end
+
+  def slug_preview
     render layout: false
   end
 

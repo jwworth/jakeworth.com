@@ -12,5 +12,7 @@ Rails.application.routes.draw do
 
   get '/posts/new', to: 'posts#new', as: 'new_post'
   post '/posts/new', to: 'posts#create', as: 'posts'
-  post '/post_preview/', to: 'posts#preview'
+
+  post '/body_preview/', to: 'posts#body_preview'
+  post '/slug_preview/', to: 'posts#slug_preview'
 end

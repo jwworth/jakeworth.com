@@ -62,4 +62,9 @@ describe Post do
     expect(dup_post).to_not be_valid
     expect(dup_post.errors[:title]).to eq ['has already been taken']
   end
+
+  it 'it should be able to slugify any title' do
+    title = 'foo bar baz'
+    expect(Post.slugify(title)).to eq 'foo-bar-baz'
+  end
 end

@@ -132,7 +132,7 @@ Given(/^I click edit post$/) do
 end
 
 Then 'I see the post edit page' do
-  within 'h3' do
+  within first('h3') do
     expect(page).to have_content 'Edit post'
   end
 end
@@ -143,7 +143,7 @@ Then 'I see my edited post' do
 end
 
 Then(/^I see the post create page$/) do
-  within 'h3' do
+  within first('h3') do
     expect(page).to have_content 'Create post'
   end
 end
@@ -186,6 +186,27 @@ When 'I enter markdown into that form' do
     fill_in 'Title', with: 'Awesome title'
     fill_in 'Body', with: 'Awesome *emphasis* and `code`'
     click_on 'Submit'
+  end
+end
+
+When 'I enter content into that form' do
+  within 'form' do
+    fill_in 'Title', with: 'Awesome title'
+    fill_in 'Body', with: 'Awesome *emphasis* and `code`'
+  end
+end
+
+Then 'I see a live preview' do
+  within('.title_preview') do
+    expect(page).to have_content('Awesome title')
+  end
+
+  within('.slug_preview') do
+    expect(page).to have_content('awesome-title')
+  end
+
+  within '.content em' do
+    expect(page).to have_content 'emphasis'
   end
 end
 
