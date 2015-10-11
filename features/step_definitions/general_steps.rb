@@ -48,7 +48,7 @@ And 'I visit the homepage' do
 end
 
 And 'a project exists' do
-  FactoryGirl.create :project
+  @project = FactoryGirl.create :project
 end
 
 And 'a non-featured project exists' do
@@ -302,3 +302,42 @@ Then 'I see an Atom feed' do
   expect(page).to have_content @post.title
 end
 
+When(/^I visit the project page$/) do
+  visit projects_path
+end
+
+When(/^I click edit project$/) do
+  click_on '[edit]'
+end
+
+Then(/^I see the edit project page$/) do
+  within 'h3' do
+    expect(page).to have_content 'Edit Project'
+  end
+end
+
+When(/^I edit the project$/) do
+  within 'form' do
+    fill_in 'Title', with: 'Yahoo'
+    fill_in 'Hyperlink', with: 'http://yahoo.com'
+    fill_in 'Description', with: 'Another search engine.'
+    click_on 'Submit'
+  end
+end
+
+Then(/^I see my updated project$/) do
+  within '.project' do
+    expect(page).to have_content('Yahoo')
+  end
+end
+
+When(/^I try to visit the edit project path$/) do
+  visit edit_project_path @project
+end
+
+When(/^I edit the project with no title$/) do
+  within 'form' do
+    fill_in 'Title', with: ''
+    click_on 'Submit'
+  end
+end
