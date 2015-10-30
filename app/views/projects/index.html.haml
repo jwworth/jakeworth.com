@@ -5,7 +5,10 @@
 
 - projects.each do |project|
   %p.title
-    = link_to project.title, project.hyperlink
-    - if developer_signed_in?
-      = link_to '[edit]', edit_project_path(project)
-    = project.description
+    .panel.panel-default
+      .panel-heading
+        = link_to project.title, project.hyperlink
+      .panel-body
+        - if developer_signed_in?
+          = link_to '[edit]', edit_project_path(project)
+        = project.description
