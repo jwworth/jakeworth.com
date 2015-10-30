@@ -1,17 +1,32 @@
 $text-color: rgba(46,48,58,0.96)
 $light-gray: #a8a8a8
-$pantone-color-of-the-year: #955251
 
-nav
-  a
-    color: $text-color
-    text-decoration: initial
-
-.page-header
-  text-align: center
-  h1
-    font-family: 'Lato', serif
-    font-size: 40px
+body
+  nav
     a
       color: $text-color
       text-decoration: initial
+  a
+    text-decoration: initial
+
+  .page-header
+    text-align: center
+    h1
+      font-family: 'Lato', serif
+      font-size: 40px
+      a
+        color: $text-color
+        text-decoration: initial
+  .older-posts
+    display: none
+  .expand-button
+    font-style: italic
+    a
+      color: $light-gray
+  .posted
+    font-style: italic
+    a
+      color: $light-gray
+
+footer
+  text-align: center
