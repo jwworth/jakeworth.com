@@ -24,8 +24,8 @@
     .page-header
       .container
         %h1= link_to SITE_NAME.upcase, root_path
-        = gravatar_image_tag 'jake@worth-chicago.co'
-    .subheader= "A developer's notebook"
+        %h4= "A developer's notebook"
+        -# = gravatar_image_tag 'jake@worth-chicago.co'
   #flash
     - if flash.present?
       - if flash[:alert]
