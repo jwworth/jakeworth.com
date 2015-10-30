@@ -73,11 +73,9 @@ Then 'I see the homepage' do
 end
 
 Then 'I see links' do
-  within 'body ul' do
-    expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
-    expect(page).to have_link 'Twitter', href: 'http://twitter.com/jwworth'
-    expect(page).to have_link 'Email', href: 'mailto:jake@jakeworth.com'
-  end
+  expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
+  expect(page).to have_link 'Twitter', href: 'http://twitter.com/jwworth'
+  expect(page).to have_link 'Email', href: 'mailto:jake@jakeworth.com'
 end
 
 Then 'I see an edit button' do
@@ -85,16 +83,12 @@ Then 'I see an edit button' do
 end
 
 Then 'I see the page for that post' do
-  within 'h3' do
-    expect(page).to have_content 'Newest post'
-  end
+  expect(page).to have_content 'Newest post'
 
   expect(page.title).to include 'Newest post - Jake Worth'
 
-  within 'body' do
-    expect(page).to have_content 'Newest body'
-    expect(page).to have_content @newest_post.created_at.strftime('%B %e, %Y')
-  end
+  expect(page).to have_content 'Newest body'
+  expect(page).to have_content @newest_post.created_at.strftime('%B %e, %Y')
 end
 
 And 'I see project information' do
@@ -243,9 +237,7 @@ Then(/^I see my post$/) do
 end
 
 Then(/^I see my project$/) do
-  within '.project' do
-    expect(page).to have_content('Google')
-  end
+  expect(page).to have_content('Google')
 end
 
 Then(/^I do not see my project$/) do
@@ -326,9 +318,7 @@ When(/^I edit the project$/) do
 end
 
 Then(/^I see my updated project$/) do
-  within '.project' do
-    expect(page).to have_content('Yahoo')
-  end
+  expect(page).to have_content('Yahoo')
 end
 
 When(/^I try to visit the edit project path$/) do
