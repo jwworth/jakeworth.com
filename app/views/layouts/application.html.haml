@@ -22,16 +22,10 @@
         %p.navbar-text.navbar-right= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
         %p.navbar-text.navbar-right= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
         .navbar-brand= link_to SITE_NAME.upcase, root_path
-  #flash
-    - if flash.present?
-      - if flash[:alert]
-        - [flash[:alert]].flatten.each do |alert_message|
-          %p.alert= alert_message
-      - elsif flash[:notice]
-        - [flash[:notice]].flatten.each do |notice|
-          %p.notice= notice
   %main
     .container
+      - if flash.present? && flash[:notice]
+        .alert.alert-info(role="alert")= [flash[:notice]].flatten.join('; ').downcase.capitalize
       = yield
 
   .container

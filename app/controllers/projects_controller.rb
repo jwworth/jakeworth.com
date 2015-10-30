@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     if project.update(project_params)
       redirect_to projects_path, notice: 'Project updated'
     else
-      flash.now[:alert] = project.errors.full_messages
+      flash.now[:notice] = project.errors.full_messages
       render :edit
     end
   end
@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
     if project.save
       redirect_to projects_path, notice: 'Project created'
     else
-      flash.now[:alert] = project.errors.full_messages
+      flash.now[:notice] = project.errors.full_messages
       render :new
     end
   end
