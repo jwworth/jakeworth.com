@@ -52,7 +52,7 @@ And 'a project exists' do
 end
 
 And 'a non-featured project exists' do
-  FactoryGirl.create :project, featured: false, title: 'Not special'
+  FactoryGirl.create :project, featured_order: nil, title: 'Not special'
 end
 
 Then(/^I see the project$/) do
@@ -161,7 +161,7 @@ When(/^I enter valid information into the project form$/) do
     fill_in 'Title', with: 'Google'
     fill_in 'Hyperlink', with: 'http://google.com'
     fill_in 'Description', with: 'A search engine.'
-    check 'Featured'
+    fill_in 'Featured order', with: 1
     click_on 'Submit'
   end
 end

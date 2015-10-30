@@ -8,7 +8,7 @@
     .panel.panel-default
       .panel-heading
         = link_to project.title, project.hyperlink
-      .panel-body
         - if developer_signed_in?
           = link_to '[edit]', edit_project_path(project)
+      .panel-body
         = project.description

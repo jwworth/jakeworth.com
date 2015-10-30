@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:edit, :update]
 
   def index
-    self.projects = Project.featured.order(:title)
+    self.projects = Project.featured.order(:featured_order)
   end
 
   def new
@@ -38,6 +38,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit :title, :body, :description, :featured, :hyperlink
+    params.require(:project).permit :title, :body, :description, :featured_order, :hyperlink
   end
 end

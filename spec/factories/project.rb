@@ -3,6 +3,6 @@ FactoryGirl.define do
     title 'A cool project'
     description 'With cool features'
     hyperlink 'http://www.google.com'
-    featured true
+    featured_order 1
   end
 end
