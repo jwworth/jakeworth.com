@@ -1,25 +1,33 @@
-$text-color: rgba(46,48,58,0.96)
+$main-color: rgba(46,48,58,0.96)
 $light-gray: #a8a8a8
+$green: #009b77
 
 body
+  color: $main-color
   nav
     a
-      color: $text-color
+      color: $main-color
       text-decoration: initial
+      &:hover
+        color: $main-color
+        text-decoration: initial
     .navbar-brand
       font-family: 'Lato', serif
 
   a
+    color: $green
     text-decoration: initial
 
   main
-    padding-top: 30px
     .older-posts
       display: none
     .expand-button
       font-style: italic
       a
         color: $light-gray
+    textarea
+      width: 100%
+      height: 200px
     .posted
       font-style: italic
       a
@@ -28,6 +36,6 @@ body
 footer
   text-align: center
   color: $light-gray
+  padding: 30px 0px
   a
     color: $light-gray
-
