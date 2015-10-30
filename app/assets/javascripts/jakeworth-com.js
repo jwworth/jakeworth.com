@@ -36,7 +36,7 @@ $(function(){
 
   $('#post_body').on('keyup', debounce(renderMarkdown, 350)).each(renderMarkdown);
   $('#post_title').on('keyup', debounce(renderSlug, 500)).each(renderSlug);
-  $('#post_title').on('keyup', renderTitle);
+  $('#post_title').on('keyup', renderTitle).each(renderTitle);
 
   var $expandButtonEl = $(".expand-button a")
 
