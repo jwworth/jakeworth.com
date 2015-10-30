@@ -32,7 +32,9 @@
       = link_to '@jwworth.', 'http://twitter.com/jwworth'
       = link_to ' source code.', 'http://github.com/jwworth/jakeworth.com'
       - if developer_signed_in?
-        .action-button
-          = link_to '+', new_post_path
-          = link_to '$', new_project_path
-          = link_to '☮', destroy_session_path
+        %br
+        %br
+        .btn-group(role="group")
+          .btn.btn-default= link_to '+', new_post_path
+          .btn.btn-default= link_to '$', new_project_path
+          .btn.btn-default= link_to '☮', destroy_session_path
