@@ -127,7 +127,7 @@ end
 
 Then 'I see the post edit page' do
   within first('h3') do
-    expect(page).to have_content 'Edit post'
+    expect(page).to have_content 'Edit Post'
   end
 end
 
@@ -138,13 +138,13 @@ end
 
 Then(/^I see the post create page$/) do
   within first('h3') do
-    expect(page).to have_content 'Create post'
+    expect(page).to have_content 'Create Post'
   end
 end
 
 Then(/^I see the project create page$/) do
   within 'h3' do
-    expect(page).to have_content 'Create project'
+    expect(page).to have_content 'Create Project'
   end
 end
 
