@@ -1,9 +1,9 @@
-%h3 Projects
+.page-header
+  %h3 Projects
 
 - projects.each do |project|
-  .project
-    %p.title
-      = link_to project.title, project.hyperlink
-      - if developer_signed_in?
-        = link_to '[edit]', edit_project_path(project)
-    .small= project.description
+  %p.title
+    = link_to project.title, project.hyperlink
+    - if developer_signed_in?
+      = link_to '[edit]', edit_project_path(project)
+    = project.description

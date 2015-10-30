@@ -1,6 +1,7 @@
 = content_for :head, auto_discovery_link_tag(:atom, root_path(format: "atom"))
 
-%h3 Latest Posts
+.page-header
+  %h3 Latest Posts
 
 - latest_posts.each do |post|
   %p.title

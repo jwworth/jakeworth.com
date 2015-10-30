@@ -21,11 +21,9 @@
         %p.navbar-text.navbar-right= link_to 'Email', 'mailto:jake@jakeworth.com'
         %p.navbar-text.navbar-right= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
         %p.navbar-text.navbar-right= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
-    .page-header
-      .container
-        %h1= link_to SITE_NAME.upcase, root_path
-        %h4= "A developer's notebook"
-        -# = gravatar_image_tag 'jake@worth-chicago.co'
+        %p.navbar-text.navbar-right= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
+        .navbar-brand= link_to SITE_NAME.upcase, root_path
+        -#= gravatar_image_tag 'jake@worth-chicago.co'
   #flash
     - if flash.present?
       - if flash[:alert]
@@ -34,8 +32,9 @@
       - elsif flash[:notice]
         - [flash[:notice]].flatten.each do |notice|
           %p.notice= notice
-  .container
-    = yield
+  %main
+    .container
+      = yield
 
   .container
     %footer
