@@ -22,6 +22,7 @@
         %p.navbar-text.navbar-right= link_to 'Twitter', 'http://twitter.com/jwworth', target: '_blank'
         %p.navbar-text.navbar-right= link_to 'Github', 'http://github.com/jwworth', target: '_blank'
         .navbar-brand= link_to SITE_NAME.upcase, root_path
+
   %main
     .container
       - if flash.present? && flash[:notice]
