@@ -3,7 +3,7 @@ namespace :db do
   task :restore_production_dump do
     def verify_exec(command)
       system(command)
-      raise 'Command failed' unless $?.exitstatus.zero?
+      fail 'Command failed' unless $CHILD_STATUS.exitstatus.zero?
     end
 
     puts 'Restoring latest production data'
