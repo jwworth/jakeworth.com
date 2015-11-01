@@ -8,3 +8,10 @@ Feature: Developer logs out
     When I click log out
     Then I am not logged in
     And I see a message "Logged out"
+
+  Scenario: With a button
+    Given I am a signed in developer
+    And I visit the homepage
+    And I click "Logout"
+    Then I am not logged in
+    And I see a message "Logged out"

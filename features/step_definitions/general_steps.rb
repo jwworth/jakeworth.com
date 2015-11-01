@@ -31,7 +31,7 @@ Then 'I am logged in' do
 end
 
 When 'I click log out' do
-  click_on '☮'
+  click_on 'Logout'
 end
 
 Then 'I am not logged in' do
