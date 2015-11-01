@@ -16,10 +16,3 @@ Feature: Developer logs in
     Given I am a signed in developer
     And I go to the login link
     Then I see the homepage
-
-  Scenario: With a button
-    Given a developer exists
-    And I visit the homepage
-    And I click "Login"
-    When I enter valid credentials into the form
-    Then I see the homepage
