@@ -73,9 +73,9 @@ Then 'I see the homepage' do
 end
 
 Then 'I see links' do
-  expect(page).to have_link 'Github', href: 'http://github.com/jwworth'
-  expect(page).to have_link 'Twitter', href: 'http://twitter.com/jwworth'
-  expect(page).to have_link 'Email', href: 'mailto:jake@jakeworth.com'
+  expect(page).to have_link 'Github', href: 'https://github.com/jwworth'
+  expect(page).to have_link 'Twitter', href: 'https://twitter.com/jwworth'
+  expect(page).to have_link 'get in touch', href: 'mailto:jake@jakeworth.com'
 end
 
 Then 'I see an edit button' do

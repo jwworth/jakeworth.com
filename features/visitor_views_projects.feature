@@ -5,6 +5,6 @@ Feature: Visitor views projects
     And a project exists
     And a non-featured project exists
     When I visit the homepage
-    And I click "Projects"
+    And I click "projects"
     Then I see the project
     And I do not see the non-featured project
