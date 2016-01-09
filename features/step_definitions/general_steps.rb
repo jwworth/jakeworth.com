@@ -339,3 +339,7 @@ Then 'I see a footer call to action' do
     expect(page).to have_link("Github", href:  "https://github.com/jwworth")
   end
 end
+
+Then 'I see a back link' do
+  expect(page).to have_link('Back', href: root_path)
+end
