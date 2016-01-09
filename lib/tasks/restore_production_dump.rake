@@ -1,16 +1,11 @@
 # This task requires the heroku toolbelt and access to production
 namespace :db do
   task :restore_production_dump do
-    def verify_exec(command)
-      system(command)
-      fail 'Command failed' unless $CHILD_STATUS.exitstatus.zero?
-    end
-
     puts 'Restoring latest production data'
-    verify_exec 'heroku pg:backups capture --app worth-chicago-co-production'
-    verify_exec 'curl -o latest.dump `heroku pg:backups public-url -a worth-chicago-co-production`'
-    verify_exec 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -d worth-chicago_co_development latest.dump'
-    verify_exec 'rm latest.dump'
+    system 'heroku pg:backups capture --app jakeworth-com'
+    system 'curl -o latest.dump `heroku pg:backups public-url -a jakeworth-com`'
+    system 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -d worth-chicago_co_development latest.dump'
+    system 'rm latest.dump'
     puts 'Completed successfully!'
   end
 end
