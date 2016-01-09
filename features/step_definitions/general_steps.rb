@@ -331,3 +331,11 @@ When(/^I edit the project with no title$/) do
     click_on 'Submit'
   end
 end
+
+Then 'I see a footer call to action' do
+  within '#call-to-action' do
+    expect(page).to have_content('Like this post?')
+    expect(page).to have_link("Twitter", href: "https://twitter.com/jwworth")
+    expect(page).to have_link("Github", href:  "https://github.com/jwworth")
+  end
+end

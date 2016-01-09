@@ -8,3 +8,10 @@
 .content
   %p= find_and_preserve markdown_render @post.body
   %p.posted= link_to @post.created_at.strftime('%B %e, %Y'), post_path(@post)
+
+#call-to-action
+  Like this post? Follow me on
+  = link_to "Twitter", "https://twitter.com/jwworth", target: '_blank'
+  and
+  = succeed '.' do
+    = link_to "Github", "https://github.com/jwworth", target: '_blank'
