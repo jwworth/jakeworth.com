@@ -28,14 +28,21 @@ $(function(){
   };
 
   var renderSlug = function(){
-    var txt = $("#post_title").val();
-    $.post("/slug_preview", {title: txt}, function(result){
-      $(".slug_preview").html(result);
-    });
+    var slug = $("#post_url_slug").val();
+
+    if (slug.length > 0) {
+      $(".slug_preview").html(slug);
+    } else {
+      var txt = $("#post_title").val();
+      $.post("/slug_preview", {title: txt}, function(result){
+        $(".slug_preview").html(result);
+      });
+    }
   };
 
   $('#post_body').on('keyup', debounce(renderMarkdown, 350)).each(renderMarkdown);
   $('#post_title').on('keyup', debounce(renderSlug, 500)).each(renderSlug);
+  $('#post_url_slug').on('keyup', debounce(renderSlug, 500)).each(renderSlug);
   $('#post_title').on('keyup', renderTitle).each(renderTitle);
 
   var $expandButtonEl = $(".expand-button a")
