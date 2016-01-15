@@ -351,9 +351,9 @@ When 'I enter content into that form including a slug' do
   end
 end
 
-Then 'I see a live preview with my chosen slug' do
+Then(/^I see a live preview with "(.*?)" as the slug$/) do |slug|
   within('.slug_preview') do
-    expect(page).to have_content('my-special-slug')
+    expect(page).to have_content(slug)
   end
 end
 
