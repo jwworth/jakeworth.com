@@ -9,4 +9,4 @@
   %p= find_and_preserve markdown_render @post.body
   %p.posted= link_to @post.created_at.strftime('%B %e, %Y'), post_path(@post)
 
-= render "shared/public_footer", object: 'post'
+= render "shared/public_footer", object: 'this post'
