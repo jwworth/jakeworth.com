@@ -334,7 +334,9 @@ end
 
 Then 'I see a footer call to action' do
   within '#public-footer' do
-    expect(page).to have_content('Like this post?')
+    object = Rails.application.routes.recognize_path(current_path)[:controller].singularize
+
+    expect(page).to have_content("Like this #{object}?")
     expect(page).to have_link("Twitter", href: "https://twitter.com/jwworth")
     expect(page).to have_link("Github", href:  "https://github.com/jwworth")
   end

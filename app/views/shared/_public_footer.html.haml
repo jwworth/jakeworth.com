@@ -1,0 +1,10 @@
+.well.well-sm
+  #public-footer
+    Like this #{object}? Follow me on
+    = link_to "Twitter", "https://twitter.com/jwworth", target: '_blank'
+    and
+    = succeed '. ' do
+      = link_to "Github", "https://github.com/jwworth", target: '_blank'
+    Or
+    = succeed '.' do
+      = link_to 'go back', root_path
