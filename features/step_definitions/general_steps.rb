@@ -333,7 +333,7 @@ When(/^I edit the project with no title$/) do
 end
 
 Then 'I see a footer call to action' do
-  within '#call-to-action' do
+  within '#public-footer' do
     expect(page).to have_content('Like this post?')
     expect(page).to have_link("Twitter", href: "https://twitter.com/jwworth")
     expect(page).to have_link("Github", href:  "https://github.com/jwworth")
@@ -341,7 +341,7 @@ Then 'I see a footer call to action' do
 end
 
 Then 'I see a back link' do
-  expect(page).to have_link('Back', href: root_path)
+  expect(page).to have_link('go back', href: root_path)
 end
 
 When 'I enter content into that form including a slug' do
