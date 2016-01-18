@@ -7,14 +7,13 @@
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application', media: 'all'
     %link(rel="shortcut icon" type="image/x-icon" href="/favicon.ico")
-    %link(href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css')
     = csrf_meta_tags
     = yield :head
 
   %body
     .jumbotron
       .container
-        %h1 I am Jake.
+        %h1= link_to 'I am Jake.', root_path
         %p
           Developer at
           = succeed ', ' do

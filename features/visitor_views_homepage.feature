@@ -6,6 +6,11 @@ Feature: Visitor views homepage
     Then I see links
     And I see project information
 
+  Scenario: And sees the header as a link
+    Given I am a visitor
+    When I visit the homepage
+    Then I see the header as a link
+
   @javascript
   Scenario: And sees the ten newest posts
     Given I am a visitor
