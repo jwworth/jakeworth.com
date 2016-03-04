@@ -10,7 +10,4 @@ http://jakeworth.com/new-blog
 
 ### License
 
-&copy; 2015 Jake Worth
-
-This repository is distributed under the MIT license. See `LICENSE` for
-details.
+This project is released under the [MIT License](http://www.opensource.org/licenses/MIT).
