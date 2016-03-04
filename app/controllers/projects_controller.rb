@@ -1,12 +1,8 @@
 class ProjectsController < ApplicationController
-  helper_attr_accessor :projects, :project
+  helper_attr_accessor :project
 
-  before_action :require_developer, except: :index
+  before_action :require_developer
   before_action :set_project, only: [:edit, :update]
-
-  def index
-    self.projects = Project.featured.order(:featured_order)
-  end
 
   def new
     self.project = Project.new
@@ -14,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def update
     if project.update(project_params)
-      redirect_to projects_path, notice: 'Project updated'
+      redirect_to '/about', notice: 'Project updated'
     else
       flash.now[:notice] = project.errors.full_messages
       render :edit
@@ -24,7 +20,7 @@ class ProjectsController < ApplicationController
   def create
     self.project = Project.new(project_params)
     if project.save
-      redirect_to projects_path, notice: 'Project created'
+      redirect_to '/about', notice: 'Project created'
     else
       flash.now[:notice] = project.errors.full_messages
       render :new

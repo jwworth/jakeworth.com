@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'posts#index'
-  resources :projects
+  resources :projects, only: [:new, :create, :update, :edit]
+
+  get '/about',  to: 'about#show', as: 'about_path'
 
   get '/login', to: 'sessions#new', as: 'new_session'
   post '/login', to: 'sessions#create'

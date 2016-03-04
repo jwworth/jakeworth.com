@@ -295,7 +295,7 @@ Then 'I see an Atom feed' do
 end
 
 When(/^I visit the project page$/) do
-  visit projects_path
+  visit "/about"
 end
 
 When(/^I click edit project$/) do
@@ -330,26 +330,6 @@ When(/^I edit the project with no title$/) do
     fill_in 'Title', with: ''
     click_on 'Submit'
   end
-end
-
-Then 'I see a footer call to action' do
-  within '#public-footer' do
-    object = Rails.application.routes.recognize_path(current_path)[:controller].singularize
-    descriptor = case object
-                 when 'post'
-                   'this post'
-                 when 'project'
-                   'these projects'
-                 end
-
-    expect(page).to have_content("Like #{descriptor}?")
-    expect(page).to have_link("Twitter", href: "https://twitter.com/jwworth")
-    expect(page).to have_link("Github", href:  "https://github.com/jwworth")
-  end
-end
-
-Then 'I see a back link' do
-  expect(page).to have_link('go back', href: root_path)
 end
 
 When 'I enter content into that form including a slug' do
