@@ -1,0 +1,39 @@
+- content_for :page_title, 'Projects'
+
+.page-header
+  %h3 About
+
+.container
+  .col-md-6
+    %h4 Projects
+    .content
+      - projects.each do |project|
+        %p.title
+          = link_to project.title, project.hyperlink
+          - if developer_signed_in?
+            = link_to '[edit]', edit_project_path(project)
+        %p= project.description
+
+  .col-md-6
+    %h4 Speaking Engagements
+    .content
+      :markdown
+        *Dive into Vim Language Plugins*, Vim Chicago Meetup, April 2015 (upcoming)
+
+        *Military to Programmer*, Code Platoon (Alpha), February 2016
+
+        *Test Driven Development/Pair Programming Workshop*, Code Platoon (Alpha), February 2016
+
+        *Introduction to Vim*, Vim Chicago Meetup, October 2015
+
+        *Ceramic Nation Lightning Talk*, Hashrocket Winter Miniconf 2015, December 2014
+
+        *Capybara Driver Benchmarking*, Hashrocket Summer Miniconf, June 2015
+
+.container
+  .col-md-6
+    %h4 Other Writing
+    .content
+      I sometimes write for the Hashrocket Blog, collected
+      = succeed '.' do
+        = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'
