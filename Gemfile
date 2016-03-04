@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails_12factor', group: :production
 gem 'redcarpet'
+gem 'rouge'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
