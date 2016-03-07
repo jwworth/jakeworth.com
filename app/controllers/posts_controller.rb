@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.ordered
     self.older_posts = Post.ordered
-    self.latest_posts = older_posts.shift(10)
+    self.latest_posts = older_posts.shift(20)
   end
 
   def update
