@@ -8,3 +8,10 @@ Feature: Visitor views about
     And I click "about"
     Then I see the project
     And I do not see the non-featured project
+
+  Scenario: With speaking engagements shown
+    Given I am a visitor
+    And a speaking engagement exists
+    When I visit the homepage
+    And I click "about"
+    Then I see the speaking engagement

@@ -51,6 +51,15 @@ And 'a project exists' do
   @project = FactoryGirl.create :project
 end
 
+And 'a speaking engagement exists' do
+  FactoryGirl.create(:speaking_engagement,
+    title: 'Haxoring everything!',
+    location: 'ChicagoRuby Meetup',
+    date: '2016-03-07 21:10:26 -0600',
+    hyperlink: 'http://google.com'
+  )
+end
+
 And 'a non-featured project exists' do
   FactoryGirl.create :project, featured_order: nil, title: 'Not special'
 end
@@ -58,6 +67,15 @@ end
 Then(/^I see the project$/) do
   expect(page).to have_link('A cool project', href: 'http://www.google.com')
   expect(page).to have_content 'With cool features'
+end
+
+Then(/^I see the speaking engagement$/) do
+  within 'main' do
+    title = 'Haxoring everything!'
+    expect(page).to have_link(title, href: 'http://google.com')
+    expect(page).to have_selector('em', text: title)
+    expect(page).to have_content(title + ', ChicagoRuby Meetup, March 2016')
+  end
 end
 
 Then(/^I do not see the non-featured project$/) do
