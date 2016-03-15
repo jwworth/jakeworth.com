@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308024751) do
+ActiveRecord::Schema.define(version: 20160315015050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,13 +55,13 @@ ActiveRecord::Schema.define(version: 20160308024751) do
     t.integer  "featured_order"
   end
 
-  create_table "speaking_engagements", id: false, force: :cascade do |t|
+  create_table "speaking_engagements", force: :cascade do |t|
     t.string   "title",      null: false
     t.string   "location",   null: false
     t.datetime "date",       null: false
+    t.string   "hyperlink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "hyperlink"
   end
 
 end
