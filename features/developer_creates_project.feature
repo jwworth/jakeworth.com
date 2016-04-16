@@ -25,3 +25,9 @@ Feature: Developer creates project
     Then I see the project create page
     When I enter invalid information into the project form
     Then I see a message "Title can't be blank"
+
+  Scenario: With markdown
+    Given I am a signed in developer
+    And a project exists with markdown
+    When I visit the about page
+    Then I see my markdown project

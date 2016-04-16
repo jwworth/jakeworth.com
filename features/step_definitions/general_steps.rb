@@ -378,3 +378,17 @@ Then 'I see the header as a link' do
     expect(page).to have_link('I am Jake.', href: root_path)
   end
 end
+
+And 'a project exists with markdown' do
+  FactoryGirl.create(:project, description: '[cool link](http://google.com)')
+end
+
+When 'I visit the about page' do
+  visit '/about'
+end
+
+Then 'I see my markdown project' do
+  within '#projects' do
+    expect(page).to have_link('cool link', href: 'http://google.com')
+  end
+end
