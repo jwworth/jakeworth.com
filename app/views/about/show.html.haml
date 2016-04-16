@@ -3,7 +3,7 @@
 .page-header
   %h3 About
 
-.container
+.container#projects
   .col-md-6
     %h4 Projects
     .content
@@ -13,7 +13,7 @@
             = link_to project.title, project.hyperlink
             - if developer_signed_in?
               = link_to '[edit]', edit_project_path(project)
-          %p= project.description
+          %p= markdown_render(project.description)
       - else
         None.
 
