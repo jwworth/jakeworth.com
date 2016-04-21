@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.slugify(title)
-    title.downcase.tr(' ', '-').gsub(/\.|!|\?|:|#|\(|\)/, '')
+    title.downcase.tr(' ', '-').gsub(/[^a-z0-9-]/, '')
   end
 
   private

@@ -19,46 +19,46 @@ describe Post do
     expect(post).to_not be_valid
   end
 
-  it 'should build a url slug' do
-    post = FactoryGirl.create(:post, title: 'A post about rails')
+  context 'it should build a URL slug' do
+    specify 'with dashes' do
+      post = FactoryGirl.create(:post, title: 'A post about rails')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-    expect(post.url_slug).to eq 'a-post-about-rails'
-  end
+    specify 'with no excalmations' do
+      post = FactoryGirl.create(:post, title: 'A post about rails!')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-  it 'should build a url slug with no excalmations' do
-    post = FactoryGirl.create(:post, title: 'A post about rails!')
+    specify 'with no question marks' do
+      post = FactoryGirl.create(:post, title: 'A post about rails?')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-    expect(post.url_slug).to eq 'a-post-about-rails'
-  end
+    specify 'with no colons' do
+      post = FactoryGirl.create(:post, title: 'A post about: rails')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-  it 'should build a url slug with no question marks' do
-    post = FactoryGirl.create(:post, title: 'A post about rails?')
+    specify 'with no octothorpes' do
+      post = FactoryGirl.create(:post, title: 'A post about #rails')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-    expect(post.url_slug).to eq 'a-post-about-rails'
-  end
+    specify 'with no dots' do
+      post = FactoryGirl.create(:post, title: 'A post about .rails')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-  it 'should build a url slug with no colons' do
-    post = FactoryGirl.create(:post, title: 'A post about: rails')
+    specify 'with no commas' do
+      post = FactoryGirl.create(:post, title: 'A post about, rails')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
 
-    expect(post.url_slug).to eq 'a-post-about-rails'
-  end
-
-  it 'should build a url slug with no octothorpes' do
-    post = FactoryGirl.create(:post, title: 'A post about #rails')
-
-    expect(post.url_slug).to eq 'a-post-about-rails'
-  end
-
-  it 'should build a url slug with no dots' do
-    post = FactoryGirl.create(:post, title: 'A post about .rails')
-
-    expect(post.url_slug).to eq 'a-post-about-rails'
-  end
-
-  it 'should build a url slug with no parens' do
-    post = FactoryGirl.create(:post, title: 'A post about (rails)')
-
-    expect(post.url_slug).to eq 'a-post-about-rails'
+    specify 'with no parens' do
+      post = FactoryGirl.create(:post, title: 'A post about (rails)')
+      expect(post.url_slug).to eq 'a-post-about-rails'
+    end
   end
 
   it 'should validate title uniqueness' do
