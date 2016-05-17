@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.6'
 
 gem 'authem'
 gem 'coffee-rails', '~> 4.1.0'
