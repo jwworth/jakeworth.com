@@ -1,5 +1,7 @@
 # jakeworth.com
 
+[![Circle CI](https://circleci.com/gh/jwworth/jakeworth.com.svg?style=svg)](https://circleci.com/gh/jwworth/jakeworth.com)
+
 This is the source code for my developer's blog, available here:
 
 http://jakeworth.com
