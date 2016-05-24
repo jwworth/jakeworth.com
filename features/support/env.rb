@@ -7,8 +7,8 @@ Capybara.configure do |config|
   config.javascript_driver = :webkit
 end
 
-Before '@javascript' do
-  page.driver.block_unknown_urls
+Capybara::Webkit.configure do |config|
+  config.block_unknown_urls
 end
 
 begin
