@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
     attr_names.each do |n|
       attr_accessor n
       helper_method n, :"#{n}="
-      hide_action n
     end
   end
 
