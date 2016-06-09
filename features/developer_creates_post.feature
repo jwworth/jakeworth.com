@@ -5,6 +5,16 @@ Feature: Developer creates post
     And I click create post
     Then I see the post create page
     When I enter valid information into that form
+    And I click "Submit"
+    Then I see my post
+
+  Scenario: With favorite preference
+    Given I am a signed in developer
+    And I click create post
+    Then I see the post create page
+    When I enter valid information into that form
+    And I check "Favorite"
+    And I click "Submit"
     Then I see my post
 
   Scenario: With missing information

@@ -17,6 +17,12 @@ Feature: Visitor views homepage
     When I visit the homepage
     Then I see 20 post titles
 
+  Scenario: And sees favorite posts
+    Given I am a visitor
+    And a favorite post exists
+    When I visit the homepage
+    Then I see the favorited post
+
   Scenario: Visitor sees Atom feed
     Given I am a visitor
     And a post exists
