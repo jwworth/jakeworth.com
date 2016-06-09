@@ -44,12 +44,4 @@ $(function(){
   $('#post_title').on('keyup', debounce(renderSlug, 500)).each(renderSlug);
   $('#post_url_slug').on('keyup', debounce(renderSlug, 500)).each(renderSlug);
   $('#post_title').on('keyup', renderTitle).each(renderTitle);
-
-  var $expandButtonEl = $(".expand-button a")
-
-  $expandButtonEl.click(function(e) {
-    e.preventDefault();
-    $(".older-posts").toggle();
-    $($expandButtonEl).html($($expandButtonEl).text() == 'More' ? 'Less' : 'More');
-  });
 });

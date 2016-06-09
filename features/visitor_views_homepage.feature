@@ -11,39 +11,11 @@ Feature: Visitor views homepage
     When I visit the homepage
     Then I see the header as a link
 
-  @javascript
   Scenario: And sees the twenty newest posts
     Given I am a visitor
-    And 21 posts exist
+    And 20 posts exist
     When I visit the homepage
     Then I see 20 post titles
-
-  @javascript
-  Scenario: And can load older posts
-    Given I am a visitor
-    And 21 posts exist
-    When I visit the homepage
-    Then I see 20 post titles
-    When I click "More"
-    Then I see 21 post titles
-    And I do not see a link to "More"
-
-  @javascript
-  Scenario: And can hide older posts
-    Given I am a visitor
-    And 21 posts exist
-    When I visit the homepage
-    Then I see 20 post titles
-    And I see a link to "More"
-    And I do not see a link to "Less"
-    When I click "More"
-    Then I see 21 post titles
-    And I do not see a link to "More"
-    And I see a link to "Less"
-    When I click "Less"
-    Then I see 20 post titles
-    And I do not see a link to "Less"
-    And I see a link to "More"
 
   Scenario: Visitor sees Atom feed
     Given I am a visitor

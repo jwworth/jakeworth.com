@@ -3,17 +3,8 @@
 .page-header
   %h3 Blog
 
-- latest_posts.each do |post|
+- @posts.each do |post|
   %p.title
     = link_to post.title, post_path(post.url_slug)
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
-
-.older-posts
-  - older_posts.each do |post|
-    %p.title
-      = link_to post.title, post_path(post.url_slug)
-      - if developer_signed_in?
-        = link_to '[edit]', edit_post_path(post.url_slug)
-
-.expand-button= link_to 'More', '#'
