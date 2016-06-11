@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :title, :body, :url_slug
+    params.require(:post).permit :title, :body, :url_slug, :favorite
   end
 
   def set_post
