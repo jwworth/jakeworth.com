@@ -170,7 +170,6 @@ When(/^I enter valid information into that form$/) do
   within 'form' do
     fill_in 'Title', with: 'Awesome title'
     fill_in 'Body', with: 'Awesome body'
-    click_on 'Submit'
   end
 end
 
@@ -391,4 +390,18 @@ Then 'I see my markdown project' do
   within '#projects' do
     expect(page).to have_link('cool link', href: 'http://google.com')
   end
+end
+
+And 'a favorite post exists' do
+  @fav_post = FactoryGirl.create(:post, title: 'This post rocks', favorite: true)
+end
+
+Then 'I see the favorited post' do
+  within 'p.title' do
+    expect(page).to have_link 'This post rocks *', href: post_path(@fav_post)
+  end
+end
+
+When(/^I check "([^"]*)"$/) do |name|
+  check name
 end
