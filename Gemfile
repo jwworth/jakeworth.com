@@ -30,7 +30,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'simplecov', require: false
-  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
 end
 
 group :development do

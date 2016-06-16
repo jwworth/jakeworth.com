@@ -4,11 +4,7 @@ require 'cucumber/rails'
 ActionController::Base.allow_rescue = false
 
 Capybara.configure do |config|
-  config.javascript_driver = :webkit
-end
-
-Capybara::Webkit.configure do |config|
-  config.block_unknown_urls
+  config.javascript_driver = :selenium
 end
 
 begin
