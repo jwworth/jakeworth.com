@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20160609191949) do
 
   create_table "authem_sessions", force: :cascade do |t|
     t.string   "role",                    null: false
-    t.integer  "subject_id",              null: false
     t.string   "subject_type",            null: false
+    t.integer  "subject_id",              null: false
     t.string   "token",        limit: 60, null: false
     t.datetime "expires_at",              null: false
     t.integer  "ttl",                     null: false

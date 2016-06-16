@@ -59,6 +59,14 @@ describe Post do
       post = FactoryGirl.create(:post, title: 'A post about (rails)')
       expect(post.url_slug).to eq 'a-post-about-rails'
     end
+
+    specify 'that is unique' do
+      FactoryGirl.create(:post, url_slug: 'a-post-about-rails')
+
+      expect do
+        FactoryGirl.create(:post, url_slug: 'a-post-about-rails')
+      end.to raise_error ActiveRecord::RecordInvalid
+    end
   end
 
   it 'should validate title uniqueness' do
