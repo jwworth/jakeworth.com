@@ -7,6 +7,6 @@
   %p.title
     - fav_star = post.favorite? ? '⭐️ ' : ''
     = link_to "#{fav_star + post.title}", post_path(post.url_slug)
-    = post.created_at.strftime('%B %e, %Y')
+    %span.posted= post.created_at.strftime('%B %e, %Y')
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
