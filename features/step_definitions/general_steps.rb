@@ -373,7 +373,7 @@ end
 
 Then 'I see the favorited post' do
   within 'p.title' do
-    expect(page).to have_link '* This post rocks', href: post_path(@fav_post)
+    expect(page).to have_link '⭐️ This post rocks', href: post_path(@fav_post)
   end
 end
 

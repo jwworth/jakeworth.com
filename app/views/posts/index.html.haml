@@ -1,12 +1,12 @@
 = content_for :head, auto_discovery_link_tag(:atom, root_path(format: "atom"))
 
 .page-header
-  %h3 Blog <small>(* == favorites)</small>
+  %h3 Blog
 
 - @posts.each do |post|
   %p.title
-    - fav_star = post.favorite? ? '* ' : ''
+    - fav_star = post.favorite? ? '⭐️ ' : ''
     = link_to "#{fav_star + post.title}", post_path(post.url_slug)
-    = post.created_at.strftime('%B %e, %Y')
+    %span.posted= post.created_at.strftime('%B %e, %Y')
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
