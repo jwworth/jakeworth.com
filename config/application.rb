@@ -6,6 +6,7 @@ Bundler.require(*Rails.groups)
 
 module WorthChicagoCo
   class Application < Rails::Application
+    config.active_record.schema_format = :sql
     config.time_zone = 'Central Time (US & Canada)'
   end
 end
