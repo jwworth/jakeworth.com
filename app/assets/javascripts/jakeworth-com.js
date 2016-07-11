@@ -13,7 +13,7 @@ $(function(){
       timeout = setTimeout(later, wait);
       if (callNow) func.apply(context, args);
     };
-  };
+  }
 
   var renderMarkdown = function(){
     var txt = $("#post_body").val();
