@@ -1,14 +1,13 @@
 = form_for @post do |f|
   %p= f.label :title
-  %p= f.text_field :title
+  %p= f.text_field :title, placeholder: 'Enter title...'
   %p= f.label :url_slug, 'URL slug (leave blank to autogenerate)'
-  %p= f.text_field :url_slug
+  %p= f.text_field :url_slug, placeholder: 'Enter URL slug...'
   %p= f.label :body
-  %p= f.text_area :body
+  %p= f.text_area :body, placeholder: 'Enter body...'
   %p= f.label :favorite
   %p= f.check_box :favorite
 
-  Markdown Preview
   .page-header
     %h3.title_preview
     .slug_preview
