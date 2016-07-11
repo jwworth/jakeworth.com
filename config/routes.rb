@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new', as: 'new_session'
   post '/login', to: 'sessions#create'
+  get '/admin', to: 'sessions#new'
+  post '/admin', to: 'sessions#create'
+
   get '/logout', to: 'sessions#destroy', as: 'destroy_session'
 
   get '/:url_slug', to: 'posts#show', as: 'post', param: :url_slug
