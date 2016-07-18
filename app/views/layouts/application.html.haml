@@ -48,8 +48,8 @@
       = link_to ' source code.', 'http://github.com/jwworth/jakeworth.com'
       %br
       %br
-      .btn-group(role="group")
+      .btn-group{role: "group", "aria-label": "..."}
         - if developer_signed_in?
-          .btn.btn-default= link_to 'Logout', destroy_session_path
-          .btn.btn-default= link_to '+', new_post_path
-          .btn.btn-default= link_to '$', new_project_path
+          = link_to 'Logout', destroy_session_path, class: 'btn btn-default'
+          = link_to '+', new_post_path, class: 'btn btn-default'
+          = link_to '$', new_project_path, class: 'btn btn-default'
