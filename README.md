@@ -10,6 +10,15 @@ I wrote a blog post about why I created this application:
 
 http://jakeworth.com/new-blog
 
+### Installation
+
+```
+$ git clone https://github.com/jwworth/jakeworth.com
+$ cd jakeworth.com
+$ rake db:setup
+$ rails s
+```
+
 ### License
 
 This project is released under the [MIT License](http://www.opensource.org/licenses/MIT).
