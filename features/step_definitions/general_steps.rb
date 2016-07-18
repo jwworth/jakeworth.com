@@ -349,7 +349,7 @@ end
 
 Then 'I see the header as a link' do
   within '.jumbotron' do
-    expect(page).to have_link('I am Jake.', href: root_path)
+    expect(page).to have_link('Jake Worth', href: root_path)
   end
 end
 

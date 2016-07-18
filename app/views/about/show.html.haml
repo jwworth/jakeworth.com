@@ -7,6 +7,16 @@
   .col-md-6
     %h4 Projects
     .content
+
+      %p
+        %blockquote
+          %em
+            I love to code! I'm pretty much building something all the time.
+            Currently passionate about OO and functional programming patterns.
+            Check out
+            = link_to "Github", "https://github.com/jwworth", target: '_blank'
+            for my most recent activity.
+
       - if projects.any?
         - projects.each do |project|
           %p.title
@@ -20,6 +30,14 @@
   .col-md-6
     %h4 Speaking Engagements
     .content
+
+      %p
+        %blockquote
+          %em
+            I enjoy speaking and teaching!
+            = link_to "Send me an email", 'mailto:jake@jakeworth.com'
+            to talk more about workshops and presentations.
+
       - if speaking_engagements.any?
         - speaking_engagements.each do |engagement|
           %p.title
@@ -36,6 +54,10 @@
   .col-md-6
     %h4 Other Writing
     .content
-      I sometimes write for the Hashrocket Blog, collected
-      = succeed '.' do
-        = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'
+
+      %p
+        %blockquote
+          %em
+            When I'm not writing here, I also write for the Hashrocket blog, collected
+            = succeed '.' do
+              = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'
