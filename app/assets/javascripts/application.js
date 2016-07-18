@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_self
-//= require bootstrap.min.js
-//= require google.js.erb
+//= require bootstrap.min
+//= require google
 //= require jakeworth-com
 //= require background
