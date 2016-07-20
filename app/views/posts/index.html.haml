@@ -10,3 +10,7 @@
     %span.posted= post.created_at.strftime('%B %e, %Y')
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
+
+%nav.pagination
+  = link_to_next_page @posts, "previous posts", class: "btn btn-default btn-sm"
+  = link_to_previous_page @posts, "next posts", class: "btn btn-default btn-sm"

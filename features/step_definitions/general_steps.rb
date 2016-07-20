@@ -380,3 +380,7 @@ end
 When(/^I check "([^"]*)"$/) do |name|
   check name
 end
+
+Then(/^I see (\d+) posts$/) do |num|
+  expect(page).to have_selector '.title', count: num
+end
