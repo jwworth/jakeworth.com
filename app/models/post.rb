@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :title
   validates_uniqueness_of :url_slug
 
-  scope :ordered, -> { order('created_at desc').to_a }
+  scope :ordered, -> { order('created_at desc') }
 
   before_create :generate_url_slug
 
