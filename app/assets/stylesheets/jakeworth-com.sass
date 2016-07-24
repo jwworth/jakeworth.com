@@ -1,10 +1,20 @@
 $light-gray: #a8a8a8
 $black: rgba(46,48,58,0.96)
 
+$animation-duration: 100s
+$animation-count: infinite
+
 body
   color: $black
   .jumbotron
-    background: #99e2ff
+    background: #e79dab
+    -webkit-animation-name: backgroundz /* Chrome, Safari, Opera */
+    -webkit-animation-duration: $animation-duration /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: $animation-count
+    animation-name: backgroundz
+    animation-duration: $animation-duration
+    animation-iteration-count: $animation-count
+
     h1
       a
         color: $black
@@ -40,3 +50,31 @@ footer
     &:hover
       color: $light-gray
       text-decoration: initial
+
+
+// Lightened versions of http://www.color-hex.com/color-palette/4216
+/* Chrome, Safari, Opera */
+@-webkit-keyframes backgroundz
+  0%
+    background-color: #e79dab
+  20%
+    background-color: #a5fbca
+  40%
+    background-color: #99e2ff
+  60%
+    background-color: #adc932
+  100%
+    background-color: #e79dab
+
+/* Standard syntax */
+@keyframes backgroundz
+  0%
+    background-color: #e79dab
+  20%
+    background-color: #a5fbca
+  40%
+    background-color: #99e2ff
+  60%
+    background-color: #adc932
+  100%
+    background-color: #e79dab

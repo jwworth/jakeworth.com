@@ -16,4 +16,3 @@
 //= require bootstrap.min
 //= require google
 //= require jakeworth-com
-//= require background
