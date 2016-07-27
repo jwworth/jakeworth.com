@@ -12,10 +12,10 @@
         %blockquote
           %em
             I love to code! I'm pretty much building something all the time.
-            Currently passionate about OO and functional programming patterns.
+            Currently exploring OO and functional programming patterns.
             Check out
             = link_to "Github", "https://github.com/jwworth", target: '_blank'
-            for my most recent activity.
+            for my recent activity.
 
       - if projects.any?
         - projects.each do |project|
@@ -36,7 +36,11 @@
           %em
             I enjoy speaking and teaching!
             = link_to "Send me an email", 'mailto:jake@jakeworth.com'
-            to talk more about workshops and presentations.
+            to talk about workshops and presentations.
+            Also check out
+            = succeed ',' do
+              = link_to 'PG Casts', 'https://pgcasts.com'
+            where I screencast regularly.
 
       - if speaking_engagements.any?
         - speaking_engagements.each do |engagement|
@@ -58,6 +62,6 @@
       %p
         %blockquote
           %em
-            I contribute frequently to the Hashrocket blog, collected
+            I write frequently for the Hashrocket blog, collected
             = succeed '.' do
               = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'
