@@ -10,12 +10,11 @@
 
       %p
         %blockquote
-          %em
-            I love to code! I'm pretty much building something all the time.
-            Currently exploring OO and functional programming patterns.
-            Check out
-            = link_to "Github", "https://github.com/jwworth", target: '_blank'
-            for my recent activity.
+          I love to code! I'm pretty much building something all the time.
+          Currently exploring OO and functional programming patterns.
+          Check out
+          = link_to "Github", "https://github.com/jwworth", target: '_blank'
+          for my recent activity.
 
       - if projects.any?
         - projects.each do |project|
@@ -33,14 +32,13 @@
 
       %p
         %blockquote
-          %em
-            I enjoy speaking and teaching!
-            = link_to "Send me an email", 'mailto:jake@jakeworth.com'
-            to talk about workshops and presentations.
-            Also check out
-            = succeed ',' do
-              = link_to 'PG Casts', 'https://www.pgcasts.com'
-            where I screencast regularly.
+          I enjoy speaking and teaching!
+          = link_to "Send me an email", 'mailto:jake@jakeworth.com'
+          to talk about workshops and presentations.
+          Also check out
+          = succeed ',' do
+            = link_to 'PG Casts', 'https://www.pgcasts.com'
+          where I screencast regularly.
 
       - if speaking_engagements.any?
         - speaking_engagements.each do |engagement|
@@ -61,7 +59,6 @@
 
       %p
         %blockquote
-          %em
-            I write frequently for the Hashrocket blog, collected
-            = succeed '.' do
-              = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'
+          I write frequently for the Hashrocket blog, collected
+          = succeed '.' do
+            = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'

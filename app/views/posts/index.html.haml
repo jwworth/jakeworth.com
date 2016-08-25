@@ -2,11 +2,15 @@
 
 .page-header
   %h3 Blog
+  %p
+    %blockquote
+      My favorite posts are marked with &#9733;.
 
 - @posts.each do |post|
   %p.title
-    - fav_star = post.favorite? ? '⭐️ ' : ''
-    = link_to "#{fav_star + post.title}", post_path(post.url_slug)
+    - if post.favorite?
+      &#9733;
+    = link_to post.title, post_path(post.url_slug)
     %span.posted= post.created_at.strftime('%B %e, %Y')
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
