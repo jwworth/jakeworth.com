@@ -6,6 +6,8 @@ gem 'rails', '5.0.0'
 
 gem 'authem'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'

@@ -3,6 +3,7 @@ class AboutController < ApplicationController
 
   def show
     self.projects = Project.featured.order(:featured_order)
-    self.speaking_engagements = SpeakingEngagement.by_date
+    self.speaking_engagements = SpeakingEngagementDecorator
+      .decorate_collection(SpeakingEngagement.by_date)
   end
 end

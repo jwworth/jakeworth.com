@@ -60,6 +60,15 @@ And 'a speaking engagement exists' do
   )
 end
 
+And 'a future speaking engagement exists' do
+  FactoryGirl.create(:speaking_engagement,
+    title: 'Haxoring everything!',
+    location: 'ChicagoRuby Meetup',
+    date: Time.now + 1.month,
+    hyperlink: 'http://google.com'
+  )
+end
+
 And 'a non-featured project exists' do
   FactoryGirl.create :project, featured_order: nil, title: 'Not special'
 end
@@ -75,6 +84,13 @@ Then(/^I see the speaking engagement$/) do
     expect(page).to have_link(title, href: 'http://google.com')
     expect(page).to have_selector('em', text: title)
     expect(page).to have_content(title + ', ChicagoRuby Meetup, March 2016')
+  end
+end
+
+Then(/^I see the future speaking engagement$/) do
+  within 'main' do
+    title = 'Haxoring everything! (upcoming)'
+    expect(page).to have_link(title, href: 'http://google.com')
   end
 end
 

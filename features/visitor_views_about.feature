@@ -15,3 +15,10 @@ Feature: Visitor views about
     When I visit the homepage
     And I click "about"
     Then I see the speaking engagement
+
+  Scenario: With future speaking engagements shown
+    Given I am a visitor
+    And a future speaking engagement exists
+    When I visit the homepage
+    And I click "about"
+    Then I see the future speaking engagement

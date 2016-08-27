@@ -10,19 +10,19 @@
 
       %p
         %blockquote
-          I love to code! I'm pretty much building something all the time.
-          Currently exploring OO and functional programming patterns.
-          Check out
-          = link_to "Github", "https://github.com/jwworth", target: '_blank'
-          for my recent activity.
+          Coding is my passion, and I'm doing it most of the time. Currently
+          exploring OO and functional programming patterns.
 
       - if projects.any?
         - projects.each do |project|
-          %p.title
-            = link_to project.title, project.hyperlink
-            - if developer_signed_in?
-              = link_to '[edit]', edit_project_path(project)
-          %p= markdown_render(project.description)
+          %ul
+            %li
+              %p.title
+                = link_to project.title, project.hyperlink
+                - if developer_signed_in?
+                  = link_to '[edit]', edit_project_path(project)
+              %em
+                %p= markdown_render(project.description)
       - else
         None.
 
@@ -32,10 +32,8 @@
 
       %p
         %blockquote
-          I enjoy speaking and teaching!
           = link_to "Send me an email", 'mailto:jake@jakeworth.com'
-          to talk about workshops and presentations.
-          Also check out
+          to talk about workshops and presentations. Also check out
           = succeed ',' do
             = link_to 'PG Casts', 'https://www.pgcasts.com'
           where I screencast regularly.
@@ -44,7 +42,7 @@
         - speaking_engagements.each do |engagement|
           %p.title
             = succeed ',' do
-              %em= link_to_if(engagement.hyperlink, engagement.title, engagement.hyperlink)
+              %em= link_to_if(engagement.hyperlink, engagement.display_title, engagement.hyperlink)
             = succeed ',' do
               = engagement.location
             = engagement.date.strftime('%B %Y')
