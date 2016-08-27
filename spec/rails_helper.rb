@@ -10,4 +10,8 @@ DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
+
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
 end
