@@ -23,6 +23,7 @@ gem 'figaro'
 gem 'kaminari'
 
 group :development, :test do
+  gem 'ffaker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
 end
@@ -32,8 +33,8 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'launchy'
-  gem 'simplecov', require: false
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
 end
 
 group :development do
