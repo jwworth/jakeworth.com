@@ -52,7 +52,7 @@ And 'a project exists' do
 end
 
 And 'a speaking engagement exists' do
-  FactoryGirl.create(:speaking_engagement,
+  @speaking_engagement = FactoryGirl.create(:speaking_engagement,
     title: 'Haxoring everything!',
     location: 'ChicagoRuby Meetup',
     date: '2016-03-07 21:10:26 -0600',

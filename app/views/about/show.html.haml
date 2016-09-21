@@ -3,8 +3,8 @@
 .page-header
   %h3 About
 
-.container#projects
-  .col-md-6
+.container
+  .col-md-6#projects
     %h4 Projects
     .content
 
@@ -26,7 +26,7 @@
       - else
         None.
 
-  .col-md-6
+  .col-md-6#speaking-engagements
     %h4 Speaking Engagements
     .content
 
@@ -46,6 +46,8 @@
             = succeed ',' do
               = engagement.location
             = engagement.date.strftime('%B %Y')
+            - if developer_signed_in?
+              = link_to '[edit]', edit_speaking_engagement_path(engagement)
       - else
         None.
 
