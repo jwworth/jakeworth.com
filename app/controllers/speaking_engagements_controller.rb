@@ -34,6 +34,6 @@ class SpeakingEngagementsController < ApplicationController
   end
 
   def speaking_engagement_params
-    params.require(:speaking_engagement).permit :title, :location, :date
+    params.require(:speaking_engagement).permit :title, :location, :date, :hyperlink
   end
 end
