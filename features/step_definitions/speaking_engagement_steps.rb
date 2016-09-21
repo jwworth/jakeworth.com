@@ -26,3 +26,15 @@ end
 When(/^I try to visit the edit speaking engagement path$/) do
   visit edit_speaking_engagement_path @speaking_engagement
 end
+
+Given(/^I click create speaking_engagement$/) do
+  click_on '+ Speaking Engagement'
+end
+
+Then(/^I see the speaking_engagement create page$/) do
+  expect(page).to have_selector('h3', text: 'Create Speaking Engagement')
+end
+
+Given(/^I try to visit the new speaking_engagement path$/) do
+  visit new_speaking_engagement_path
+end

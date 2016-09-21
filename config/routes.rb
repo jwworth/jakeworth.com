@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'posts#index'
   resources :projects, only: [:new, :create, :update, :edit]
-  resources :speaking_engagements, only: [:update, :edit]
+  resources :speaking_engagements, only: [:new, :create, :update, :edit]
 
   get '/about',  to: 'about#show', as: 'about_path'
 
