@@ -1,6 +1,8 @@
 = form_for speaking_engagement do |f|
   %p= f.label :title
   %p= f.text_field :title
+  %p= f.label :hyperlink
+  %p= f.url_field :hyperlink
   %p= f.label :location
   %p= f.text_field :location
   %p= f.label :date
