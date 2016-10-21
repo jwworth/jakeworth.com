@@ -6,5 +6,8 @@
 - if developer_signed_in?
   = link_to '[edit]', edit_post_path(@post.url_slug)
 .content
+  - if @post.created_at < 1.year.ago
+    %em Any code contained in this post is more than a year old; please use at your own risk.
+
   %p= find_and_preserve markdown_render @post.body
   %p.posted= link_to @post.created_at.strftime('%B %e, %Y'), post_path(@post)

@@ -44,7 +44,7 @@ end
 
 And 'I visit the homepage' do
   visit root_path
-  expect(page.title).to include SITE_NAME
+  expect(page.title).to eq 'Jake Worth'
 end
 
 And 'a project exists' do
@@ -400,4 +400,14 @@ end
 
 Then(/^I see (\d+) posts$/) do |num|
   expect(page).to have_selector '.title', count: num
+end
+
+Given(/^posts exist from (\d+) years? ago$/) do |year|
+  @newest_post = FactoryGirl.create(:post, created_at: year.to_i.years.ago, title: 'Newest post', body: 'Newest body')
+end
+
+Then(/^I see a deprecation warning$/) do
+  within '.content' do
+    expect(page).to have_selector('em', text: 'Any code contained in this post is more than a year old; please use at your own risk.')
+  end
 end
