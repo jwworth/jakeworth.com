@@ -1,19 +1,20 @@
+$black:      #2e303a
+$dark-navy:  #000059
 $light-gray: #a8a8a8
-$black: rgba(46,48,58,0.96)
-$navy: #000094
-$dark-navy: #000059
-$white: #fff
+$light-navy: #9999cc
+$navy:       #000094
+$white:      #fff
 
 body
   color: $black
 
   a
     color: $navy
-    &:hover
+    &:hover, &:visited
       color: $dark-navy
 
   .jumbotron
-    border-bottom: 1px dashed $navy
+    background: $light-navy
     h1 > a
       color: $black
       text-decoration: initial
