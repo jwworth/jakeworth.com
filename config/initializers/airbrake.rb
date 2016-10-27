@@ -4,7 +4,7 @@ Airbrake.configure do |c|
   c.root_directory = Rails.root
   c.logger = Rails.logger
   c.environment = Rails.env
-  c.ignore_environments = %w(test)
+  c.ignore_environments = %w(development test)
   c.blacklist_keys = [/password/i]
 end
 
