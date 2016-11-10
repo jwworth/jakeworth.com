@@ -81,6 +81,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webmock (0.2.3)
+      capybara (~> 2.4)
+      rack (>= 1.4)
+      rack-proxy (= 0.6.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
@@ -179,6 +183,8 @@ GEM
       pry (>= 0.9.10)
     puma (3.6.0)
     rack (2.0.1)
+    rack-proxy (0.6.0)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0)
@@ -287,6 +293,7 @@ DEPENDENCIES
   authem
   brakeman
   bullet
+  capybara-webmock
   coffee-rails (~> 4.1.0)
   cucumber-rails
   database_cleaner
@@ -317,4 +324,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.5
+   1.13.6
