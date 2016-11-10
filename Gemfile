@@ -4,24 +4,24 @@ ruby '2.3.1'
 
 gem 'rails', '5.0.0'
 
-gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'airbrake', '~> 5.4'
 gem 'authem'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'draper', github: 'audionerd/draper', branch: 'rails5'
+gem 'draper', git: 'https://github.com/audionerd/draper', branch: 'rails5'
+gem 'figaro'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'pg'
+gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'redcarpet'
 gem 'rouge'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
-gem 'puma'
-gem 'figaro'
-gem 'kaminari'
 
 group :development, :test do
   gem 'ffaker'
