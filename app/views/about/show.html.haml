@@ -59,6 +59,11 @@
 
       %p
         %blockquote
-          I write frequently for the Hashrocket blog, collected
+          I write frequently for the
+          = succeed ',' do
+            = link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth'
+          = succeed ',' do
+            = link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth'
+          and
           = succeed '.' do
-            = link_to 'here', 'https://hashrocket.com/blog/rocketeers/jake-worth'
+            = link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth'
