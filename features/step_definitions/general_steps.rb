@@ -408,6 +408,6 @@ end
 
 Then(/^I see a deprecation warning$/) do
   within '.content' do
-    expect(page).to have_selector('em', text: 'Any code contained in this post is more than a year old; please use at your own risk.')
+    expect(page).to have_selector('.well-sm em', text: 'Any code contained in this post is more than a year old; please use at your own risk.')
   end
 end

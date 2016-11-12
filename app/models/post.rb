@@ -16,6 +16,10 @@ class Post < ActiveRecord::Base
     title.downcase.tr(' ', '-').gsub(/[^a-z0-9-]/, '')
   end
 
+  def one_year_or_older?
+    created_at < 1.year.ago
+  end
+
   private
 
   def generate_url_slug
