@@ -51,6 +51,6 @@
       .btn-group{role: "group", "aria-label": "..."}
         - if developer_signed_in?
           = link_to 'Logout', destroy_session_path, class: 'btn btn-default'
-          = link_to '+', new_post_path, class: 'btn btn-default'
-          = link_to '$', new_project_path, class: 'btn btn-default'
-          = link_to '+ Speaking Engagement', new_speaking_engagement_path, class: 'btn btn-default'
+          = link_to 'New Post', new_post_path, class: 'btn btn-default'
+          = link_to 'New Project', new_project_path, class: 'btn btn-default'
+          = link_to 'New Speaking Engagement', new_speaking_engagement_path, class: 'btn btn-default'

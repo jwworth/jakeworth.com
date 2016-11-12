@@ -27,7 +27,7 @@ When 'I enter invalid information into the project form' do
 end
 
 Then 'I am logged in' do
-  expect(page).to have_link '+'
+  expect(page).to have_link 'New Project'
 end
 
 When 'I click log out' do
@@ -140,11 +140,11 @@ And 'a post exists' do
 end
 
 Given(/^I click create post$/) do
-  click_on '+'
+  click_on 'New Post'
 end
 
 Given(/^I click create project$/) do
-  click_on '$'
+  click_on 'New Project'
 end
 
 And 'I try to visit the new project path' do
