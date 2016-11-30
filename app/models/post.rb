@@ -20,6 +20,10 @@ class Post < ActiveRecord::Base
     created_at < 1.year.ago
   end
 
+  def display_date
+    created_at.strftime('%b %e, %Y')
+  end
+
   private
 
   def generate_url_slug

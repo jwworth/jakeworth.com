@@ -16,6 +16,7 @@ Feature: Visitor views homepage
     And 20 posts exist
     When I visit the homepage
     Then I see 20 post titles
+    And I see 20 post dates
 
   Scenario: And sees favorite posts
     Given I am a visitor
