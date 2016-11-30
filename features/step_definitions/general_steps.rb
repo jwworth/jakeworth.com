@@ -322,10 +322,6 @@ Then 'I see an Atom feed' do
   expect(page).to have_content @post.title
 end
 
-When(/^I visit the project page$/) do
-  visit "/about"
-end
-
 When(/^I click edit project$/) do
   click_on '[edit]'
 end

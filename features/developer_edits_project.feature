@@ -3,7 +3,7 @@ Feature: Developer edits project
   Scenario: With valid information
     Given I am a signed in developer
     And a project exists
-    When I visit the project page
+    When I visit the about page
     And I click edit project
     Then I see the edit project page
     When I edit the project
@@ -18,7 +18,7 @@ Feature: Developer edits project
   Scenario: With missing information
     Given I am a signed in developer
     And a project exists
-    When I visit the project page
+    When I visit the about page
     And I click edit project
     Then I see the edit project page
     When I edit the project with no title
