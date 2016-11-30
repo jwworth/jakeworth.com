@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  helper_attr_accessor :project
+  helper_attr_accessor :project, :projects
 
   before_action :require_developer
   before_action :set_project, only: [:edit, :update]
@@ -25,6 +25,10 @@ class ProjectsController < ApplicationController
       flash.now[:notice] = project.errors.full_messages
       render :new
     end
+  end
+
+  def index
+    self.projects = Project.order(:featured_order)
   end
 
   private

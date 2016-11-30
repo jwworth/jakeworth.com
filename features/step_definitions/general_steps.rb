@@ -414,3 +414,15 @@ Then(/^I see a deprecation warning$/) do
     expect(page).to have_selector('.well-sm em', text: 'Any code contained in this post is more than a year old; please use at your own risk.')
   end
 end
+
+Given(/^(\d+) projects+ exists$/) do |num|
+  FactoryGirl.create_list(:project, num.to_i)
+end
+
+When 'I visit the projects page' do
+  visit projects_path
+end
+
+Then(/^I see (\d+) projects+$/) do |num|
+  expect(page).to have_selector('.title', count: num.to_i)
+end
