@@ -4,6 +4,13 @@ Feature: Developer views projects
     Given I am a signed in developer
     And 3 projects exists
     When I visit the projects page
+
+  Scenario: Via a subheader link
+    Given I am a visitor
+    Given I am a signed in developer
+    And 3 projects exists
+    When I click "about"
+    And I click "Projects"
     Then I see 3 projects
 
   Scenario: With URL hacking

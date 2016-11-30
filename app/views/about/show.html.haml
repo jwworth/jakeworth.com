@@ -5,7 +5,7 @@
 
 .container
   .col-md-6#projects
-    %h4 Projects
+    %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
     .content
 
       %p
