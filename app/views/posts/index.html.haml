@@ -11,7 +11,7 @@
     - if post.favorite?
       &#9733;
     = link_to post.title, post_path(post.url_slug)
-    %span.posted= post.display_date
+    %span.posted= link_to post.display_date, post_path(post)
     - if developer_signed_in?
       = link_to '[edit]', edit_post_path(post.url_slug)
 
