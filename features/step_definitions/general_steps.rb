@@ -123,7 +123,7 @@ end
 
 And 'I see project information' do
   within 'footer' do
-    expect(page).to have_link 'source code', href: 'http://github.com/jwworth/jakeworth.com'
+    expect(page).to have_link 'open source', href: 'http://github.com/jwworth/jakeworth.com'
   end
 end
 
