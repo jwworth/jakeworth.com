@@ -118,7 +118,7 @@ Then 'I see the page for that post' do
   expect(page.title).to include 'Newest post - Jake Worth'
 
   expect(page).to have_content 'Newest body'
-  expect(page).to have_content @newest_post.created_at.strftime('%b %e, %Y')
+  expect(page).to have_content @newest_post.created_at.strftime('%b %-e, %Y')
 end
 
 And 'I see project information' do
@@ -304,7 +304,7 @@ end
 
 Then(/^I see (\d+) post dates+$/) do |num|
   expect(page).to have_selector('.posted',
-    text: Post.last.created_at.strftime('%b %e, %Y'),
+    text: Post.last.created_at.strftime('%b %-e, %Y'),
     count: num.to_i,
   )
 end

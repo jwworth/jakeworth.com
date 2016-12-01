@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_date
-    created_at.strftime('%b %e, %Y')
+    created_at.strftime('%b %-e, %Y')
   end
 
   private
