@@ -1,9 +1,0 @@
-defaults: &defaults
-  google_analytics_key: ~
-  host: 'www.jakeworth.com'
-
-development:
-  <<: *defaults
-
-test:
-  <<: *defaults

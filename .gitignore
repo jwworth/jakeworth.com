@@ -4,6 +4,6 @@
 !/log/.keep
 /tmp
 
-/stories.md
+config/application.yml
 
 coverage
