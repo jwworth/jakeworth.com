@@ -7,7 +7,7 @@ class TwitterStatus
   end
 
   def post_to_twitter
-    TwitterClient.update(status)
+    TwitterClient.update(status) if ENV['twitter_consumer_key']
   end
 
   private
