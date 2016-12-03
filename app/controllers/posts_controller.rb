@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      TwitterStatus.new(@post).post_to_twitter
       redirect_to @post, notice: 'Post created'
     else
       flash.now[:notice] = @post.errors.full_messages

@@ -6,6 +6,10 @@ class TwitterStatus
     @post = post
   end
 
+  def post_to_twitter
+    TwitterClient.update(status)
+  end
+
   private
 
   def title
