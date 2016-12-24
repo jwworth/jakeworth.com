@@ -54,6 +54,7 @@
       This blog is
       = link_to 'open source.', 'http://github.com/jwworth/jakeworth.com'
       %br
+      %br
       .btn-group{role: "group", "aria-label": "..."}
         - if developer_signed_in?
           = link_to 'Logout', destroy_session_path, class: 'btn btn-default'
