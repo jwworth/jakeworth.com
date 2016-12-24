@@ -3,10 +3,10 @@
 .page-header
   %h3 About
 
-.container
-  .col-md-6#projects
+.container#about
+  .col-md-4.5
     %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
-    .content
+    .content#projects
 
       %p
         %blockquote
@@ -19,10 +19,9 @@
       - else
         None.
 
-  .col-md-6#speaking-engagements
+  .col-md-4.5
     %h4 Speaking Engagements
-    .content
-
+    .content#speaking-engagements
       %p
         %blockquote
           = link_to "Email me", 'mailto:jake@jakeworth.com'
@@ -41,10 +40,8 @@
         None.
 
 
-.container
-  .col-md-6
     %h4 Other Media
-    .content
+    .content#other-media
 
       %p
         %blockquote

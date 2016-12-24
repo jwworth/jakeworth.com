@@ -39,7 +39,11 @@
     .container
       - if flash.present? && flash[:notice]
         .alert.alert-info(role="alert")= [flash[:notice]].flatten.join('; ').downcase.capitalize
-      = yield
+      .col-md-9
+        = yield
+      .col-md-3
+        %a(class="twitter-timeline" data-tweet-limit=3 href="https://twitter.com/jwworth")
+          Tweets by @jwworth
 
   .container
     %footer
@@ -53,3 +57,5 @@
           = link_to 'New Post', new_post_path, class: 'btn btn-default'
           = link_to 'New Project', new_project_path, class: 'btn btn-default'
           = link_to 'New Speaking Engagement', new_speaking_engagement_path, class: 'btn btn-default'
+
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
