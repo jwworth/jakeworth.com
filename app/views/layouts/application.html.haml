@@ -14,8 +14,17 @@
     .jumbotron
       .container
         %h1= link_to 'Jake Worth', root_path
-        %p
-          Developer at
+
+  %main
+    .container
+      - if flash.present? && flash[:notice]
+        .alert.alert-info(role="alert")= [flash[:notice]].flatten.join('; ').downcase.capitalize
+      .col-md-9
+        = yield
+      .col-md-3
+        .well
+          %strong Oh, hello there.
+          I'm Jake Worth. Developer at
           = succeed ', ' do
             = link_to "Hashrocket", "https://hashrocket.com/", target: '_blank'
           co-organizer of
@@ -35,13 +44,6 @@
           = succeed '.' do
             = link_to "get in touch", 'mailto:jake@jakeworth.com'
 
-  %main
-    .container
-      - if flash.present? && flash[:notice]
-        .alert.alert-info(role="alert")= [flash[:notice]].flatten.join('; ').downcase.capitalize
-      .col-md-9
-        = yield
-      .col-md-3
         %a(class="twitter-timeline" data-tweet-limit=3 href="https://twitter.com/jwworth")
           Tweets by @jwworth
 
