@@ -14,6 +14,12 @@
     .jumbotron
       .container
         %h1= link_to 'Jake Worth', root_path
+        %ul.nav.nav-pills
+          - blog = current_page?(root_path)
+          %li(role="presentation" class="#{'active' if blog}")
+            = link_to "Blog", "/"
+          %li(role="presentation" class="#{'active' if !blog}")
+            = link_to "About", "/about"
 
   %main
     .container
@@ -30,7 +36,6 @@
           co-organizer of
           = succeed '. ' do
             = link_to "Vim Chicago", "http://www.meetup.com/Vim-Chicago/", target: '_blank'
-          Can talk all day about TDD, Ruby, JS, and Elixir. Craftsmanship and compassion in every bit.
           Read my
           = succeed ', ' do
             = link_to "blog", '/'
