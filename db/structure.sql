@@ -52,8 +52,8 @@ CREATE TABLE ar_internal_metadata (
 CREATE TABLE authem_sessions (
     id integer NOT NULL,
     role character varying NOT NULL,
-    subject_type character varying NOT NULL,
     subject_id integer NOT NULL,
+    subject_type character varying NOT NULL,
     token character varying(60) NOT NULL,
     expires_at timestamp without time zone NOT NULL,
     ttl integer NOT NULL,
@@ -301,14 +301,6 @@ ALTER TABLE ONLY projects
 
 
 --
--- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY schema_migrations
-    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
-
-
---
 -- Name: speaking_engagements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -328,6 +320,13 @@ CREATE UNIQUE INDEX index_authem_sessions_on_expires_at_and_token ON authem_sess
 --
 
 CREATE INDEX index_authem_sessions_subject ON authem_sessions USING btree (expires_at, subject_type, subject_id);
+
+
+--
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
 
 
 --
