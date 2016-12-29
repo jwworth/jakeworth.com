@@ -1,3 +1,3 @@
-class Developer < ActiveRecord::Base
+class Developer < ApplicationRecord
   include Authem::User
 end
