@@ -15,10 +15,10 @@
       .container
         %h1= link_to 'Jake Worth', root_path
         %ul.nav.nav-pills
-          - blog = current_page?(root_path)
-          %li(role="presentation" class="#{'active' if blog}")
+          - about = current_page?('/about')
+          %li(role="presentation" class="#{'active' if !about}")
             = link_to "Blog", "/"
-          %li(role="presentation" class="#{'active' if !blog}")
+          %li(role="presentation" class="#{'active' if about}")
             = link_to "About", "/about"
 
   %main
