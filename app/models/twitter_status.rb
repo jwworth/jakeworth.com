@@ -1,5 +1,7 @@
 class TwitterStatus
 
+  include ActionView::Helpers
+
   attr_reader :post
 
   def initialize(post)
@@ -28,7 +30,15 @@ class TwitterStatus
     Rails.application.routes.url_helpers.post_url(url_slug, host: host)
   end
 
+  def archive_hashtag
+    "#{pluralize(Date.today.year - post.created_at.year, 'yr').delete(' ')}ago"
+  end
+
   def status
     "New blog post: '#{title}' #{url}"
+  end
+
+  def achive_status
+    "'#{title}' #{url} ##{archive_hashtag}"
   end
 end
