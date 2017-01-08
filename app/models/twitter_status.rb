@@ -8,9 +8,14 @@ class TwitterStatus
     @post = post
   end
 
-  def post_to_twitter
+  def post_status_to_twitter
     TwitterClient.update(status) if ENV['twitter_consumer_key']
   end
+
+  def post_archive_status_to_twitter
+    TwitterClient.update(archive_status) if ENV['twitter_consumer_key']
+  end
+
 
   private
 

@@ -81,4 +81,16 @@ describe Post do
     title = 'foo bar baz'
     expect(Post.slugify(title)).to eq 'foo-bar-baz'
   end
+
+  it 'should know if it is an anniversary post' do
+    today_post        = FactoryGirl.create(:post)
+    year_old_post     = FactoryGirl.create(:post, created_at: 1.year.ago)
+    two_year_old_post = FactoryGirl.create(:post, created_at: 2.years.ago)
+    random_post       = FactoryGirl.create(:post, created_at: 1.week.ago)
+
+    expect(today_post.anniversary?).to_not be
+    expect(year_old_post.anniversary?).to be
+    expect(two_year_old_post.anniversary?).to be
+    expect(random_post.anniversary?).to_not be
+  end
 end

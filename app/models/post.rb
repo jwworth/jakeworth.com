@@ -24,6 +24,10 @@ class Post < ApplicationRecord
     created_at.strftime('%b %-e, %Y')
   end
 
+  def anniversary?
+    Date.today.yday == created_at.yday && !created_at.today?
+  end
+
   private
 
   def generate_url_slug
