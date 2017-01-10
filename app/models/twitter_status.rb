@@ -43,7 +43,7 @@ class TwitterStatus
     "New blog post: '#{title}' #{url}"
   end
 
-  def achive_status
+  def archive_status
     "'#{title}' #{url} ##{archive_hashtag}"
   end
 end

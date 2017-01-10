@@ -36,7 +36,7 @@ describe TwitterStatus do
       twitter_status = described_class.new(old_post)
 
       expected = "'My First Ruby Post' http://www.jakeworth.com/my-first-ruby-post #5yrsago"
-      actual = twitter_status.send(:achive_status)
+      actual = twitter_status.send(:archive_status)
 
       expect(actual).to eq expected
     end
