@@ -234,12 +234,9 @@ Then 'I see a live preview' do
 end
 
 Then 'I see my markdown post' do
-  within('em') do
-    expect(page).to have_content 'emphasis'
-  end
-
-  within('code') do
-    expect(page).to have_content 'code'
+  within('main') do
+    expect(page).to have_selector('em', text: 'emphasis')
+    expect(page).to have_selector('code', text: 'code')
   end
 end
 
