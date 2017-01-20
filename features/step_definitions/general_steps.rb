@@ -105,7 +105,7 @@ end
 Then 'I see links' do
   expect(page).to have_link 'Github', href: 'https://github.com/jwworth'
   expect(page).to have_link 'Twitter', href: 'https://twitter.com/jwworth'
-  expect(page).to have_link 'get in touch', href: 'mailto:jake@jakeworth.com'
+  expect(page).to have_link 'get in touch', href: 'mailto:jake+blog@jakeworth.com'
 end
 
 Then 'I see an edit button' do
