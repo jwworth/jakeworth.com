@@ -24,7 +24,7 @@
     .content#speaking-engagements
       %p
         %blockquote
-          = link_to "Email me", 'mailto:jake@jakeworth.com'
+          = link_to "Email me", 'mailto:' + ENV.fetch('contact_email')
           to discuss workshops and presentations.
       - if speaking_engagements.any?
         - speaking_engagements.each do |engagement|
