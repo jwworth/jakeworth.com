@@ -15,7 +15,8 @@
 
       - if projects.any?
         - projects.each do |project|
-          = render 'projects/projects', project: project
+          %ul
+            = render 'projects/projects', project: project
       - else
         None.
 
@@ -28,14 +29,15 @@
           to discuss workshops and presentations.
       - if speaking_engagements.any?
         - speaking_engagements.each do |engagement|
-          %p.title
-            = succeed ',' do
-              %em= link_to_if(engagement.hyperlink, engagement.display_title, engagement.hyperlink)
-            = succeed ',' do
-              = engagement.location
-            = engagement.date.strftime('%B %Y')
-            - if developer_signed_in?
-              = link_to '[edit]', edit_speaking_engagement_path(engagement)
+          %ul
+            %li
+              = succeed ',' do
+                %em= link_to_if(engagement.hyperlink, engagement.display_title, engagement.hyperlink)
+              = succeed ',' do
+                = engagement.location
+              = engagement.date.strftime('%B %Y')
+              - if developer_signed_in?
+                = link_to '[edit]', edit_speaking_engagement_path(engagement)
       - else
         None.
 

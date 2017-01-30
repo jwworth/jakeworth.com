@@ -1,8 +1,7 @@
-%ul
-  %li
-    %p.title
-      = link_to project.title, project.hyperlink
-      - if developer_signed_in?
-        = link_to '[edit]', edit_project_path(project)
-    %em
-      %p= markdown_render(project.description)
+%li
+  %p.title
+    = link_to project.title, project.hyperlink
+    - if developer_signed_in?
+      = link_to '[edit]', edit_project_path(project)
+  %em
+    %p= markdown_render(project.description)
