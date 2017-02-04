@@ -41,6 +41,21 @@ $ rake db:setup
 $ rails s
 ```
 
+### Testing
+
+Run the tests with:
+
+```
+$ rake
+```
+
+Or, run the tests in parallel with [flatware](https://github.com/briandunn/flatware):
+
+```
+$ flatware fan rake db:test:prepare
+$ flatware rspec && flatware cucumber
+```
+
 ### Contributing
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) it

@@ -9,7 +9,7 @@ development:
 
 test: &test
   <<: *default
-  database: worth-chicago_co_test
+  database: worth-chicago_co_test<%=ENV['TEST_ENV_NUMBER']%>
 
 production:
   <<: *default
