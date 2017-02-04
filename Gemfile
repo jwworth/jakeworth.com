@@ -37,7 +37,6 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'simplecov', require: false
 end
 
 group :development do
