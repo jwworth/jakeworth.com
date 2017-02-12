@@ -4,18 +4,19 @@
   %h3 About
 
 .container#about
+  .col-md-9
+    %blockquote
+      Programming is my passion. I'm currently excited about Elixir, Phoenix,
+      Ruby, Rails, PostgreSQL, JavaScript, CSS, and HTML, and tests.
+
+      I strive for expert communication with an emphasis on client happiness,
+      technical writing, pair-programming, and teaching.
   .col-md-4.5
     %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
     .content#projects
-
-      %p
-        %blockquote
-          Coding is my passion, and I'm doing it most of the time. Currently
-          exploring OO and functional programming patterns.
-
       - if projects.any?
-        - projects.each do |project|
-          %ul
+        %ul
+          - projects.each do |project|
             = render 'projects/projects', project: project
       - else
         None.
@@ -23,13 +24,9 @@
   .col-md-4.5
     %h4 Speaking Engagements
     .content#speaking-engagements
-      %p
-        %blockquote
-          = link_to "Email me", 'mailto:' + ENV.fetch('contact_email')
-          to discuss workshops and presentations.
       - if speaking_engagements.any?
-        - speaking_engagements.each do |engagement|
-          %ul
+        %ul
+          - speaking_engagements.each do |engagement|
             %li
               = succeed ',' do
                 %em= link_to_if(engagement.hyperlink, engagement.display_title, engagement.hyperlink)
@@ -44,19 +41,9 @@
 
     %h4 Other Media
     .content#other-media
-
-      %p
-        %blockquote
-          I write for the
-          = succeed ',' do
-            = link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank'
-          = succeed ',' do
-            = link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth', target: '_blank'
-          = succeed ',' do
-            = link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth', target: '_blank'
-          and screencast for
-          = link_to 'PG Casts', 'https://www.pgcasts.com', target: '_blank'
-          about PostgreSQL.
-          My professional (and personal) reading list is available at
-          = succeed '.' do
-            = link_to 'Goodreads', 'https://www.goodreads.com/jwworth', target: '_blank'
+      %ul
+        %li= link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank'
+        %li= link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth', target: '_blank'
+        %li= link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth', target: '_blank'
+        %li= link_to 'PG Casts', 'https://www.pgcasts.com', target: '_blank'
+        %li= link_to 'Reading List', 'https://www.goodreads.com/jwworth', target: '_blank'
