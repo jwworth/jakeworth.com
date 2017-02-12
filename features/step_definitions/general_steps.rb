@@ -422,5 +422,5 @@ When 'I visit the projects page' do
 end
 
 Then(/^I see (\d+) projects+$/) do |num|
-  expect(page).to have_selector('.title', count: num.to_i)
+  expect(page).to have_selector('.project', count: num.to_i)
 end
