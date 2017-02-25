@@ -1,14 +1,6 @@
 !!!
 %html
-  %head
-    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
-    %meta(name="viewport" content="width=device-width, initial-scale=1")
-    %title= [content_for(:page_title), SITE_NAME].compact.join(' - ').html_safe
-    = javascript_include_tag 'application'
-    = stylesheet_link_tag 'application', media: 'all'
-    %link(rel="shortcut icon" type="image/x-icon" href="/favicon.ico")
-    = csrf_meta_tags
-    = yield :head
+  = render 'shared/head'
 
   %body
     .jumbotron

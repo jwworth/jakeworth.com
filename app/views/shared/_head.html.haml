@@ -1,0 +1,21 @@
+%head
+  %title= [content_for(:page_title), SITE_NAME].compact.join(' - ').html_safe
+  = csrf_meta_tags
+
+  %meta(name="format-detection" content="telephone=no")
+  %meta(name="description" content="Weblog of Jake Worth, a developer at Hashrocket, based in Chicago.")
+
+  %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1")
+
+  %meta(name="twitter:card" content="summary_large_image")
+  %meta(name="twitter:site" content="@jwworth")
+  %meta(name="twitter:creator" content="@jwworth")
+  %meta(name="twitter:title" content="Jake Worth")
+  %meta(name="twitter:description" content="Weblog of Jake Worth, a developer at Hashrocket, based in Chicago.")
+  %meta(name="twitter:image" content="http://jakeworth.com/assets/twittercard.jpg")
+
+  = favicon_link_tag
+  = javascript_include_tag 'application'
+  = stylesheet_link_tag 'application', media: 'all'
+
+  = yield :head
