@@ -1,5 +1,8 @@
 - content_for :page_title, @post.title
 
+- content_for :canonical do
+  %link{rel: 'canonical', href: post_url(@post)}
+
 .page-header
   %h3= @post.title
 
