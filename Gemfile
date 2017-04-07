@@ -5,7 +5,7 @@ ruby '2.3.3'
 gem 'rails', '5.0.1'
 
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
-gem 'airbrake', '~> 5.4'
+gem 'airbrake'
 gem 'authem'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'draper', git: 'https://github.com/audionerd/draper', branch: 'rails5'
