@@ -25,7 +25,11 @@ class Post < ApplicationRecord
   end
 
   def anniversary?
-    Date.today.yday == created_at.yday && !created_at.today?
+    today = Date.today
+
+    created_at.month == today.month &&
+    created_at.day == today.day &&
+    !created_at.today?
   end
 
   private

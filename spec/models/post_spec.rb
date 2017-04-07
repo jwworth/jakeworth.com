@@ -88,9 +88,9 @@ describe Post do
     two_year_old_post = FactoryGirl.create(:post, created_at: 2.years.ago)
     random_post       = FactoryGirl.create(:post, created_at: 1.week.ago)
 
-    expect(today_post.anniversary?).to_not be
-    expect(year_old_post.anniversary?).to be
-    expect(two_year_old_post.anniversary?).to be
-    expect(random_post.anniversary?).to_not be
+    expect(today_post.anniversary?).to eq false
+    expect(year_old_post.anniversary?).to eq true
+    expect(two_year_old_post.anniversary?).to eq true
+    expect(random_post.anniversary?).to eq false
   end
 end
