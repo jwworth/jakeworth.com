@@ -21,7 +21,7 @@
         = yield
       .col-md-3
         .well
-          I'm Jake Worth, a developer at
+          Hi! I'm Jake Worth, a developer at
           = succeed ', ' do
             = link_to "Hashrocket", "https://hashrocket.com/", target: '_blank'
           based in Chicago.
@@ -46,14 +46,12 @@
 
   .container
     %footer
-      The banner image is the Orion nebula, taken by the Hubble Space Telescope.
-      %br
       This blog is
       = link_to 'open source.', 'http://github.com/jwworth/jakeworth.com'
       %br
       %br
-      .btn-group{role: "group", "aria-label": "..."}
-        - if developer_signed_in?
+      - if developer_signed_in?
+        .btn-group{role: "group", "aria-label": "..."}
           = link_to 'Logout', destroy_session_path, class: 'btn btn-default'
           = link_to 'New Post', new_post_path, class: 'btn btn-default'
           = link_to 'New Project', new_project_path, class: 'btn btn-default'

@@ -22,7 +22,7 @@
         None.
 
   .col-md-4.5
-    %h4 Speaking Engagements
+    %h4 Talks
     .content#speaking-engagements
       - if speaking_engagements.any?
         %ul
@@ -32,18 +32,33 @@
                 %em= link_to_if(engagement.hyperlink, engagement.display_title, engagement.hyperlink)
               = succeed ',' do
                 = engagement.location
-              = engagement.date.strftime('%B %Y')
+              = succeed '.' do
+                = engagement.date.strftime('%B %Y')
               - if developer_signed_in?
                 = link_to '[edit]', edit_speaking_engagement_path(engagement)
       - else
         None.
 
-
-    %h4 Other Media
+    %h4 Other Stuff
     .content#other-media
       %ul
-        %li= link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank'
-        %li= link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth', target: '_blank'
-        %li= link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth', target: '_blank'
-        %li= link_to 'PG Casts', 'https://www.pgcasts.com', target: '_blank'
-        %li= link_to 'Reading List', 'https://www.goodreads.com/jwworth', target: '_blank'
+        %li
+          = succeed ':' do
+            = link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank'
+          writing for my company.
+        %li
+          = succeed ':' do
+            = link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth', target: '_blank'
+          answering and asking programming questions.
+        %li
+          = succeed ':' do
+            = link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth', target: '_blank'
+          answering and asking programming questions.
+        %li
+          = succeed ':' do
+            = link_to 'PG Casts', 'https://www.pgcasts.com', target: '_blank'
+          screencasting about PostgreSQL.
+        %li
+          = succeed ':' do
+            = link_to 'Reading List', 'https://www.goodreads.com/jwworth', target: '_blank'
+          recording what I read.
