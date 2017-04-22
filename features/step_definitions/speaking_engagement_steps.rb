@@ -1,7 +1,5 @@
 When(/^I click edit speaking engagement$/) do
-  within '#speaking-engagements' do
-    click_on '[edit]'
-  end
+  click_on '[edit]'
 end
 
 Given(/^a speaking engagement exists with title "([^"]*)"$/) do |title|
@@ -18,9 +16,7 @@ When(/^I edit the speaking engagement$/) do
 end
 
 Then(/^I see my updated speaking engagement$/) do
-  within '#speaking-engagements' do
-    expect(page).to have_content 'New Title'
-  end
+  expect(page).to have_content 'New Title'
 end
 
 When(/^I try to visit the edit speaking engagement path$/) do

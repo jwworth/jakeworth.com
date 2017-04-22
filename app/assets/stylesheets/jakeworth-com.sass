@@ -4,6 +4,11 @@ $white:      #fff
 
 body
   color: $black
+  ul
+    &.posts, &.about
+      padding-left: 0px
+      li
+        list-style: none
 
   .jumbotron
     background: image-url("keyboard.jpg")
@@ -37,10 +42,8 @@ body
     background: #414347
 
 #about
-  ul
-    margin-top: 1em
-    li
-      margin-top: 0.5em
+  .content
+    margin-bottom: 1.5em
 
 footer
   text-align: center
