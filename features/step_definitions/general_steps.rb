@@ -378,9 +378,7 @@ When 'I visit the about page' do
 end
 
 Then 'I see my markdown project' do
-  within '#projects' do
-    expect(page).to have_link('cool link', href: 'http://google.com')
-  end
+  expect(page).to have_link('cool link', href: 'http://google.com')
 end
 
 And 'a favorite post exists' do

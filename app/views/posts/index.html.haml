@@ -6,14 +6,16 @@
     %blockquote
       My favorite posts are marked with &#9733;.
 
-- @posts.each do |post|
-  %p.title
-    - if post.favorite?
-      &#9733;
-    = link_to post.title, post_path(post.url_slug)
-    %span.posted= link_to post.display_date, post_path(post)
-    - if developer_signed_in?
-      = link_to '[edit]', edit_post_path(post.url_slug)
+%ul.posts
+  - @posts.each do |post|
+    %li
+      %p.title
+        - if post.favorite?
+          &#9733;
+        = link_to post.title, post_path(post.url_slug)
+        %span.posted= link_to post.display_date, post_path(post)
+        - if developer_signed_in?
+          = link_to '[edit]', edit_post_path(post.url_slug)
 
 %nav.pagination
   = link_to_next_page @posts, "older posts", class: "btn btn-default btn-sm"

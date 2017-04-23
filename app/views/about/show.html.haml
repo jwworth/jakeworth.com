@@ -4,28 +4,27 @@
   %h3 About
 
 .container#about
-  .col-md-9
+  .col-md-8
     %blockquote
       Programming is my passion. I'm currently excited about Elixir, Phoenix,
       Ruby, Rails, PostgreSQL, JavaScript, CSS, and HTML, and tests.
 
       I strive for expert communication with an emphasis on client happiness,
       technical writing, pair-programming, and teaching.
-  .col-md-4.5
-    %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
-    .content#projects
+
+    .content
+      %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
       - if projects.any?
-        %ul
+        %ul.about
           - projects.each do |project|
             = render 'projects/projects', project: project
       - else
         None.
 
-  .col-md-4.5
-    %h4 Talks
-    .content#speaking-engagements
+    .content
+      %h4 Talks
       - if speaking_engagements.any?
-        %ul
+        %ul.about
           - speaking_engagements.each do |engagement|
             %li
               = succeed ',' do
@@ -39,9 +38,9 @@
       - else
         None.
 
-    %h4 Other Stuff
-    .content#other-media
-      %ul
+    .content
+      %h4 Other Stuff
+      %ul.about
         %li
           = succeed ':' do
             = link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank'
