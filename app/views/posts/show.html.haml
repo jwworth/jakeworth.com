@@ -5,7 +5,8 @@
 
 .page-header
   %h3
-    = emoji_of_the_day
+    - if @post.favorite?
+      = emoji_of_the_day
     = @post.title
 
 
