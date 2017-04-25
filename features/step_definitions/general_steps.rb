@@ -1,3 +1,5 @@
+include PostHelper
+
 Given 'a developer exists' do
   @developer = FactoryGirl.create(:developer)
 end
@@ -387,7 +389,7 @@ end
 
 Then 'I see the favorited post' do
   within 'p.title' do
-    expect(page).to have_content '★'
+    expect(page).to have_content(emoji_of_the_day)
     expect(page).to have_link 'This post rocks', href: post_path(@fav_post)
   end
 end
@@ -401,7 +403,11 @@ Then(/^I see (\d+) posts$/) do |num|
 end
 
 Given(/^posts exist from (\d+) years? ago$/) do |year|
-  @newest_post = FactoryGirl.create(:post, created_at: year.to_i.years.ago, title: 'Newest post', body: 'Newest body')
+  @newest_post = FactoryGirl.create(:post,
+    created_at: year.to_i.years.ago,
+    title: 'Newest post',
+    body: 'Newest body',
+   )
 end
 
 Then(/^I see a deprecation warning$/) do

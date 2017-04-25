@@ -4,14 +4,16 @@
   %h3 Blog
   %p
     %blockquote
-      My favorite posts are marked with &#9733;.
+      My favorite posts are marked with
+      = succeed '.' do
+        = emoji_of_the_day
 
 %ul.posts
   - @posts.each do |post|
     %li
       %p.title
         - if post.favorite?
-          &#9733;
+          = emoji_of_the_day
         = link_to post.title, post_path(post.url_slug)
         %span.posted= link_to post.display_date, post_path(post)
         - if developer_signed_in?

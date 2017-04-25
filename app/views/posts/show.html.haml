@@ -4,7 +4,10 @@
   %link{rel: 'canonical', href: post_url(@post)}
 
 .page-header
-  %h3= @post.title
+  %h3
+    = emoji_of_the_day
+    = @post.title
+
 
 - if developer_signed_in?
   = link_to '[edit]', edit_post_path(@post.url_slug)
