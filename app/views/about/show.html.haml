@@ -29,11 +29,15 @@
           - speaking_engagements.each do |engagement|
             %li
               = succeed ',' do
-                %em= link_to_if(engagement.hyperlink, engagement.display_title, engagement.hyperlink)
+                %em= engagement.display_title
               = succeed ',' do
                 = engagement.location
               = succeed '.' do
                 = engagement.date.strftime('%B %Y')
+              - if engagement.video_hyperlink?
+                = link_to('(video)', engagement.video_hyperlink)
+              - if engagement.slides_hyperlink?
+                = link_to('(slides)', engagement.slides_hyperlink)
               - if developer_signed_in?
                 = link_to '[edit]', edit_speaking_engagement_path(engagement)
       - else

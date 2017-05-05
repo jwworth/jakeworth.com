@@ -200,9 +200,10 @@ CREATE TABLE speaking_engagements (
     title character varying NOT NULL,
     location character varying NOT NULL,
     date timestamp without time zone NOT NULL,
-    hyperlink character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    slides_hyperlink character varying,
+    video_hyperlink character varying
 );
 
 
@@ -335,6 +336,20 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20150422174456'), ('20150422174509'), ('20150422200749'), ('20150423152139'), ('20150628171109'), ('20150923014645'), ('20150923022056'), ('20151030032924'), ('20160308024751'), ('20160315014511'), ('20160315015050'), ('20160609191949');
+INSERT INTO schema_migrations (version) VALUES
+('20150422174456'),
+('20150422174509'),
+('20150422200749'),
+('20150423152139'),
+('20150628171109'),
+('20150923014645'),
+('20150923022056'),
+('20151030032924'),
+('20160308024751'),
+('20160315014511'),
+('20160315015050'),
+('20160609191949'),
+('20170505034953'),
+('20170505035447');
 
 

@@ -58,7 +58,6 @@ And 'a speaking engagement exists' do
     title: 'Haxoring everything!',
     location: 'ChicagoRuby Meetup',
     date: '2016-03-07 21:10:26 -0600',
-    hyperlink: 'http://google.com'
   )
 end
 
@@ -67,7 +66,6 @@ And 'a future speaking engagement exists' do
     title: 'Haxoring everything!',
     location: 'ChicagoRuby Meetup',
     date: Time.now + 1.month,
-    hyperlink: 'http://google.com'
   )
 end
 
@@ -83,7 +81,6 @@ end
 Then(/^I see the speaking engagement$/) do
   within 'main' do
     title = 'Haxoring everything!'
-    expect(page).to have_link(title, href: 'http://google.com')
     expect(page).to have_selector('em', text: title)
     expect(page).to have_content(title + ', ChicagoRuby Meetup, March 2016')
   end
@@ -92,7 +89,7 @@ end
 Then(/^I see the future speaking engagement$/) do
   within 'main' do
     title = 'Haxoring everything! (upcoming)'
-    expect(page).to have_link(title, href: 'http://google.com')
+    expect(page).to have_content(title)
   end
 end
 
