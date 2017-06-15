@@ -5,7 +5,6 @@ ruby '2.3.3'
 gem 'rails', '5.0.1'
 
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
-gem 'airbrake'
 gem 'authem'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'draper', git: 'https://github.com/audionerd/draper', branch: 'rails5'
@@ -24,10 +23,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter'
 gem 'uglifier', '>= 1.3.0'
 
+group :development do
+  gem 'brakeman'
+  gem 'bullet'
+end
+
 group :development, :test do
   gem 'ffaker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
+end
+
+group :production do
+  gem 'airbrake'
 end
 
 group :test do
@@ -39,9 +47,4 @@ group :test do
   gem 'flatware-rspec', require: false
   gem 'launchy'
   gem 'selenium-webdriver'
-end
-
-group :development do
-  gem 'brakeman'
-  gem 'bullet'
 end
