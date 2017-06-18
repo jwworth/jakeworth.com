@@ -18,7 +18,3 @@
         %span.posted= link_to post.display_date, post_path(post)
         - if developer_signed_in?
           = link_to '[edit]', edit_post_path(post.url_slug)
-
-%nav.pagination
-  = link_to_next_page @posts, "older posts", class: "btn btn-default btn-sm"
-  = link_to_previous_page @posts, "newer posts", class: "btn btn-default btn-sm"

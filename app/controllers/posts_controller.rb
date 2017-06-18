@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.ordered.page(params[:page]).per(ENV.fetch('pagination_breakpoint'))
+    @posts = Post.ordered
   end
 
   def update
