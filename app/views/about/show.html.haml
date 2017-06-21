@@ -2,17 +2,13 @@
 
 .page-header
   %h3 About
+  %p
+    %blockquote
+      Technology is my &#128293;. I'm currently excited about Elixir, Phoenix,
+      Ruby, Rails, PostgreSQL, JavaScript, CSS, HTML, and automated tests.
 
 .container#about
   .col-md-8
-    %blockquote
-      Programming is my &#128293;. I'm currently excited about Elixir, Phoenix,
-      Ruby, Rails, PostgreSQL, JavaScript, CSS, and HTML, and tests.
-
-      My goal is expert communication, which means: listening to stakeholders,
-      writing bulletproof documentation, being a great pair, speaking about the
-      things I care about, and teaching the next generation of developers.
-
     .content
       %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
       - if projects.any?
