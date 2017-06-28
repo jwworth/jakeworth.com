@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAuthemSessions < ActiveRecord::Migration
   def change
     create_table :authem_sessions do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
   validates_presence_of :body
   validates_presence_of :title
@@ -28,8 +30,8 @@ class Post < ApplicationRecord
     today = Date.today
 
     created_at.month == today.month &&
-    created_at.day == today.day &&
-    !created_at.today?
+      created_at.day == today.day &&
+      !created_at.today?
   end
 
   private

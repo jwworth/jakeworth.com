@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddSpeakingEngagements < ActiveRecord::Migration
   def up
     execute <<-SQL

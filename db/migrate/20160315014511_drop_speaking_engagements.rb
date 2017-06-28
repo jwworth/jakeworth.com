@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DropSpeakingEngagements < ActiveRecord::Migration
   def up
     execute 'drop table speaking_engagements;'
