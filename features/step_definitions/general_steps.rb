@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 include PostHelper
 
 Given 'a developer exists' do
@@ -55,18 +57,16 @@ end
 
 And 'a speaking engagement exists' do
   @speaking_engagement = FactoryGirl.create(:speaking_engagement,
-    title: 'Haxoring everything!',
-    location: 'ChicagoRuby Meetup',
-    date: '2016-03-07 21:10:26 -0600',
-  )
+                                            title: 'Haxoring everything!',
+                                            location: 'ChicagoRuby Meetup',
+                                            date: '2016-03-07 21:10:26 -0600')
 end
 
 And 'a future speaking engagement exists' do
   FactoryGirl.create(:speaking_engagement,
-    title: 'Haxoring everything!',
-    location: 'ChicagoRuby Meetup',
-    date: Time.now + 1.month,
-  )
+                     title: 'Haxoring everything!',
+                     location: 'ChicagoRuby Meetup',
+                     date: Time.now + 1.month)
 end
 
 And 'a non-featured project exists' do
@@ -300,9 +300,8 @@ end
 
 Then(/^I see (\d+) post dates+$/) do |num|
   expect(page).to have_selector('.posted',
-    text: Post.last.created_at.strftime('%b %-e, %Y'),
-    count: num.to_i,
-  )
+                                text: Post.last.created_at.strftime('%b %-e, %Y'),
+                                count: num.to_i)
 end
 
 When(/^I click "(.*?)"$/) do |arg|
@@ -359,7 +358,7 @@ Then(/^I see a live preview with "(.*?)" as the slug$/) do |slug|
 end
 
 Then(/^I enter a slug "(.*?)"$/) do |slug|
-  page.execute_script %Q{$("#post_url_slug").val('#{slug}').keyup()}
+  page.execute_script %{$("#post_url_slug").val('#{slug}').keyup()}
 end
 
 Then 'I see the header as a link' do
@@ -401,10 +400,9 @@ end
 
 Given(/^posts exist from (\d+) years? ago$/) do |year|
   @newest_post = FactoryGirl.create(:post,
-    created_at: year.to_i.years.ago,
-    title: 'Newest post',
-    body: 'Newest body',
-   )
+                                    created_at: year.to_i.years.ago,
+                                    title: 'Newest post',
+                                    body: 'Newest body')
 end
 
 Then(/^I see a deprecation warning$/) do

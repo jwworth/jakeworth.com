@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'posts#index'
 
   resources :projects, except: :destroy
-  resources :speaking_engagements, only: [:new, :create, :update, :edit]
+  resources :speaking_engagements, only: %i[new create update edit]
 
-  get '/about',  to: 'about#show', as: 'about_path'
+  get '/about', to: 'about#show', as: 'about_path'
 
   get '/login', to: 'sessions#new', as: 'new_session'
   post '/login', to: 'sessions#create'

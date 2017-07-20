@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Rails.env.production?
   Airbrake.configure do |c|
     c.project_id = ENV['AIRBRAKE_PROJECT_ID']

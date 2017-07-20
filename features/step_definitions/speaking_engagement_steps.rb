@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 When(/^I click edit speaking engagement$/) do
   click_on '[edit]'
 end

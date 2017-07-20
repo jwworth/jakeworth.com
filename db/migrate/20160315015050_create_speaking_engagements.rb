@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSpeakingEngagements < ActiveRecord::Migration
   def change
     create_table :speaking_engagements do |t|

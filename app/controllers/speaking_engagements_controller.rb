@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class SpeakingEngagementsController < ApplicationController
   helper_attr_accessor :speaking_engagement
 
   before_action :require_developer
-  before_action :set_speaking_engagement, only: [:edit, :update]
+  before_action :set_speaking_engagement, only: %i[edit update]
 
   def new
     self.speaking_engagement = SpeakingEngagement.new
@@ -35,6 +37,6 @@ class SpeakingEngagementsController < ApplicationController
 
   def speaking_engagement_params
     params.require(:speaking_engagement).permit(:date,
-     :location, :slides_hyperlink, :video_hyperlink, :title)
+                                                :location, :slides_hyperlink, :video_hyperlink, :title)
   end
 end

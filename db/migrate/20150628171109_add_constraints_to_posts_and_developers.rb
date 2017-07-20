@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddConstraintsToPostsAndDevelopers < ActiveRecord::Migration
   def change
     change_column_null :developers, :created_at, false

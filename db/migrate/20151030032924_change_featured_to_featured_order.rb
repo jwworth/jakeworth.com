@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeFeaturedToFeaturedOrder < ActiveRecord::Migration
   def up
     execute <<-SQL

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   helper_attr_accessor :older_posts, :latest_posts
 
-  before_action :set_post, only: [:show, :edit, :update]
-  before_action :require_developer, except: [:index, :show]
+  before_action :set_post, only: %i[show edit update]
+  before_action :require_developer, except: %i[index show]
 
   def new
     @post = Post.new
@@ -28,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.ordered.page(params[:page]).per(ENV.fetch('pagination_breakpoint'))
+    @posts = Post.ordered
   end
 
   def update

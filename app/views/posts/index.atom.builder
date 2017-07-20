@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 atom_feed do |feed|
   feed.title SITE_NAME
   feed.updated @posts.last.created_at
