@@ -1,5 +1,6 @@
-class TwitterStatus
+# frozen_string_literal: true
 
+class TwitterStatus
   include ActionView::Helpers
 
   attr_reader :post
@@ -15,7 +16,6 @@ class TwitterStatus
   def post_archive_status_to_twitter
     TwitterClient.update(archive_status) if ENV['twitter_consumer_key']
   end
-
 
   private
 

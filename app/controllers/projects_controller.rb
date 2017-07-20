@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class ProjectsController < ApplicationController
   helper_attr_accessor :project, :projects
 
   before_action :require_developer
-  before_action :set_project, only: [:edit, :update]
+  before_action :set_project, only: %i[edit update]
 
   def new
     self.project = Project.new

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateDevelopers < ActiveRecord::Migration
   def change
     create_table :developers do |t|
