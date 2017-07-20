@@ -1,11 +1,11 @@
 defaults: &defaults
-  google_analytics_key: ~
   host: 'www.jakeworth.com'
   contact_email:
   twitter_access_token:
   twitter_access_token_secret:
   twitter_consumer_key:
   twitter_consumer_secret:
+  site_name:
 
 development:
   <<: *defaults
