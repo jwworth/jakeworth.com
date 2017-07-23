@@ -18,9 +18,17 @@
       - else
         None.
 
-    .content
-      %h4 Talks
-      - if speaking_engagements.any?
+    - if speaking_engagements.any?
+      .content
+        %h4 Talks
+
+        .featured-video
+          .embed-responsive.embed-responsive-16by9
+            %iframe(width="560" height="315" src="https://www.youtube.com/embed/D9awDBUQvr4" allowfullscreen)
+          .caption
+            %em Observing Change: A Gold Master Test in Practice,
+            RailsConf, April 2017.
+
         %ul.about
           - speaking_engagements.each do |engagement|
             %li
@@ -36,8 +44,6 @@
                 = link_to('(slides)', engagement.slides_hyperlink)
               - if developer_signed_in?
                 = link_to '[edit]', edit_speaking_engagement_path(engagement)
-      - else
-        None.
 
     .content
       %h4 Other Stuff
