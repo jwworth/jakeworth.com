@@ -10,9 +10,9 @@
 .container#about
   .col-md-8
     .content
-      %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
+      %h4#projects= link_to_if(developer_signed_in?, 'Projects', projects_path)
       - if projects.any?
-        %ul.about
+        %ul.projects
           - projects.each do |project|
             = render 'projects/projects', project: project
       - else
@@ -20,7 +20,7 @@
 
     - if speaking_engagements.any?
       .content
-        %h4 Talks
+        %h4#talks Talks
 
         .featured-video
           .embed-responsive.embed-responsive-16by9
@@ -46,7 +46,7 @@
                 = link_to '[edit]', edit_speaking_engagement_path(engagement)
 
     .content
-      %h4 Other Stuff
+      %h4#other-stuff Other Stuff
       %ul.about
         %li
           = succeed ':' do
