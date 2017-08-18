@@ -30,3 +30,13 @@ Feature: Visitor views homepage
     And I visit the homepage
     When I visit the Atom feed page
     Then I see an Atom feed
+
+  Scenario: Visitor sees pagination
+    Given I am a visitor
+    And 40 posts exist
+    When I visit the homepage
+    Then I see 30 posts
+    When I click "older posts"
+    Then I see 10 posts
+    When I click "newer posts"
+    When I see 30 posts
