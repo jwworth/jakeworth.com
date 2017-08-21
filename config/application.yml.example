@@ -6,6 +6,7 @@ defaults: &defaults
   twitter_consumer_key:
   twitter_consumer_secret:
   site_name:
+  pagination_breakpoint: '30'
 
 development:
   <<: *defaults
