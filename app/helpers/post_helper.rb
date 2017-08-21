@@ -15,4 +15,16 @@ module PostHelper
   def emoji_of_the_day
     CGI.unescapeHTML(EMOJIS.values[Date.today.wday])
   end
+
+  def preceding_post(post)
+    post_ids = Post.ordered.pluck(:id)
+    post_index = post_ids.index(post.id)
+    Post.find_by_id(post_ids[post_index + 1])
+  end
+
+  def succeeding_post(post)
+    post_ids = Post.ordered.pluck(:id)
+    post_index = post_ids.index(post.id)
+    Post.find_by_id(post_ids[post_index - 1]) unless post_index.zero?
+  end
 end
