@@ -34,6 +34,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
+  gem 'rubocop'
 end
 
 group :production do
