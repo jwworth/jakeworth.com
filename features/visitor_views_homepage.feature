@@ -36,7 +36,7 @@ Feature: Visitor views homepage
     And 40 posts exist
     When I visit the homepage
     Then I see 30 posts
-    When I click "older posts"
+    When I click "Older Posts"
     Then I see 10 posts
-    When I click "newer posts"
+    When I click "Newer Posts"
     When I see 30 posts

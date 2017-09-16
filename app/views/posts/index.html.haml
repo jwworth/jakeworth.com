@@ -20,5 +20,5 @@
           = link_to '[edit]', edit_post_path(post.url_slug)
 
 %nav.pagination
-  = link_to_next_page @posts, "older posts", class: "btn btn-default btn-sm"
-  = link_to_previous_page @posts, "newer posts", class: "btn btn-default btn-sm"
+  = link_to_next_page @posts, '&#8592; Older Posts'.html_safe
+  = link_to_previous_page @posts, 'Newer Posts &#8594;'.html_safe
