@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'cucumber/rails'
+require 'capybara/webmock'
 
 ActionController::Base.allow_rescue = false
 
@@ -12,7 +13,7 @@ end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-Capybara.javascript_driver = :capybara_webmock
+Capybara.javascript_driver = :capybara_webmock_chrome
 Capybara::Webmock.start
 
 at_exit do
