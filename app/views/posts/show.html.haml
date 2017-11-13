@@ -19,7 +19,11 @@
   %p= find_and_preserve markdown_render @post.body
   %p.posted= link_to @post.display_date, post_path(@post)
 
-  - if preceding = preceding_post(@post)
-    = link_to '&#8592; Previous Post'.html_safe, preceding
-  - if succeeding = succeeding_post(@post)
-    = link_to 'Next Post &#8594;'.html_safe, succeeding
+  - preceding  = preceding_post(@post)
+  - succeeding = succeeding_post(@post)
+  - if preceding
+    = link_to "&#8592; #{preceding.title}".html_safe, preceding
+    - if succeeding
+      \::
+  - if succeeding
+    = link_to "#{succeeding.title} &#8594;".html_safe, succeeding
