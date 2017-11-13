@@ -36,3 +36,13 @@ end
 Given(/^I try to visit the new speaking engagement path$/) do
   visit new_speaking_engagement_path
 end
+
+Given(/^(\d+) speaking engagements$/) do |num|
+  FactoryGirl.create_list(:speaking_engagement, num.to_i)
+end
+
+Then(/^I see (\d+) speaking engagements$/) do |num|
+  within 'ul.talks' do
+    expect(page).to have_selector('li', count: num.to_i)
+  end
+end

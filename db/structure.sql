@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.0
+-- Dumped from database version 9.4.0
 -- Dumped by pg_dump version 9.5.1
 
 SET statement_timeout = 0;
@@ -52,8 +52,8 @@ CREATE TABLE ar_internal_metadata (
 CREATE TABLE authem_sessions (
     id integer NOT NULL,
     role character varying NOT NULL,
-    subject_id integer NOT NULL,
     subject_type character varying NOT NULL,
+    subject_id integer NOT NULL,
     token character varying(60) NOT NULL,
     expires_at timestamp without time zone NOT NULL,
     ttl integer NOT NULL,
@@ -302,6 +302,14 @@ ALTER TABLE ONLY projects
 
 
 --
+-- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
 -- Name: speaking_engagements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -324,17 +332,10 @@ CREATE INDEX index_authem_sessions_subject ON authem_sessions USING btree (expir
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
-
-
---
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user", public;
+SET search_path TO "$user",public;
 
 INSERT INTO schema_migrations (version) VALUES
 ('20150422174456'),
