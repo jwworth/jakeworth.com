@@ -1,0 +1,10 @@
+Metrics/LineLength:
+  Enabled: false
+Documentation:
+  Enabled: false
+Lint/AssignmentInCondition:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
