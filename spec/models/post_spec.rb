@@ -72,8 +72,7 @@ describe Post do
   end
 
   it 'should validate title uniqueness' do
-    post = FactoryGirl.create(:post, title: 'Title')
-    dup_post = FactoryGirl.build(:post, title: 'Title')
+    dup_post = FactoryGirl.create(:post, title: 'Title').dup
 
     expect(dup_post).to_not be_valid
     expect(dup_post.errors[:title]).to eq ['has already been taken']
