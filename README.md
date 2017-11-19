@@ -6,7 +6,7 @@ This is the source code for my developer's blog, available here:
 
 http://jakeworth.com
 
-Here's my intention, from the first post:
+Here's my intention, from the [first post](http://www.jakeworth.com/hello-world):
 
 > I’ve been writing code for a few years now, and am proud to be launching my own
 > developer’s blog.
