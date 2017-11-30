@@ -5,7 +5,7 @@ defaults: &defaults
   twitter_access_token_secret:
   twitter_consumer_key:
   twitter_consumer_secret:
-  site_name:
+  site_name: 'Jake Worth'
   pagination_breakpoint: '30'
 
 development:
