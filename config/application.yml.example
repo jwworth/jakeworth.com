@@ -1,6 +1,6 @@
 defaults: &defaults
   host: 'www.jakeworth.com'
-  contact_email:
+  contact_email: 'dev@jakeworth.com'
   twitter_access_token:
   twitter_access_token_secret:
   twitter_consumer_key:
