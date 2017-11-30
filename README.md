@@ -33,12 +33,7 @@ http://jakeworth.com/new-blog
 ### Installation
 
 ```
-$ git clone https://github.com/jwworth/jakeworth.com
-$ cd jakeworth.com
-$ bundle
-$ cp config/application.yml{.example,}
-$ rake db:setup
-$ rails s
+$ ./bin/setup
 ```
 
 ### Testing
