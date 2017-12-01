@@ -17,7 +17,6 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'pg'
 gem 'puma'
-gem 'rails_12factor', group: :production
 gem 'redcarpet'
 gem 'rouge'
 gem 'sass-rails', '~> 5.0'
@@ -38,6 +37,7 @@ end
 
 group :production do
   gem 'airbrake'
+  gem 'rails_12factor'
 end
 
 group :test do
