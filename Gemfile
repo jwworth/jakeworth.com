@@ -26,13 +26,13 @@ gem 'uglifier', '>= 1.3.0'
 group :development do
   gem 'brakeman'
   gem 'bullet'
+  gem 'rubocop'
 end
 
 group :development, :test do
   gem 'ffaker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop'
 end
 
 group :production do
