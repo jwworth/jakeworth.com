@@ -1,17 +1,19 @@
-= content_for :head, auto_discovery_link_tag(:atom, root_path(format: "atom"))
+= content_for :head, auto_discovery_link_tag(:atom, root_path(format: 'atom'))
 
 .page-header
   %h3 Blog
   %p
     %blockquote
-      My favorite posts are marked with
+      My
+      = link_to 'favorite', favorite_posts_path
+      posts are marked with
       = succeed '.' do
         = emoji_of_the_day
 
 %ul.posts
   - @posts.each do |post|
     %li
-      %p.title
+      %p.title{ class: ('favorite' if post.favorite?) }
         - if post.favorite?
           = emoji_of_the_day
         = link_to post.title, post_path(post.url_slug)

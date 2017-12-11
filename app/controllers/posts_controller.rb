@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   helper_attr_accessor :older_posts, :latest_posts
 
   before_action :set_post, only: %i[show edit update]
-  before_action :require_developer, except: %i[index show]
+  before_action :require_developer, except: %i[index show favorites]
 
   def new
     @post = Post.new
@@ -40,6 +40,11 @@ class PostsController < ApplicationController
       flash.now[:notice] = @post.errors.full_messages
       render :edit
     end
+  end
+
+  def favorites
+    @posts = Post.favorites.ordered.page(params[:page]).per(ENV.fetch('pagination_breakpoint'))
+    render :index
   end
 
   private
