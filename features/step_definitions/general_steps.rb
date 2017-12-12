@@ -423,3 +423,12 @@ end
 Then(/^I see (\d+) projects+$/) do |num|
   expect(page).to have_selector('.project', count: num.to_i)
 end
+
+
+Given(/^(\d+) favorited posts exist$/) do |count|
+  FactoryGirl.create_list(:post, count.to_i, favorite: true)
+end
+
+Then(/^I see the (\d+) favorited posts$/) do |count|
+  expect(page).to have_selector('.favorite', count: count.to_i)
+end

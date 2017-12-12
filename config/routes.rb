@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'sessions#destroy', as: 'destroy_session'
 
+  get '/favorites', to: 'posts#favorites', as: 'favorite_posts'
   get '/:url_slug', to: 'posts#show', as: 'post', param: :url_slug
   get '/:url_slug/edit', to: 'posts#edit', as: 'edit_post', param: :url_slug
   patch '/:url_slug', to: 'posts#update', param: :url_slug

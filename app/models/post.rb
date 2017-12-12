@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates_uniqueness_of :url_slug
 
   scope :ordered, -> { order('created_at desc') }
+  scope :favorites, -> { where('favorite is true') }
 
   before_create :generate_url_slug
 
