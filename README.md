@@ -36,6 +36,12 @@ http://jakeworth.com/new-blog
 $ ./bin/setup
 ```
 
+To restore the production database to development, run:
+
+```
+$ ./bin/db_restore.sh
+```
+
 ### Testing
 
 Run the tests with:
