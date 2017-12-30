@@ -27,4 +27,8 @@ module PostHelper
     post_index = post_ids.index(post.id)
     Post.find_by_id(post_ids[post_index - 1]) unless post_index.zero?
   end
+
+  def display_date(post)
+    post.created_at.strftime('%b %-e, %Y')
+  end
 end

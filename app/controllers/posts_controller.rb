@@ -30,7 +30,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.ordered.page(params[:page]).per(ENV.fetch('pagination_breakpoint'))
+    @posts = paginated(Kaminari.paginate_array(ordered_collected_posts))
+  end
+
+  def favorites
+    @posts = paginated(Kaminari.paginate_array(ordered_favorites))
+    render :index
   end
 
   def update
@@ -42,12 +47,19 @@ class PostsController < ApplicationController
     end
   end
 
-  def favorites
-    @posts = Post.favorites.ordered.page(params[:page]).per(ENV.fetch('pagination_breakpoint'))
-    render :index
+  private
+
+  def paginated(array)
+    array.page(params[:page]).per(ENV.fetch('pagination_breakpoint'))
   end
 
-  private
+  def ordered_collected_posts
+    (Post.all + SymlinkPost.all).sort_by(&:created_at).reverse
+  end
+
+  def ordered_favorites
+    ordered_collected_posts.select(&:favorite?)
+  end
 
   def post_params
     params.require(:post).permit :title, :body, :url_slug, :favorite

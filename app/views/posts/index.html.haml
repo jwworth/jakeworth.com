@@ -5,8 +5,8 @@
   %p
     %blockquote
       My
-      = link_to 'favorite', favorite_posts_path
-      posts are marked with
+      = link_to 'favorite posts', favorite_posts_path
+      are marked with
       = succeed '.' do
         = emoji_of_the_day
 
@@ -16,10 +16,15 @@
       %p.title{ class: ('favorite' if post.favorite?) }
         - if post.favorite?
           = emoji_of_the_day
-        = link_to post.title, post_path(post.url_slug)
-        %span.posted= link_to post.display_date, post_path(post)
-        - if developer_signed_in?
-          = link_to '[edit]', edit_post_path(post.url_slug)
+
+        - if post.is_a?(Post)
+          = link_to post.title, post_path(post.url_slug)
+          %span.posted= link_to display_date(post), post_path(post)
+          - if developer_signed_in?
+            = link_to '[edit]', edit_post_path(post.url_slug)
+        - else
+          = link_to post.title, post.link_url, target: '_blank'
+          %span.posted= link_to display_date(post), post.link_url, target: '_blank'
 
 %nav.pagination
   = link_to_next_page @posts, '&#8592; Older Posts'.html_safe

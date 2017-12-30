@@ -227,6 +227,19 @@ ALTER SEQUENCE speaking_engagements_id_seq OWNED BY speaking_engagements.id;
 
 
 --
+-- Name: symlink_posts; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE symlink_posts (
+    link_url character varying NOT NULL,
+    title character varying NOT NULL,
+    favorite boolean DEFAULT false NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    updated_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -332,6 +345,13 @@ CREATE INDEX index_authem_sessions_subject ON authem_sessions USING btree (expir
 
 
 --
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -351,6 +371,7 @@ INSERT INTO schema_migrations (version) VALUES
 ('20160315015050'),
 ('20160609191949'),
 ('20170505034953'),
-('20170505035447');
+('20170505035447'),
+('20171214032109');
 
 

@@ -7,7 +7,6 @@ class Post < ApplicationRecord
   validates_uniqueness_of :url_slug
 
   scope :ordered, -> { order('created_at desc') }
-  scope :favorites, -> { where('favorite is true') }
 
   before_create :generate_url_slug
 
@@ -21,10 +20,6 @@ class Post < ApplicationRecord
 
   def one_year_or_older?
     created_at < 1.year.ago
-  end
-
-  def display_date
-    created_at.strftime('%b %-e, %Y')
   end
 
   def anniversary?
