@@ -3,6 +3,8 @@
 require 'cucumber/rails'
 require 'capybara/webmock'
 
+include ActionView::Helpers::TagHelper
+
 ActionController::Base.allow_rescue = false
 
 begin

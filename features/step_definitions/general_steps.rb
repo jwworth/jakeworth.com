@@ -385,7 +385,7 @@ end
 
 Then 'I see the favorited post' do
   within 'p.title' do
-    expect(page).to have_content(emoji_of_the_day)
+    expect(page).to have_selector('span.favorite')
     expect(page).to have_link 'This post rocks', href: post_path(@fav_post)
   end
 end

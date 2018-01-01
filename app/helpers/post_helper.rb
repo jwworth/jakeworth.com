@@ -14,7 +14,7 @@ module PostHelper
 
   def emoji_of_the_day
     emoji = EMOJIS[Date.today.wday]
-    content_tag(:span, CGI.unescapeHTML(emoji[1]), title: emoji[0])
+    content_tag(:span, CGI.unescapeHTML(emoji[1]), title: emoji[0], class: 'favorite')
   end
 
   def preceding_post(post)
