@@ -46,41 +46,10 @@
                 = link_to '[edit]', edit_speaking_engagement_path(engagement)
 
     .content
-      %h4#other-stuff Other Stuff
+      %h4#other-stuff Jake + Internet
       %ul.other-stuff
-        %li
-          = succeed ':' do
-            = link_to 'Exercism', 'http://exercism.io/jwworth', target: '_blank'
-          writing algorithms and experimenting with different languages.
-        %li
-          = succeed ':' do
-            = link_to 'Goodreads', 'https://www.goodreads.com/jwworth', target: '_blank'
-          recording what I read.
-        %li
-          = succeed ':' do
-            = link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank'
-          writing for my company.
-        %li
-          = succeed ':' do
-            = link_to 'Meetup', 'https://www.meetup.com/members/12542589/', target: '_blank'
-          talking about code on the scene.
-        %li
-          = succeed ':' do
-            = link_to 'PG Casts', 'https://www.pgcasts.com', target: '_blank'
-          screencasting about PostgreSQL.
-        %li
-          = succeed ':' do
-            = link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth', target: '_blank'
-          answering and asking programming questions.
-        %li
-          = succeed ':' do
-            = link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth', target: '_blank'
-          answering and asking programming questions.
-        %li
-          = succeed ':' do
-            = link_to 'Today I Learned', 'https://til.hashrocket.com/authors/jakeworth', target: '_blank'
-          writing short articles about things I have learned.
-        %li
-          = succeed ':' do
-            = link_to 'Untappd', 'https://untappd.com/user/jwworth', target: '_blank'
-          rating and reviewing beers.
+        - sites.each do |site|
+          %li
+            = succeed ':' do
+              = link_to site[0], site[1], target: '_blank'
+            #{site[2]}.
