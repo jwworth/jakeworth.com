@@ -1,19 +1,20 @@
 # frozen_string_literal: true
 
 module PostHelper
-  EMOJIS = {
-    lake:     '&#x2631;',
-    fire:     '&#x2632;',
-    thunder:  '&#x2633;',
-    wind:     '&#x2634;',
-    water:    '&#x2635;',
-    mountain: '&#x2636;',
-    earth:    '&#x2637;',
-    heaven:   '&#x2630;'
-  }.freeze
+  EMOJIS = [
+    ['Lake',     '&#x2631;'],
+    ['Fire',     '&#x2632;'],
+    ['Thunder',  '&#x2633;'],
+    ['Wind',     '&#x2634;'],
+    ['Water',    '&#x2635;'],
+    ['Mountain', '&#x2636;'],
+    ['Earth',    '&#x2637;'],
+    ['Heaven',   '&#x2630;']
+  ].freeze
 
   def emoji_of_the_day
-    CGI.unescapeHTML(EMOJIS.values[Date.today.wday])
+    emoji = EMOJIS[Date.today.wday]
+    content_tag(:span, CGI.unescapeHTML(emoji[1]), title: emoji[0])
   end
 
   def preceding_post(post)
