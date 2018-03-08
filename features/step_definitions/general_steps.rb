@@ -471,3 +471,7 @@ end
 Then(/^I see (\d+) speaking engagements$/) do |num|
   expect(page).to have_selector('#talks li', count: num.to_i)
 end
+
+Given(/^I visit "([^"]*)"$/) do |path|
+  visit path
+end
