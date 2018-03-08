@@ -431,3 +431,7 @@ end
 Then(/^I see the (\d+) favorited posts$/) do |count|
   expect(page).to have_selector('.favorite', count: count.to_i)
 end
+
+Given(/^I visit "([^"]*)"$/) do |path|
+  visit path
+end

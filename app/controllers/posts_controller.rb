@@ -3,7 +3,7 @@
 class PostsController < ApplicationController
   helper_attr_accessor :older_posts, :latest_posts
 
-  before_action :set_post, only: %i[show edit update]
+  before_action :set_post_or_redirect, only: %i[show edit update]
   before_action :require_developer, except: %i[index show favorites]
 
   def new
@@ -53,7 +53,9 @@ class PostsController < ApplicationController
     params.require(:post).permit :title, :body, :url_slug, :favorite
   end
 
-  def set_post
+  def set_post_or_redirect
     @post = Post.find_by_url_slug!(params[:url_slug])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
   end
 end

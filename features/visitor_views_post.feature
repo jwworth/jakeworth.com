@@ -14,3 +14,9 @@ Feature: Visitor views post
     When I click the newest post
     Then I see the page for that post
     And I see a deprecation warning
+
+  Scenario: Visitor views a deleted post
+    Given I am a visitor
+    Given I visit the homepage
+    And I visit "/technology-what-is-it-good-for"
+    Then I see the homepage
