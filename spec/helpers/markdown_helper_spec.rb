@@ -13,7 +13,7 @@ RSpec.describe MarkdownHelper, type: :helper do
         let(:text) { '[My link](http://link.com)' }
 
         it 'parses links' do
-          is_expected.to include('<a href="http://link.com" target="_blank">My link</a>')
+          is_expected.to include('<a href="http://link.com" target="_blank" rel="noopener noreferrer">My link</a>')
         end
       end
     end
