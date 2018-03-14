@@ -5,7 +5,6 @@ class AboutController < ApplicationController
 
   def show
     self.projects = Project.featured.order(:featured_order)
-    self.speaking_engagements = SpeakingEngagementDecorator
-                                .decorate_collection(SpeakingEngagement.by_date.take(10))
+    self.speaking_engagements = SpeakingEngagementDecorator.decorate_collection(SpeakingEngagement.by_date)
   end
 end

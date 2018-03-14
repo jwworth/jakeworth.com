@@ -23,9 +23,9 @@ Feature: Visitor views about
     And I click "about"
     Then I see the future speaking engagement
 
-  Scenario: With at most ten speaking engagement
+  Scenario: With multiple speaking engagements
     Given I am a visitor
     And 11 speaking engagements
     When I visit the homepage
     And I click "about"
-    Then I see 10 speaking engagements
+    Then I see 11 speaking engagements
