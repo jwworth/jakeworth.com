@@ -13,7 +13,7 @@ module PostHelper
   }.freeze
 
   def emoji_of_the_day
-    CGI.unescapeHTML(EMOJIS.values[Date.today.wday])
+    content_tag(:span, emoji_of_the_day_pair[:emoji], title: emoji_of_the_day_pair[:title])
   end
 
   def preceding_post(post)
@@ -26,5 +26,12 @@ module PostHelper
     post_ids = Post.ordered.pluck(:id)
     post_index = post_ids.index(post.id)
     Post.find_by_id(post_ids[post_index - 1]) unless post_index.zero?
+  end
+
+  private
+
+  def emoji_of_the_day_pair
+    today = Date.today.wday
+    { title: EMOJIS.keys[today], emoji: CGI.unescapeHTML(EMOJIS.values[today]) }
   end
 end
