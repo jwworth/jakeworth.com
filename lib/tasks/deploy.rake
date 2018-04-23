@@ -12,7 +12,7 @@ task :deploy do
   system 'git push origin --tags'
 
   system "git push #{env} master"
-  system 'heroku run rake db:migrate'
+  system "heroku run rake db:migrate -r#{env}"
   system "heroku restart -r#{env}"
   system "heroku open -r#{env}"
 
