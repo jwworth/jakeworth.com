@@ -6,17 +6,14 @@
     .jumbotron
       .container
         %h1= link_to 'Jake Worth', root_path
-        %ul.nav.nav-pills
-          - about = current_page?('/about')
-          %li(role="presentation" class="#{'active' if !about}")
-            = link_to "Blog", "/"
-          %li(role="presentation" class="#{'active' if about}")
-            = link_to "About", "/about"
+        %ul
+          %li= link_to "Blog", root_path
+          %li= link_to "About", about_path
 
   %main
     .container
       - if flash.present? && flash[:notice]
-        .alert.alert-info(role="alert")= [flash[:notice]].flatten.join('; ').downcase.capitalize
+        .alert= [flash[:notice]].flatten.join('; ').downcase.capitalize
       .col-md-9
         = yield
       .col-md-3

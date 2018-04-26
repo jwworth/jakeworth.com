@@ -3,16 +3,15 @@
 .page-header
   %h3 About
   %p
-    %blockquote
-      Technology is my &#128293;. I'm currently excited about Ruby, Rails,
-      Elixir, Phoenix, PostgreSQL, React.js, Vim, and automated tests.
+    Technology is my passion. I'm currently excited about Ruby, Rails, Elixir,
+    Phoenix, PostgreSQL, React.js, Vim, and automated tests.
 
-.container#about
+.container
   .col-md-8
     .content
-      %h4#projects= link_to_if(developer_signed_in?, 'Projects', projects_path)
+      %h4= link_to_if(developer_signed_in?, 'Projects', projects_path)
       - if projects.any?
-        %ul.projects
+        %ul
           - projects.each do |project|
             = render 'projects/projects', project: project
       - else
@@ -20,7 +19,7 @@
 
     - if speaking_engagements.any?
       .content
-        %h4#talks Talks
+        %h4 Talks
 
         .featured-video
           .embed-responsive.embed-responsive-16by9
@@ -36,7 +35,7 @@
             %em Observing Change: A Gold Master Test in Practice,
             RailsConf, April 2017.
 
-        %ul.talks
+        %ul#talks
           - speaking_engagements.each do |engagement|
             %li
               = succeed ',' do
@@ -53,8 +52,8 @@
                 = link_to '[edit]', edit_speaking_engagement_path(engagement)
 
     .content
-      %h4#other-stuff Other Stuff
-      %ul.other-stuff
+      %h4 Other Stuff
+      %ul
         %li
           = succeed ':' do
             = link_to 'Exercism', 'http://exercism.io/jwworth', target: '_blank'

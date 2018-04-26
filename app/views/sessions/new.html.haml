@@ -1,9 +1,10 @@
-.page-header
-  %h3 Sign In
+#sessions-new
+  .page-header
+    %h3 Sign In
 
-= form_for 'session' do |f|
-  %p= f.label :email
-  %p= f.text_field :email
-  %p= f.label :password
-  %p= f.password_field :password
-  %p= f.submit 'Submit'
+  = form_for 'session' do |f|
+    %p= f.label :email
+    %p= f.text_field :email
+    %p= f.label :password
+    %p= f.password_field :password
+    %p= f.submit 'Submit'

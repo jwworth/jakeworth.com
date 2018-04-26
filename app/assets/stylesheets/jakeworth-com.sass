@@ -1,61 +1,41 @@
-$black:      #2e303a
-$light-gray: #8899a6
+$black:      #000
+$light-gray: #ccc
 $white:      #fff
 
 body
+  font-family: "Courier", monospace
   color: $black
-  ul
-    &.posts, &.projects, &.talks, &.other-stuff
-      padding-left: 0px
-      li
-        list-style: none
 
   .jumbotron
     background: image-url("keyboard.jpg")
     background-size: cover
-    h1
-      margin-bottom: 20px
-    h1 > a
+    filter: grayscale(0.3)
+    filter: opacity(0.8)
+    h1 a
       color: $white
-      text-decoration: initial
-    li > a
-      margin-right: 0.75em
-
-  .posted
-    font-style: italic
-    color: $light-gray
-
-  main
-    textarea
-      width: 100%
-      height: 400px
-    p > code, li > code
-      background: #f6f6f6
-      color: $black
-    .posted
-      font-style: italic
+    li
+      color: $white
       a
-        color: $light-gray
-        text-decoration: initial
+        color: $white
 
-  .highlight
-    background: #414347
+  a, a:hover, a:visited
+    color: $black
+    text-decoration: underline
 
-#about
-  .content
-    margin-bottom: 1.5em
-    .featured-video
-      margin-bottom: 1em
-      .caption
-        color: $light-gray
+  h1 a, a:hover, a:visited
+    text-decoration: initial
+
+  p > code, li > code
+    background: $light-gray
+    color: $black
 
 footer
   text-align: center
-  color: $light-gray
-  padding: 30px 0px
+  padding: 1.0em
   a, .btn
-    color: $light-gray
-    text-decoration: initial
+    color: $black
     &:hover, &:visited
-      color: $light-gray
-      text-decoration: initial
+      color: $black
+
+nav
+  padding-bottom: 1.0em

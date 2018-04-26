@@ -1,5 +1,6 @@
-.page-header
-  %h3 Projects
+#projects-index
+  .page-header
+    %h3 Projects
 
-- projects.each do |project|
-  = render 'projects', project: project
+  - projects.each do |project|
+    = render 'projects', project: project
