@@ -1,29 +1,33 @@
 - content_for :page_title, @post.title
 
 - content_for :canonical do
-  %link{rel: 'canonical', href: post_url(@post)}
+  %link{ rel: 'canonical', href: post_url(@post) }
 
-.page-header
-  %h3
-    - if @post.favorite?
-      = emoji_of_the_day
-    = @post.title
+#posts-show
+  .page-header
+    %h3
+      - if @post.favorite?
+        = emoji_of_the_day
+      = @post.title
 
 
-- if developer_signed_in?
-  = link_to '[edit]', edit_post_path(@post.url_slug)
-.content
-  - if @post.one_year_or_older?
-    %em Note: any code contained in this post is more than a year old. Please use at your own risk.
+  - if developer_signed_in?
+    = link_to '[edit]', edit_post_path(@post.url_slug)
 
-  %p= find_and_preserve markdown_render @post.body
-  %p.posted= link_to @post.display_date, post_path(@post)
+  .content
+    - if @post.one_year_or_older?
+      %em Note: any code contained in this post is more than a year old. Please use at your own risk.
 
-  - preceding  = preceding_post(@post)
-  - succeeding = succeeding_post(@post)
-  - if preceding
-    = link_to "&#8592; #{preceding.title}".html_safe, preceding
+    %p= find_and_preserve markdown_render @post.body
+    %p= @post.display_date
+
+
+  %nav
+    - preceding  = preceding_post(@post)
+    - succeeding = succeeding_post(@post)
+    - if preceding
+      = link_to "&#8592; #{preceding.title}".html_safe, preceding
+      - if succeeding
+        \::
     - if succeeding
-      \::
-  - if succeeding
-    = link_to "#{succeeding.title} &#8594;".html_safe, succeeding
+      = link_to "#{succeeding.title} &#8594;".html_safe, succeeding
