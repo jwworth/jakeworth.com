@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.4'
 
-gem 'rails', '5.0.1'
+gem 'rails', '5.0.7'
 
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'authem'
