@@ -38,6 +38,9 @@
           = succeed '.' do
             = link_to "get in touch", 'mailto:' + ENV.fetch('contact_email')
 
+        %a(class="twitter-timeline" data-tweet-limit=3 href="https://twitter.com/jwworth")
+          Tweets by @jwworth
+
   .container
     %footer
       This blog is
@@ -52,3 +55,5 @@
           = link_to 'New Post', new_post_path, class: 'btn btn-default'
           = link_to 'New Project', new_project_path, class: 'btn btn-default'
           = link_to 'New Speaking Engagement', new_speaking_engagement_path, class: 'btn btn-default'
+
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
