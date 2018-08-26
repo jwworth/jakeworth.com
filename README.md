@@ -57,6 +57,14 @@ $ flatware fan rake db:test:prepare
 $ flatware rspec && flatware cucumber
 ```
 
+### Deployment
+
+To deploy to a particular environment, run:
+
+```
+$ rake deploy ENV=<environment>
+```
+
 ### Contributing
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) it
