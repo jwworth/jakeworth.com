@@ -24,7 +24,6 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'brakeman'
-  gem 'bullet'
   gem 'rubocop'
 end
 
