@@ -8,7 +8,6 @@ gem 'rails', '5.0.7'
 
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'authem'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'draper', git: 'https://github.com/audionerd/draper', branch: 'rails5'
 gem 'figaro'
 gem 'haml-rails'
