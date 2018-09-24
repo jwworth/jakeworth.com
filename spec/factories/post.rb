@@ -2,10 +2,9 @@
 
 FactoryBot.define do
   factory :post do
+    body { 'Lots of content here' }
     sequence :title do |i|
       "A post about everything #{i}"
     end
-
-    body 'Lots of content here'
   end
 end

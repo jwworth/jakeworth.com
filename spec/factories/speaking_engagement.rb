@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :speaking_engagement do
-    title 'Title so cool'
-    date Time.now
-    location 'Chicago, IL'
+    date { Time.now }
+    location { 'Chicago, IL' }
+    title { 'Title so cool' }
   end
 end

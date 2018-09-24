@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :project do
-    title 'A cool project'
-    description 'With cool features'
-    hyperlink 'http://www.google.com'
-    featured_order 1
+    description { 'With cool features' }
+    featured_order { 1 }
+    hyperlink { 'http://www.google.com' }
+    title { 'A cool project' }
   end
 end
