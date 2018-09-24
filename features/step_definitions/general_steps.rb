@@ -4,7 +4,7 @@ include PostHelper
 include ActionView::Helpers::TagHelper
 
 Given 'a developer exists' do
-  @developer = FactoryGirl.create(:developer)
+  @developer = FactoryBot.create(:developer)
 end
 
 When 'I go to the login link' do
@@ -53,25 +53,25 @@ And 'I visit the homepage' do
 end
 
 And 'a project exists' do
-  @project = FactoryGirl.create :project
+  @project = FactoryBot.create :project
 end
 
 And 'a speaking engagement exists' do
-  @speaking_engagement = FactoryGirl.create(:speaking_engagement,
+  @speaking_engagement = FactoryBot.create(:speaking_engagement,
                                             title: 'Haxoring everything!',
                                             location: 'ChicagoRuby Meetup',
                                             date: '2016-03-07 21:10:26 -0600')
 end
 
 And 'a future speaking engagement exists' do
-  FactoryGirl.create(:speaking_engagement,
+  FactoryBot.create(:speaking_engagement,
                      title: 'Haxoring everything!',
                      location: 'ChicagoRuby Meetup',
                      date: Time.now + 1.month)
 end
 
 And 'a non-featured project exists' do
-  FactoryGirl.create :project, featured_order: nil, title: 'Not special'
+  FactoryBot.create :project, featured_order: nil, title: 'Not special'
 end
 
 Then(/^I see the project$/) do
@@ -136,7 +136,7 @@ Given(/^I am a signed in developer$/) do
 end
 
 And 'a post exists' do
-  @post = FactoryGirl.create(:post)
+  @post = FactoryBot.create(:post)
 end
 
 Given(/^I click create post$/) do
@@ -283,8 +283,8 @@ When 'I visit the edit post path' do
 end
 
 And 'posts exist' do
-  2.times { FactoryGirl.create(:post) }
-  @newest_post = FactoryGirl.create(:post, title: 'Newest post', body: 'Newest body')
+  2.times { FactoryBot.create(:post) }
+  @newest_post = FactoryBot.create(:post, title: 'Newest post', body: 'Newest body')
 end
 
 When 'I click the newest post' do
@@ -292,7 +292,7 @@ When 'I click the newest post' do
 end
 
 Given(/^(\d+) posts exist$/) do |num|
-  FactoryGirl.create_list(:post, num.to_i)
+  FactoryBot.create_list(:post, num.to_i)
 end
 
 Then(/^I see (\d+) post titles$/) do |num|
@@ -363,7 +363,7 @@ Then 'I see the header as a link' do
 end
 
 And 'a project exists with markdown' do
-  FactoryGirl.create(:project, description: '[cool link](http://google.com)')
+  FactoryBot.create(:project, description: '[cool link](http://google.com)')
 end
 
 When 'I visit the about page' do
@@ -375,7 +375,7 @@ Then 'I see my markdown project' do
 end
 
 And 'a favorite post exists' do
-  @fav_post = FactoryGirl.create(:post, title: 'This post rocks', favorite: true)
+  @fav_post = FactoryBot.create(:post, title: 'This post rocks', favorite: true)
 end
 
 Then 'I see the favorited post' do
@@ -394,7 +394,7 @@ Then(/^I see (\d+) posts$/) do |num|
 end
 
 Given(/^posts exist from (\d+) years? ago$/) do |year|
-  @newest_post = FactoryGirl.create(:post,
+  @newest_post = FactoryBot.create(:post,
                                     created_at: year.to_i.years.ago,
                                     title: 'Newest post',
                                     body: 'Newest body')
@@ -408,7 +408,7 @@ Then(/^I see a deprecation warning$/) do
 end
 
 Given(/^(\d+) projects+ exists$/) do |num|
-  FactoryGirl.create_list(:project, num.to_i)
+  FactoryBot.create_list(:project, num.to_i)
 end
 
 When 'I visit the projects page' do
@@ -420,7 +420,7 @@ Then(/^I see (\d+) projects+$/) do |num|
 end
 
 Given(/^(\d+) favorited posts exist$/) do |count|
-  FactoryGirl.create_list(:post, count.to_i, favorite: true)
+  FactoryBot.create_list(:post, count.to_i, favorite: true)
 end
 
 Then(/^I see the (\d+) favorited posts$/) do |count|
@@ -432,7 +432,7 @@ When(/^I click edit speaking engagement$/) do
 end
 
 Given(/^a speaking engagement exists with title "([^"]*)"$/) do |title|
-  FactoryGirl.create :speaking_engagement, title: title
+  FactoryBot.create :speaking_engagement, title: title
 end
 
 Then(/^I see the edit speaking enagement page$/) do
@@ -465,7 +465,7 @@ Given(/^I try to visit the new speaking engagement path$/) do
 end
 
 Given(/^(\d+) speaking engagements$/) do |num|
-  FactoryGirl.create_list(:speaking_engagement, num.to_i)
+  FactoryBot.create_list(:speaking_engagement, num.to_i)
 end
 
 Then(/^I see (\d+) speaking engagements$/) do |num|

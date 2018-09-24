@@ -4,13 +4,13 @@ require 'rails_helper'
 
 describe TwitterStatus do
   let(:post) do
-    FactoryGirl.build(:post,
+    FactoryBot.build(:post,
                       title: 'Hacking on Elixir',
                       url_slug: 'hacking-on-elixir')
   end
 
   let(:old_post) do
-    FactoryGirl.build(:post,
+    FactoryBot.build(:post,
                       title: 'My First Ruby Post',
                       url_slug: 'my-first-ruby-post',
                       created_at: 5.years.ago)
