@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Exercism",
+    "url": "http://exercism.io/jwworth",
+    "description": "writing algorithms and experimenting with different languages."
+  },
+  {
+    "label": "Goodreads",
+    "url": "https://www.goodreads.com/jwworth",
+    "description": "recording what I read."
+  },
+  {
+    "label": "Hashrocket Blog",
+    "url": "https://hashrocket.com/blog/rocketeers/jake-worth",
+    "description": "writing for my company."
+  },
+  {
+    "label": "Meetup",
+    "url": "https://www.meetup.com/members/12542589/",
+    "description": "talking about code on the scene."
+  },
+  {
+    "label": "Quora",
+    "url": "https://www.quora.com/profile/Jake-Worth",
+    "description": "answering and asking programming questions."
+  },
+  {
+    "label": "Stack Overflow",
+    "url": "https://stackoverflow.com/users/2112512/jake-worth",
+    "description": "answering and asking programming questions."
+  },
+  {
+    "label": "Today I Learned",
+    "url": "https://til.hashrocket.com/authors/jakeworth",
+    "description": "writing short articles about things I have learned."
+  },
+  {
+    "label": "Speaker Deck",
+    "url": "https://speakerdeck.com/jwworth",
+    "description": "a place where some of my slide decks are saved."
+  }
+]
