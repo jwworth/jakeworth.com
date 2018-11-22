@@ -54,31 +54,8 @@
     .content
       %h4 Other Stuff
       %ul
-        %li
-          = succeed ':' do
-            = link_to 'Exercism', 'http://exercism.io/jwworth', target: '_blank', rel: "noopener noreferrer"
-          writing algorithms and experimenting with different languages.
-        %li
-          = succeed ':' do
-            = link_to 'Goodreads', 'https://www.goodreads.com/jwworth', target: '_blank', rel: "noopener noreferrer"
-          recording what I read.
-        %li
-          = succeed ':' do
-            = link_to 'Hashrocket Blog', 'https://hashrocket.com/blog/rocketeers/jake-worth', target: '_blank', rel: "noopener noreferrer"
-          writing for my company.
-        %li
-          = succeed ':' do
-            = link_to 'Meetup', 'https://www.meetup.com/members/12542589/', target: '_blank', rel: "noopener noreferrer"
-          talking about code on the scene.
-        %li
-          = succeed ':' do
-            = link_to 'Quora', 'https://www.quora.com/profile/Jake-Worth', target: '_blank', rel: "noopener noreferrer"
-          answering and asking programming questions.
-        %li
-          = succeed ':' do
-            = link_to 'Stack Overflow', 'https://stackoverflow.com/users/2112512/jake-worth', target: '_blank', rel: "noopener noreferrer"
-          answering and asking programming questions.
-        %li
-          = succeed ':' do
-            = link_to 'Today I Learned', 'https://til.hashrocket.com/authors/jakeworth', target: '_blank', rel: "noopener noreferrer"
-          writing short articles about things I have learned.
+        - links.map do |link|
+          %li
+            = succeed ':' do
+              = link_to link["label"], link["url"], target: '_blank', rel: "noopener noreferrer"
+            = link["description"]
