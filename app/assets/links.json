@@ -33,5 +33,10 @@
     "label": "Today I Learned",
     "url": "https://til.hashrocket.com/authors/jakeworth",
     "description": "writing short articles about things I have learned."
+  },
+  {
+    "label": "Speaker Deck",
+    "url": "https://speakerdeck.com/jwworth",
+    "description": "a place where some of my slide decks are saved."
   }
 ]
